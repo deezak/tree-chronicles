@@ -1,0 +1,24 @@
+.left-arrow{
+    width: 10%;
+    font-size: 40px;
+    color:rgba(255, 255, 255, 0.7);
+    transition: 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+
+}
+
+.right-arrow{
+    width: 10%;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+.middle-part{
+    width: 100%;
+    
+}
+
+
+
+
+
