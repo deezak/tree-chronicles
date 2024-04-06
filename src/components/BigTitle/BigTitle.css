@@ -1,11 +1,7 @@
-@font-face {
-    font-family: 'babylonica';
-    src: url('../../assets/fonts/Babylonica-Regular.ttf');
-}
 
 @font-face {
-    font-family: 'bungee-shade';
-    src: url('../../assets/fonts/BungeeShade-Regular.ttf');
+    font-family: 'glassure';
+    src: url('../../assets/fonts/Glassure.otf');
 }
 
 @font-face {
@@ -13,29 +9,53 @@
     src: url('../../assets/fonts/Calligraffitti-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'gela';
+    src: url('../../assets/fonts/GelaTrialVF.ttf');
+}
+
+@font-face {
+    font-family: 'gela';
+    src: url('../../assets/fonts/GelaTrialVF.ttf');
+}
+
+@font-face {
+    font-family: 'dancing';
+    src: url('../../assets/fonts/DancingScript-VariableFont_wght.ttf');
+}
 .big-title{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* letter-spacing: 0.5em; */
+    /* font-weight: 100; */
+    width: 45%;
 }
 
 .the{
-    font-family: 'babylonica';
-    font-size: 60px;
+    font-family: 'dancing';
+    font-size: 40px;
     display: flex;
+    letter-spacing: normal;
+    font-weight:lighter;
+    color: var(--magic-yellow);
     justify-content: flex-start;
-    padding: 0px 10px 0px 20px;
+    /* padding: 11vh 0.5vw 0px 2vw; */
     vertical-align: top;
+    align-items: flex-start;
+
 }
 
 .tree-chronicles{
-    font-family: 'bungee-shade';
-    font-size: 85px;
-    font-weight: 600;
+    font-family: 'glassure';
+    font-size: 130px;
+    font-weight: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--magic-yellow);
+    line-height: 1.05;
 }
 
 .by-dina{

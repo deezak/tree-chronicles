@@ -54,9 +54,9 @@ const handleAuth = async(e) => {
 
   return (
     <div className='login container-fluid mb-4'>
-        <div className="container">
+        <div className="">
             <div className = "col-12 text-center">
-                {!signUp ? "Sign-In" : "Sign-Up"}
+                {!signUp ? "Sign In" : "Sign Up"}
 
             </div>
         </div>
@@ -117,7 +117,7 @@ const handleAuth = async(e) => {
                 
                 <div className="col-12 py-3 text-center">
                     <button className={`btn ${!signUp ? "btn-sign-in" : "btn-sign-up"}`} type="submit">
-                        {!signUp ? "Sign-in" : "Sign-up"}
+                        {!signUp ? "SIGN IN" : "SIGN UP"}
                     </button>
                 </div>
             </form>

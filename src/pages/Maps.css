@@ -1,3 +1,28 @@
 body{
     /* background-image: url('../assets/images/testworld.svg'); */
 }
+.map-container {
+  position: relative;
+}
+
+.blog-overlay {
+  position: absolute;
+    bottom: -9%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.7);
+    z-index: 10;
+    width: 80vw;
+}
+
+.blog-header{
+  display: flex;
+  color: var(--grey-accent);
+  justify-content: flex-start;
+  font-family: "tropikal";
+  font-weight: bolder;
+  letter-spacing: 0.3rem;
+  font-size: 46px;
+  text-transform: uppercase;
+}
+
+

@@ -23,21 +23,26 @@
     src: url('../../assets/fonts/BungeeShade-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'tropikal';
+    src: url('../../assets/fonts/Tropikal-Bold.otf');
+}
 
 .user-name{
     /* font-family:"poppins"; */
 }
 .log-out{
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     /* font-family:"poppins"; */
 
 }
 .alt-nav-bar-wrapper{
-    height: 49px;
-    font-size: 23px;
+    height: auto;
+    font-size: 19px;
     text-align: center;
     flex-shrink: 0;
-    height: 85px;
+    /* height: 85px; */
+    margin: 6vh 1vw 3vh 1vw;
     display: flex;
     justify-content: space-between;
     /* padding: 0.2rem calc((100vw - 1000px) / 2); */
@@ -45,35 +50,41 @@
     align-items: center;
     
 }
-.font-icon{
+.alt-font-icon{
     font-size: 18px;
 }
+.alt-list-left{
+    padding: 0px;
+    font-size: 22px;
+}
+
 .alt-list-left a{
-    font-size: 16px;
     display: flex;
     /* width: 36vw; */
     padding: 14px 20px;
     align-items: center;
     font-weight: 500;
     /* color: rgba(237, 237, 237, 0.2); */
-    color: black;
+    color: var(--grey-accent);
   /* -webkit-text-stroke:0.2px rgba(0,0,0,0.8);  */
 
-    font-family: 'poppins';
+    font-family: 'tropikal';
 }
 
 .alt-list-right{
     float: right;
+    font-size: 22px;
+    padding-right: 2rem;
     /* width: 23vw; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 16px;
-    font-family: "poppins";
-    font-weight: 500;
+    /* font-size: 18px; */
+    font-family: "tropikal";
+    /* font-weight: 500; */
 }
 .alt-list-middle{
-    width: 4vw;
+    width: 0vw;
 }
 ul{
     list-style-type: none;
@@ -92,15 +103,18 @@ a:link{
 }
 
 a{
-    color: black;
+    color: var(--grey-accent);
     
 }
 
 
 .list-right a:hover{
-    color: rgb(237, 237, 237);
+    /* color: rgba(0,0,0,0.3);
+    transition: 0.4s cubic-bezier(0.33, 0.66, 0.66, 1);
+    -webkit-text-stroke: 0.5px #FFF; */
+	/* transform: scale(1.2); */
 }
 
 .log-out:hover{
-    color: rgb(237, 237, 237);
+    /* color: rgb(237, 237, 237); */
 }

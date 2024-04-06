@@ -29,7 +29,7 @@ const Home = () => {
   // console.log("blogs", blogs);
 
   return (
-    <div className = "Home-Page" style={{flex: "1"}}>
+    <div className = "Home-Page" style={{ marginBottom: "8%", display:"flex", flexDirection: "row", textAlign: "left", justifyContent:"center"}}>
         {/* <div>Home</div> */}
         <BigTitle />
         <PlaceCounter />

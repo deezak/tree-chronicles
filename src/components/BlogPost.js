@@ -3,54 +3,16 @@ import { Link } from 'react-router-dom';
 // import { excerpt } from '../utility';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './BlogPost.css';
-const BlogPost = ({blogs, user, id, handleDelete}) => {
+const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
   const userId = user?.uid;
   console.log("USER ID " + userId);
   
   return (
-    <div className='blog-heading text-start py-2 mb-4'>
+    <div className={isMap ? 'blog-heading-map' : 'blog-heading-reg'}>
       {blogs?.map((item) =>(
-        
-        // <div className='blog row pb-4' key={item.id}>
-        //   <div className='blog-pic'> 
-        //     <div className='hover-blog-img'>
-        //       <div className='blogs-img'>
-        //         <img src={item.imgUrl} alt={item.title}/>
-        //         <div>
-        //         </div>
-        //       </div>
-        //     </div>
-        //   </div>
-        //     <div className='blog-content'>
-        //       <div className='text-start'>
-        //           <h6 className='category bg-light text-primary opacity-50'>{item.category}</h6>
-
-        //           <div className="edit-button" style ={{float:"right"}}>
-        //             <FontAwesomeIcon icon="fa-regular fa-pen-to-square" style={{margin:"15px", cursor:"pointer"}}/>
-        //           </div>
-
-        //           <span className='title py-2'>{item.title}</span>
-        //           <div className='short-description'>
-        //             {excerpt(item.description, 120)}
-        //           </div>
-        //             {item?.description > 120 ?(
-        //               console.log("MORE THAN 120 CHAR")
-        //             ):(
-        //               <div></div>
-        //             )}
-        //           <span className='meta-info'>
-        //             <p className='author'>{item.author}</p>
-        //             {item.timestamp.toDate().toDateString()}
-        //           </span>
-        //         </div>
-              
-        //       {/* <button className='btn btn-read'>Read More</button> */}
-              
-        //   </div>
-        // </div>
-      
-      
-      <div key={item.id} className="blog-card spring-fever" style={{ backgroundImage: `url(${item?.imgUrls[0]})` }}>
+       
+      <div key={item.id} className={isMap ? 'blog-card-map blog-card spring-fever' : 'blog-card spring-fever'} style={{ backgroundImage: `url(${item?.imgUrls[0]})`, backgroundRepeat: "no-repeat",
+      backgroundSize: "cover"}}>
         <div className="color-overlay"></div>
         
 

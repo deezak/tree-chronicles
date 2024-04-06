@@ -1,0 +1,287 @@
+/* .ticket {
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 50px auto;
+    color: whitesmoke;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .photo {
+    flex: 0 0 150px; 
+    margin-right: 20px;
+  }
+  
+  .photo img {
+    width: 100%;
+    border-radius: 50%; 
+  }
+  
+  .about {
+    flex: 1; 
+  }
+  
+  .about h2 {
+    margin-top: 0;
+  }
+  
+  .about p {
+    font-size: 16px;
+  }
+   */
+   
+	@font-face {
+		font-family: 'glassure';
+		src: url('../assets/fonts/Glassure.otf');
+	}
+
+   body {
+    /* background-color: #FFB563; */
+    font-family: "Montserrat", "Helvetica Neue", "Open Sans", "Arial";
+    font-weight: 300;
+  }
+  .ticket-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .container-fluid-about {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+  }
+  .ticket {
+    display: flex;
+    border-radius: 7px;
+    /* display: inline-block; */
+    max-width: 75vw;
+    text-align: left;
+    height:350px;
+    text-transform: uppercase;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .ticket.dark {
+    background-color: var(--dark-complement);
+    color: white;
+    box-shadow: 0px 0px 25px #2f3322;
+  }
+  /* .ticket.light {
+    background-color: white;
+    color: #161616;
+  }
+  .ticket.light .ticket-body {
+    border-color: #161616;
+  } */
+  .ticket-head {
+    background-position: center;
+    background-size: cover;
+    border-radius: 7px 0 0 7px;
+    color: white;
+    width: 500px;
+    height: inherit;
+    position: relative;
+  }
+  .ticket-head .from-to {
+    text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.9);
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%); */
+    font-size: 24px;
+    font-weight: 600;
+    /* font-family: 'glassure'; */
+    
+    width: 100%;
+    display: flex;
+    padding-bottom: 200px;
+    height: inherit;
+    color: whitesmoke;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  .fa-plane{
+    color:var(--dark-complement);
+  }
+  .from-location{
+    width:35%;
+    text-align: center;
+
+  }
+  .to-location{
+    width:35%;
+    text-align: center;
+  }
+  .ticket-head .icon {
+    display: inline-block;
+    margin: 0 40px;
+    transform: rotate(135deg) translate(25%, 25%);
+  }
+  .ticket-body {
+    border-right: 1px dashed white;
+    padding: 15px 65px;
+    position: relative;
+  }
+  .ticket-body p {
+    color: #A2A2A2;
+    font-size: 12px;
+  }
+  .ticket-body .flight-info {
+    margin-top: 15px;
+  }
+  .ticket-body .flight-date {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .passenger h4{
+    color: var(--magic-yellow);
+    font-weight: 100;
+    text-shadow: 0px 0px 5px;
+    font-size: 35px;
+    /* font-family: 'glassure'; */
+  }
+  .ticket-body:before,
+  .ticket-body:after {
+    /* background-color: #FFB563; */
+    border-radius: 100%;
+    content: "";
+    height: 15px;
+    position: absolute;
+    top: 100%;
+    width: 20px;
+  }
+  .ticket-body:before {
+    left: 0;
+    /* transform: translate(-70%, -45%); */
+  }
+  .ticket-body:after {
+    right: 0;
+    /* transform: translate(70%, -45%); */
+  }
+  .barcode {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 1px 0 0 1px,
+           5px 0 0 1px,
+           10px 0 0 1px,
+           11px 0 0 1px,
+           15px 0 0 1px,
+           18px 0 0 1px,
+           22px 0 0 1px,
+           23px 0 0 1px,
+           26px 0 0 1px,
+           30px 0 0 1px,
+           35px 0 0 1px,
+           37px 0 0 1px,
+           41px 0 0 1px,
+           44px 0 0 1px,
+           47px 0 0 1px,
+           51px 0 0 1px,
+           56px 0 0 1px,
+           59px 0 0 1px,
+           64px 0 0 1px,
+           68px 0 0 1px,
+           72px 0 0 1px,
+           74px 0 0 1px,
+           77px 0 0 1px,
+           81px 0 0 1px,
+           85px 0 0 1px,
+           88px 0 0 1px,
+           92px 0 0 1px,
+           95px 0 0 1px,
+           96px 0 0 1px,
+           97px 0 0 1px,
+           101px 0 0 1px,
+           105px 0 0 1px,
+           109px 0 0 1px,
+           110px 0 0 1px,
+           113px 0 0 1px,
+           116px 0 0 1px,
+           120px 0 0 1px,
+           123px 0 0 1px,
+           127px 0 0 1px,
+           130px 0 0 1px,
+           131px 0 0 1px,
+           134px 0 0 1px,
+           135px 0 0 1px,
+           138px 0 0 1px,
+           141px 0 0 1px,
+           144px 0 0 1px,
+           147px 0 0 1px,
+           148px 0 0 1px,
+           151px 0 0 1px,
+           155px 0 0 1px,
+           158px 0 0 1px,
+           162px 0 0 1px,
+           165px 0 0 1px,
+           168px 0 0 1px,
+           173px 0 0 1px,
+           176px 0 0 1px,
+           177px 0 0 1px,
+           180px 0 0 1px;
+    display: inline-block;
+    height: 30px;
+    margin-right: 85px;
+    margin-top: 25px;
+    transform: translateX(-90px);
+    width: 0;
+  }
+  .disclaimer h3{
+    font-family: 'glassure';
+    color:var(--magic-yellow);
+    font-style: normal;
+  }
+
+  .disclaimer {
+    color: var(--grey-accent);
+    font-family: "IM Fell French Canon";
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.25;
+    padding: 15px 25px;
+    text-transform: none;
+  }
+  .layer {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 7px 0 0 7px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+  

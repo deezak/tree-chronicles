@@ -14,10 +14,11 @@ const BlogDetailLayout =({active, setActive, user, handleLogout}) =>{
         <>
         <div className = "basicLayout">
             {/* <AltNavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/> */}
-            {/* <SideBar /> */}
-            <div className="side-menu-button">
-                <FontAwesomeIcon icon="fa-solid fa-bars" />
-            </div>
+            <SideBar user={user} setActive={setActive}>
+                {/* <div className="side-menu-button">
+                    <FontAwesomeIcon icon="fa-solid fa-bars" />
+                </div> */}
+            </SideBar>
             <Outlet className="page-body"/>
             {/* <Sides/> */}
             <Footer className="layout-footer"/>

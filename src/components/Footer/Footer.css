@@ -1,18 +1,19 @@
 @font-face {
-    font-family: 'crimson';
-    src: url('../../assets/fonts/CrimsonText-Regular.ttf');
+    font-family: 'tropikal';
+    src: url('../../assets/fonts/Tropikal-Bold.otf');
 }
 .footer{
     /* position: sticky; */
     /* left: 0;
     bottom: 0; */
     width: 100%;
-    height: 6vh;
+    height: 10vh;
     font-size:15px;
-    font-family: 'crimson';
+    font-family: 'tropikal';
     letter-spacing: .1rem;
-    background-color: rgba(149,193,169, 0.5);
-    color: rgba(255,255,255,0.8);
+    /* background-color: #EAFF82; */
+    /* opacity: 15%; */
+    color: var(--grey-accent);
     text-align: center;
     display: flex;
     align-items: center;

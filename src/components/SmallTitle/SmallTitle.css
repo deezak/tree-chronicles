@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'babylonica';
-    src: url('../../assets/fonts/Babylonica-Regular.ttf');
+    font-family: 'dancing';
+    src: url('../../assets/fonts/DancingScript-VariableFont_wght.ttf');
 }
 
 @font-face {
-    font-family: 'bungee-shade';
-    src: url('../../assets/fonts/BungeeShade-Regular.ttf');
+    font-family: 'glassure';
+    src: url('../../assets/fonts/Glassure.otf');
 }
 
 @font-face {
@@ -21,28 +21,30 @@
 }
 
 .small-the{
-    font-family: 'babylonica';
+    font-family: 'dancing';
     font-size: 26px;
     display: flex;
     justify-content: flex-start;
-    padding: 0px 10px 0px 20px;
+    padding: 8px 10px 0px 20px;
     vertical-align: top;
+    color: var(--magic-yellow);
 }
 
 .small-tree-chronicles{
-    font-family: 'bungee-shade';
-    font-size: 32px;
-    font-weight: 600;
+    font-family: 'glassure';
+    font-size: 55px;
+    letter-spacing: 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--magic-yellow);
 }
 
-.by-dina{
+/* .by-dina{
     font-family: 'calligraffitti';
     font-size: 26px;
     display:flex;
     justify-content: flex-end;
     flex-direction: column;
-}
+} */

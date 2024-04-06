@@ -11,8 +11,10 @@ const StandardLayout =({active, setActive, user, handleLogout}) =>{
     return(
         <>
         <div className = "standardLayout">
-            <NavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
-            <Outlet className="page-body"/>
+            <div className='rectangle-border'>
+                <NavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
+                <Outlet className="page-body"/>
+            </div>
             {/* <Sides/> */}
             <Footer className="layout-footer"/>
         </div>

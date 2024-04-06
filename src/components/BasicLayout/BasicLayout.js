@@ -14,7 +14,7 @@ const BasicLayout =({active, setActive, user, handleLogout}) =>{
             <AltNavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
             <Outlet className="page-body"/>
             {/* <Sides/> */}
-            <Footer className="layout-footer"/>
+            {/* <Footer className="layout-footer"/> */}
         </div>
         {/* <main>{children}</main> */}
         </>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useReducer} from 'react';
+import React, {useState, useEffect} from 'react';
 // import ReactTagInput from '@pathofdev/react-tag-input';
 import { useNavigate, useParams } from "react-router-dom";
 import { db, storage } from "../firebase";
@@ -167,7 +167,7 @@ const AddEditBlog = ({ user, setActive }) => {
   
   return (
   <div className="blog container-fluid" style={{flex: "1"}}>
-      <div className="container">
+      <div className="create-container">
         <div className="inner-container">
           <div className="text-center heading">
             {id ? "Update Blog" : "Create Blog"}
@@ -176,7 +176,7 @@ const AddEditBlog = ({ user, setActive }) => {
         <div className="row h-100 justify-content-center align-items-center">
           <div className="blog-input-container">
             <form className="row blog-form" onSubmit={handleSubmit}>
-              <div className="col-12 py-3">
+              <div className="col-12 py-2">
                 <input
                   type="text"
                   className="form-control input-text-box"
@@ -206,6 +206,7 @@ const AddEditBlog = ({ user, setActive }) => {
                 <input
                   type="file"
                   multiple
+                  style={{padding:"12px"}}
                   className="form-control"
                   onChange={(e) => 
                     setFiles(e.target.files)
@@ -214,7 +215,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   }
                 />
               </div>
-              <div className="col-12 py-3">
+              <div className="col-12 py-2">
                 <textarea
                   className="form-control description-box"
                   placeholder="Description"
@@ -238,7 +239,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   ))}
                 </select>
               </div>
-              <div className="col-12 py-3 city-text">
+              <div className="col-12 py-2 city-text">
                 <input
                   type="text"
                   className="form-control input-text-box"
@@ -248,7 +249,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   onChange={handleChange}
                 />
               </div>
-              <div className="col-12 py-3">
+              <div className="col-12 py-2">
                 {/* <ReactTagInput
                   tags={tags}
                   placeholder="Tags"
@@ -270,7 +271,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   type="submit"
                   disabled={progress !== null && progress < 100}
                 >
-                  {id ? "Update" : "Submit"}
+                  {id ? "UPDATE" : "SUBMIT"}
                 </button>
               </div>
             </form>

@@ -42,7 +42,7 @@ const [loading, setLoading] = useState(true);
   const getBlogsData = async () => {
     setLoading(true);
     const blogRef = collection(db, "blogs");
-    const first = query(blogRef, orderBy("timestamp", "desc"), limit(4));
+    const first = query(blogRef, orderBy("timestamp", "desc")); //, limit(4));
     const docSnapshot = await getDocs(first);
     setBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     setCount(docSnapshot.size);
@@ -86,7 +86,8 @@ const [loading, setLoading] = useState(true);
   return (
     <div style={{flex: "1"}}>
       <h2 className='latest-posts'>Latest Posts</h2>
-      <BlogPost className="blogs-flex" 
+      <BlogPost className="blogs-flex"
+      isMap={false} 
       blogs={blogs} 
       user={user} 
       handleDelete={handleDelete}></BlogPost>
