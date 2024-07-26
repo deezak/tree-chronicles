@@ -21,12 +21,12 @@ const PlaceCounter = () => {
         <div className="counter-unit">
           <h1 className='placecounter-label'>Days on the Road:</h1> 
             <br/>
-            <p className='placecounter-number'>368</p>
+            <p className='placecounter-number'>453</p>
         </div> 
         <div className="counter-unit">
           <h1 className='placecounter-label'>Current Country:</h1> 
             <br/>
-            <p className='placecounter-number'>Egypt</p>
+            <p className='placecounter-number'>USA</p>
         </div> 
       </div>     
     </div>

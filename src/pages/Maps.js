@@ -9,20 +9,20 @@
 // export default Maps
 
 import React, {useState, useEffect, useCallback, useRef} from "react";
-import { Tooltip } from 'react-tooltip';
+// import { Tooltip } from 'react-tooltip';
 import './Maps.css';
 // import {Runtime, Inspector} from "@observablehq/runtime";
 // import notebook from "569d101dd5bd332b";
-import { collection, limit, deleteDoc, onSnapshot, doc, orderBy, query, getDocs, where } from 'firebase/firestore';
+import { collection, deleteDoc, doc, query, getDocs, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import latLong from '../assets/mapJson/latLong.json';
-import * as d3 from "d3";
-import { ComposableMap,ZoomableGroup,Geographies,Geography,Markers,Marker, useZoomPan } from "react-simple-maps"
+// import * as d3 from "d3";
+import { ComposableMap,ZoomableGroup,Geographies,Geography,Marker, useZoomPan } from "react-simple-maps"
 import { geoPath } from "d3-geo";
 import { geoTimes } from "d3-geo-projection";
 import BlogPost from "../components/BlogPost";
 import { toast } from "react-toastify";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Maps({setActive, user, active}) {
   // const chartRef = useRef();
@@ -41,7 +41,7 @@ function Maps({setActive, user, active}) {
   const [defaultZoom, setZoom] = useState(2);
   const [defaultCenter, setCenter] = useState([10, 35]);
   const [countryBlogs, setCountryBlogs] = useState([]);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
 
   const projection = () => {
     return geoTimes()
@@ -51,11 +51,11 @@ function Maps({setActive, user, active}) {
   const containerRef = useRef();
 
 
-  const handleScroll = (scrollAmount) =>{
-    const newScrollPosition = scrollPosition + scrollAmount;
-    setScrollPosition(newScrollPosition);
-    containerRef.current.scrollLeft = newScrollPosition;
-  }
+  // const handleScroll = (scrollAmount) =>{
+  //   const newScrollPosition = scrollPosition + scrollAmount;
+  //   setScrollPosition(newScrollPosition);
+  //   containerRef.current.scrollLeft = newScrollPosition;
+  // }
 
 
   const getCountryList = useCallback(async () => {
@@ -91,15 +91,15 @@ function Maps({setActive, user, active}) {
   const height = 377;
 
  
-  const CustomZoomableGroup = ({ children, ...restProps }) => {
-    const { mapRef, transformString, position } = useZoomPan(restProps);
-    return (
-      <g ref={mapRef}>
-        <rect width={width} height={height} fill="transparent" />
-        <g transform={transformString}>{children(position)}</g>
-      </g>
-    );
-  };
+  // const CustomZoomableGroup = ({ children, ...restProps }) => {
+  //   const { mapRef, transformString, position } = useZoomPan(restProps);
+  //   return (
+  //     <g ref={mapRef}>
+  //       <rect width={width} height={height} fill="transparent" />
+  //       <g transform={transformString}>{children(position)}</g>
+  //     </g>
+  //   );
+  // };
 
   const getCountryBlogs= useCallback(async () => {
     setLoading(true);

@@ -29,7 +29,7 @@ const About = () => {
         <div className="from-to">
           <div className='from-location'>JAX</div> 
           <FontAwesomeIcon icon="fa-solid fa-plane" /> 
-          <div className='to-location'>AMM</div>
+          <div className='to-location'>ANY</div>
           </div>
       </div>
       <div className="ticket-body">
@@ -37,7 +37,7 @@ const About = () => {
           <p>passenger</p>
           <h4>Dina Zakaria</h4>
         </div>
-        <div className="flight-info row">
+        <div className="flight-info row" style={{position:"relative", top: "71px"}}>
           <div className="">
             <p>flight</p>
             <h4>ANYWHERE</h4>
@@ -52,7 +52,9 @@ const About = () => {
           </div>
         </div>
         {/* <div className="flight-date">Flight Time: ASAP</div> */}
-        <div className="barcode"></div>
+      {/* <div className="barcode"> */}
+        <img className="barcode" src='./qr.png' alt="qr code" />
+        {/* </div> */}
       </div>
       <div className="footer">
         <div className="disclaimer">

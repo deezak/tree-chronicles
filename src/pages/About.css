@@ -69,7 +69,7 @@
     /* display: inline-block; */
     max-width: 75vw;
     text-align: left;
-    height:350px;
+    /* height:350px; */
     text-transform: uppercase;
     width: 100%;
     flex-direction: row;
@@ -94,8 +94,8 @@
     background-size: cover;
     border-radius: 7px 0 0 7px;
     color: white;
-    width: 500px;
-    height: inherit;
+    width: 700px;
+    height: 100%;
     position: relative;
   }
   .ticket-head .from-to {
@@ -110,7 +110,7 @@
     
     width: 100%;
     display: flex;
-    padding-bottom: 200px;
+    padding-bottom: 265px;;
     height: inherit;
     color: whitesmoke;
     z-index: 2;
@@ -137,7 +137,7 @@
   }
   .ticket-body {
     border-right: 1px dashed white;
-    padding: 15px 65px;
+    padding: 0px 80px 0px 35px;
     position: relative;
   }
   .ticket-body p {
@@ -150,6 +150,10 @@
   .ticket-body .flight-date {
     font-size: 12px;
     margin-top: 15px;
+  }
+  .passenger{
+    position: relative;
+    top: 45px;
   }
   .passenger h4{
     color: var(--magic-yellow);
@@ -177,7 +181,17 @@
     /* transform: translate(70%, -45%); */
   }
   .barcode {
+    left: 107%;
+    height: 130px;
+    margin-right: 100px;
+    margin-top: 5px;
+    transform: translate(-90px, -90px);
+    width: 130px;
     position: relative;
+    top: 36px;
+  }
+
+    /* position: relative;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 1px 0 0 1px,
@@ -243,8 +257,8 @@
     margin-right: 85px;
     margin-top: 25px;
     transform: translateX(-90px);
-    width: 0;
-  }
+    width: 0; */
+  
   .disclaimer h3{
     font-family: 'glassure';
     color:var(--magic-yellow);
