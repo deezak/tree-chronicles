@@ -52,7 +52,7 @@ const About = () => {
           </div>
         </div>
         {/* <div className="flight-date">Flight Time: ASAP</div> */}
-      {/* <div className="barcode"> */}
+        {/* <div className="barcode"> */}
         <img className="barcode" src='./qr.png' alt="qr code" />
         {/* </div> */}
       </div>
