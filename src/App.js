@@ -4,17 +4,15 @@ import AddEditBlog from './pages/AddEditBlog';
 import BasicLayout from "./components/BasicLayout/BasicLayout";
 import { useState } from 'react';
 import {
-  BrowserRouter,
   Routes,
   Route,
   useNavigate,
   Navigate,
-  Link
 } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Blogs from './pages/Blogs';
-import BlogPost from './components/BlogPost';
+// import BlogPost from './components/BlogPost';
 import Maps from './pages/Maps';
 import NotFound from './pages/NotFound';
 import { useEffect } from "react";
@@ -27,9 +25,12 @@ import { signOut } from "firebase/auth";
 import StandardLayout from './components/StandardLayout/StandardLayout';
 import Detail from './pages/Detail';
 import BlogDetailLayout from './components/BlogDetailLayout/BlogDetailLayout';
+import { ThemeProvider } from 'react-bootstrap';
+import theme from './theme';
 function App() {
   const [active, setActive] = useState("home");
   const [user, setUser] = useState(null);
+  const [countryCount, setCountryCount] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,13 +52,14 @@ function App() {
   };
 
   return (
-    <div className="App">
-      
+    <ThemeProvider theme={theme}>
+        <div className="App">
+        
         <ToastContainer position='top-center'></ToastContainer>
         <Routes>
 
         <Route element={<StandardLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout}/>}>
-          <Route exact path='/' element={< Home setActive={setActive} active ={active} user={user} handleLogout={handleLogout}/>}></Route>
+          <Route exact path='/' element={< Home setActive={setActive} active ={active} user={user} handleLogout={handleLogout} countryCount={countryCount}/>}></Route>
         </Route>
 
         <Route element={<BlogDetailLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout}/>}>
@@ -86,12 +88,14 @@ function App() {
           <Route path='*' element={< NotFound />}></Route>
         </Route>
 
-        <Route element={<MapLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout}/>}>
+        <Route element={<MapLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout} setCount={setCountryCount}/>}>
           <Route exact path='/maps' element={< Maps />}></Route>
         </Route>
 
         </Routes>
     </div>
+    </ThemeProvider>
+    
   );
 
   // return (     

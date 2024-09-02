@@ -1,0 +1,27 @@
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination-controls .MuiPaginationItem-root {
+    border-color: var(--grey-accent) !important; /* Override Material-UI styles */
+    color: var(--grey-accent) !important;
+}
+
+.pagination-controls .MuiPaginationItem-root:hover {
+    border-color: var(--grey-accent) !important; /* Override Material-UI styles */
+    color: var(--dark-complement) !important;
+}
+
+
+.pagination-controls .Mui-selected {
+    background-color: #ffe55050 !important;
+    color: var(--grey-accent) !important;
+}
+
+.pagination-controls .Mui-selected:hover {
+    color: var(--dark-complement) !important;
+}
+
