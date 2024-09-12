@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 // import './BasicLayout.css';
 // import AltNavBar from '../AltNavBar/AltNavBar';
 import SideBar from '../SideBar/SideBar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const BlogDetailLayout =({active, setActive, user, handleLogout}) =>{
     // const userId = user?.uid;
 
@@ -21,7 +21,7 @@ const BlogDetailLayout =({active, setActive, user, handleLogout}) =>{
             </SideBar>
             <Outlet className="page-body"/>
             {/* <Sides/> */}
-            <Footer className="layout-footer"/>
+            {/* <Footer className="layout-footer"/> */}
         </div>
         {/* <main>{children}</main> */}
         </>
