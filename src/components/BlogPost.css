@@ -11,10 +11,20 @@ html,body{
   font-family: 'tropikal';
   src: url('../assets/fonts/Tropikal-Bold.otf');
 }
+@font-face {
+	font-family: 'standard';
+	src: url('../assets/fonts/JosefinSans.ttf');
+}
+
+@font-face {
+	font-family: 'feelings';
+	src: url('../assets/fonts/FeelingsOnOff.ttf');
+}
+	
 
 body {
   /* background: linear-gradient(to bottom, rgba(0,5,10,0.4) 0%,rgba(0,0,0,0) 100%); */
-  font-family: 'Poppins', serif;
+  font-family: 'feelings', serif;
 }
 .blog-card-flex{
     position: relative;
@@ -40,7 +50,7 @@ body {
   /* margin: 0 auto; */
   overflow: hidden;
   border-radius: 0px;
-  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5); */
   text-align: center;
   transition:all 0.4s;
   /* background: url(https://unsplash.it/600/800?image=1061) center no-repeat; */
@@ -81,7 +91,7 @@ color:#fff;
   z-index: 15;
 }
 .blog-card:hover{
-    box-shadow: 0px 18px 20px -9px rgba(0, 10, 30, 0.4);
+    box-shadow: 0px 18px 20px -9px rgba(0, 0, 0, 0.4);
 }
 
 .blog-card.spring-fever{
@@ -93,11 +103,13 @@ color:#fff;
   bottom: 100px;
 }
 .blog-card:hover .color-overlay {
-  background: rgba(52, 52, 62, 0.7);
+  background-color: rgba(52, 52, 62, 0.80);
+  /* background-color: transparent; */
+  background-image:url("../assets/images/MEDIUM.png");
 }
 .blog-card:hover .title-content{
   margin-top:70px;
-  text-shadow: 0px 0px 6px whitesmoke;
+  text-shadow: 0px 0px 1px rgb(0, 0, 0);
 }
 .title-content {
   text-align: center;
@@ -119,10 +131,10 @@ color:#fff;
 
 .blog-card h3,h1 {
   font-size: 1.1em;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 1px;
   /* font-family: 'Abril Fatface', serif; */
-  font-family:'tropikal', "tropikal";
+  font-family:'standard', "standard";
   margin-bottom: 0;
   display:inline-block;
 }
@@ -141,7 +153,7 @@ h3:after {
   letter-spacing:2px;
   border: 0;
   background: var(--magic-yellow);
-  box-shadow: 0px 0px 8px var(--magic-yellow);
+  box-shadow: 0px 0px 1px var(--magic-yellow);
   transition:all 0.2s
 }
 
@@ -171,8 +183,9 @@ h3:after {
    box-sizing: border-box;
   padding: 0;
   width: 100%;
+  font-weight:400;
   font-size: 16px;
-  font-family: "poppins";
+  font-family: "standard";
   /* position: absolute;
   bottom: -40px;
   left: 0; */
@@ -193,8 +206,8 @@ h3:after {
   background: var(--grey-accent);
   color: #444;
   padding: 2px 15px;
-  border-radius: 3px;
-  font-size:0.75em
+  font-size: 0.8em;
+  font-family: 'cutout';
 }
 .card-info a:hover{
   background: var(--dark-complement);
@@ -206,16 +219,15 @@ h3:after {
    opacity:1;
 }
 .utility-info {
-  /* position: absolute;
-  bottom: 0px;
-  left: 0; */
-position: absolute;
-font-family: "poppins";
-z-index: 20;
-bottom: -30px;
-width:100%;
-text-align:left;
-font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  font-family: "standard";
+  z-index: 20;
+  bottom: -30px;
+  width: 100%;
+  /* text-align: center; */
+  font-size: 15px;
+  text-transform: uppercase;
 }
 .utility-info:after{
   content:" ";
@@ -245,6 +257,10 @@ font-size: 16px;
   /* display: inline-block; */
   
   font-size:0.8em
+}
+
+.utility-list ul{
+  justify-content: space-around;
 }
 
 .licon{
@@ -304,7 +320,7 @@ font-size: 16px;
 
 .edit-delete-blog{
   position: absolute;
-  font-family: "poppins";
+  font-family: "standard";
   z-index: 20;
   padding: 10px 10px 0px 0px;
   width: 100%;

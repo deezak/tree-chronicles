@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './BlogPost.css';
 const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
   const userId = user?.uid;
-  console.log("USER ID " + userId);
+  // console.log("USER ID " + userId);
   
   return (
     <div className={isMap ? 'blog-heading-map' : 'blog-heading-reg'}>
@@ -35,7 +35,7 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             {item.description}
           <Link to={`/detail/${item.id}`}>
             {/* <a href="#">Read Article<FontAwesomeIcon icon="fa-solid fa-angle-right" style={{marginLeft:"5px"}}/></a> */}
-            <button >Read Article<FontAwesomeIcon icon="fa-solid fa-angle-right" style={{marginLeft:"5px"}}/></button>
+            <button ><span>Read Article</span><FontAwesomeIcon icon="fa-solid fa-angle-right" style={{marginLeft:"5px"}}/></button>
 
           </Link>
             </div>
@@ -47,7 +47,7 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             {/* <li><span class="licon icon-like"></span><a href="#">2</a></li>
             <li><span class="licon icon-com"></span><a href="#">12</a></li> */}
             {/* <li><span class="licon icon-dat"></span>{item.timestamp.toDate().toDateString()}</li> */}
-            <li><FontAwesomeIcon icon="fa-regular fa-calendar" style={{marginRight:"7px"}}/>{item.timestamp.toDate().toDateString()}</li>
+            <li><FontAwesomeIcon icon="fa-regular fa-calendar" style={{marginRight:"7px"}}/>{item.timestamp.toDate().toDateString().substring(4)}</li>
             {/* <li className='category bg-light text-primary opacity-50'><span className="licon"></span><a href="#">{item.category}</a></li> */}
             {/* <li><FontAwesomeIcon icon="fa-solid fa-rectangle-list" style={{marginRight:"7px", marginLeft:"20px"}} />{item.category}</li> */}
             <li><FontAwesomeIcon icon="fa-solid fa-clipboard-list"style={{marginRight:"7px", marginLeft:"20px"}} />{item.category}</li>
