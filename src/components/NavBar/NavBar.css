@@ -3,10 +3,10 @@
     src: url('../../assets/fonts/RuslanDisplay-Regular.ttf');
 }
 
-@font-face {
+/* @font-face {
     font-family: 'bungee-inline';
     src: url('../../assets/fonts/BungeeInline-Regular.ttf');
-}
+} */
 
 @font-face {
     font-family: 'crimson';
@@ -17,21 +17,44 @@
     font-family: 'poppins';
     src: url('../../assets/fonts/Poppins-Regular.ttf');
 }
-
+/* 
 @font-face {
     font-family: 'bungee-shade';
     src: url('../../assets/fonts/BungeeShade-Regular.ttf');
-}
+} */
 
 @font-face {
     font-family: 'tropikal';
     src: url('../../assets/fonts/Tropikal-Bold.otf');
 }
+@font-face {
+    font-family: 'cutout';
+    src: url('../../assets/fonts/Magazine-Cutouts-Font.ttf');
+}
+
+@font-face {
+	font-family: 'feelings';
+	src: url('../../assets/fonts/FeelingsOnOff.ttf');
+}
+
+@font-face {
+	font-family: 'justaword';
+	src: url('../../assets/fonts/Justaword.ttf');
+}
+
 
 @font-face {
     font-family: 'signika';
     src: url('../../assets/fonts/Signika.ttf');
 }
+@font-face {
+	font-family: 'standard';
+	src: url('../../assets/fonts/JosefinSans.ttf');
+}
+/* @font-face {
+	font-family: 'standard';
+	src: url('../../assets/fonts/raleway.ttf');
+} */
 
 .user-name{
     /* font-family:"poppins"; */
@@ -47,7 +70,7 @@
     /* height: 49px; */
     text-align: center;
     flex-shrink: 0;
-    margin-top: 2%;
+    /* margin-top: 2%; */
     /* height: 85px; */
     display: flex;
     justify-content: space-between;
@@ -65,29 +88,32 @@
     display: flex;
     /* width: 50vw; */
     padding: 14px 20px;
-    font-size: 22px;
+    font-size: 30px;
     /* margin: 17vh 0vh 10vh 2vh ; */
     align-items: center;
-    font-weight: 500;
+    /* font-weight: 500; */
     /* color: rgba(237, 237, 237, 0.2); */
     color: var(--grey-accent);
     /* -webkit-text-stroke: 1px #1E1B0F; */
   /* -webkit-text-stroke:0.2px rgba(0,0,0,0.8);  */
 
-    font-family: 'tropikal';
+    font-family: 'cutout';
 }
-.list-right a{
+/* .list-right a{
     padding: 14px 20px;
-}
+} */
+
+
 
 .list-right{
     float:right;
-    padding-right: 2rem;
-    width: 30vw;
+    padding-right: 4rem;
+    padding-left: 0;
+    /* width: 30vw; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-family: "tropikal";
+    font-family: "cutout";
     /* font-weight: 500; */
     font-size: 22px;
 }
@@ -126,5 +152,5 @@ a{
     text-shadow: 1px 1px 7px #939393;
     transition: 0.4s cubic-bezier(0.33, 0.66, 0.66, 1);
     /* -webkit-text-stroke: 0.5px whitesmoke; */
-	transform: scale(1.1);
+	/* transform: scale(1.1); */
 }
