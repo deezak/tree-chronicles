@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../../src/styles.scss';
 import { toast } from 'react-toastify';
 import { auth } from '../firebase';
-import { getFunctions, httpsCallable } from 'firebase/functions';
+// import { getFunctions, httpsCallable } from 'firebase/functions';
 import { db } from "../firebase";
-import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import {useNavigate} from "react-router-dom";

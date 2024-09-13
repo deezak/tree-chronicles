@@ -14,7 +14,7 @@ const Detail = () => {
 
     useEffect(() => {
         id && getBlogDetail();
-    }, [id])
+    })
 
     // useEffect(() => {
 
