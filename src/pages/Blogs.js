@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import BlogPost from '../components/BlogPost';
 import { collection, deleteDoc, doc, limit, startAfter, orderBy, query, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
@@ -9,7 +9,7 @@ const Blogs = ({ setActive, user, active }) => {
     const [loading, setLoading] = useState(true);
     const [blogs, setBlogs] = useState([]);
     // const [count, setCount] = useState(null);
-    const [lastVisible] = useState(null);
+    const lastVisible = useRef(null);
     const [noOfPages, setNoOfPages] = useState(null);
     const [currentPage, setCurrentPage] = useState(1); // Track current page
     const [perPage, setPerPage] = useState(6); // Number of blogs per page

@@ -35,7 +35,7 @@ function Maps({setActive, user, active}) {
   const [markers, setMarkers] = useState([]);
   // const [countryCount, setCountryCount] = useState(null);
   // const [currentPage, setCurrentPage] = useState(1);
-  const [setLastVisible] = useState(null);
+  // const [setLastVisible] = useState(null);
   // const [noOfPages, setNoOfPages] = useState(null);
   const [toolTipPosition, setToolTipPosition] = useState({ x: 0, y: 0 });
   const [toolTipContent, setToolTipContent] = useState("");
@@ -112,12 +112,12 @@ function Maps({setActive, user, active}) {
       const docSnapshot = await getDocs(first);
       setCountryBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       // setCountryCount(docSnapshot.size);
-      setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
+      // setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
     } catch (error) {
       console.error("Error getting country blogs: ", error);
     }
     // setLoading(false);
-  }, [selectedCountry, setLastVisible]);
+  }, [selectedCountry]);
 
   //ON COUNTRY CLICK, IF BLOGS EXIST LIST AND PUT CITY MARKERS
   const handleCountryClick = (geo) => {
@@ -155,7 +155,7 @@ function Maps({setActive, user, active}) {
         lat: latLong.find(c => c.name === doc.data().country).latitude,
         long: latLong.find(c => c.name === doc.data().country).longitude
       })));
-      setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
+      // setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
       setLoading(false);
     } catch (error) {
       console.error("Error getting country list: ", error);
@@ -163,7 +163,7 @@ function Maps({setActive, user, active}) {
     }
   };
     getCountryList();
-  }, [setLastVisible]);
+  }, []);
 
   useEffect(() =>{
     console.log("BLOG LENGTH: " + markers.length);
