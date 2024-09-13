@@ -1,8 +1,10 @@
-body{
-    /* background-image: url('../assets/images/testworld.svg'); */
+.no-scroll{
+  overflow: hidden;
 }
 .map-container {
   position: relative;
+  /* transition: transform 0.5s ease-in-out; Adjust timing as needed */
+
 }
 
 .blog-overlay {
@@ -16,13 +18,33 @@ body{
 
 .blog-header{
   display: flex;
-  color: var(--grey-accent);
+  color: #1b1a16;
   justify-content: flex-start;
-  font-family: "tropikal";
-  font-weight: bolder;
-  letter-spacing: 0.3rem;
-  font-size: 46px;
+  font-family: "cutout";
+  text-shadow: 0px 0px #0f0a0d88;
+  letter-spacing: 0rem;
+  /* background-image: url("../assets/images/rip4.png"); */
+  font-size: 80px;
   text-transform: uppercase;
+  width:fit-content;
+  padding: 20px 20px 0px 0px;
 }
 
+.blog-overlay::before {
+  content: '';
+    position: absolute;
+    top: 2vh;
+    left: 0vw;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/images/rip4.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
+    transform-origin: center;
+    transform: scaleX(2.2) scaleY(1.2);
+    pointer-events: none;
+}
 

@@ -168,12 +168,12 @@ const AddEditBlog = ({ user, setActive }) => {
   return (
   <div className="blog container-fluid" style={{flex: "1"}}>
       <div className="create-container">
-        <div className="inner-container">
+        <div className="inner-container" style={{color:"var(--grey-accent"}}>
           <div className="text-center heading">
             {id ? "Update Blog" : "Create Blog"}
           </div>
         </div>
-        <div className="row h-100 justify-content-center align-items-center">
+        <div className="row justify-content-center align-items-start">
           <div className="blog-input-container">
             <form className="row blog-form" onSubmit={handleSubmit}>
               <div className="col-12 py-2">

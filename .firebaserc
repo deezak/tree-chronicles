@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "travel-blog-f05ae"
-  }
+    "default": "travel-blog-f05ae",
+    "dev": "travel-blog-f05ae"
+  },
+  "targets": {},
+  "etags": {}
 }

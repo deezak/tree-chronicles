@@ -1,0 +1,623 @@
+[debug] [2024-09-11T23:01:27.124Z] ----------------------------------------------------------------------
+[debug] [2024-09-11T23:01:27.125Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dinam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-09-11T23:01:27.126Z] CLI Version:   12.9.1
+[debug] [2024-09-11T23:01:27.126Z] Platform:      win32
+[debug] [2024-09-11T23:01:27.126Z] Node Version:  v16.15.1
+[debug] [2024-09-11T23:01:27.127Z] Time:          Wed Sep 11 2024 19:01:27 GMT-0400 (Eastern Daylight Time)
+[debug] [2024-09-11T23:01:27.127Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-11T23:01:27.187Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-11T23:01:27.187Z] > authorizing via signed-in user (dina.m.zakaria@gmail.com)
+[debug] [2024-09-11T23:01:27.187Z] [iam] checking project travel-blog-f05ae for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-09-11T23:01:27.189Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions [none]
+[debug] [2024-09-11T23:01:27.189Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:27.189Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-09-11T23:01:27.406Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions 200
+[debug] [2024-09-11T23:01:27.406Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-09-11T23:01:27.407Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/travel-blog-f05ae/serviceAccounts/travel-blog-f05ae@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-09-11T23:01:27.407Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/travel-blog-f05ae/serviceAccounts/travel-blog-f05ae@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-09-11T23:01:27.617Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/travel-blog-f05ae/serviceAccounts/travel-blog-f05ae@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-09-11T23:01:27.617Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/travel-blog-f05ae/serviceAccounts/travel-blog-f05ae@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'travel-blog-f05ae'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-09-11T23:01:35.169Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae [none]
+[debug] [2024-09-11T23:01:35.625Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae 200
+[debug] [2024-09-11T23:01:35.625Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae {"projectId":"travel-blog-f05ae","projectNumber":"854150745332","displayName":"travel-blog","name":"projects/travel-blog-f05ae","resources":{"hostingSite":"travel-blog-f05ae","storageBucket":"travel-blog-f05ae.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_955b5cdf-27bc-452b-b381-56416232314e"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-09-11T23:01:35.629Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-09-11T23:01:35.629Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:35.631Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-09-11T23:01:35.631Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:35.632Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudbuild.googleapis.com [none]
+[debug] [2024-09-11T23:01:35.632Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudbuild.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:35.633Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/artifactregistry.googleapis.com [none]
+[debug] [2024-09-11T23:01:35.633Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/artifactregistry.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:36.230Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/runtimeconfig.googleapis.com 200
+[debug] [2024-09-11T23:01:36.230Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-09-11T23:01:36.237Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudfunctions.googleapis.com 200
+[debug] [2024-09-11T23:01:36.237Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-09-11T23:01:36.238Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/artifactregistry.googleapis.com 200
+[debug] [2024-09-11T23:01:36.238Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-09-11T23:01:36.255Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudbuild.googleapis.com 200
+[debug] [2024-09-11T23:01:36.255Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-09-11T23:01:36.255Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae/adminSdkConfig [none]
+[debug] [2024-09-11T23:01:36.779Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae/adminSdkConfig 200
+[debug] [2024-09-11T23:01:36.780Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae/adminSdkConfig {"projectId":"travel-blog-f05ae","storageBucket":"travel-blog-f05ae.appspot.com","locationId":"us-central"}
+[debug] [2024-09-11T23:01:36.780Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/travel-blog-f05ae/configs [none]
+[debug] [2024-09-11T23:01:37.001Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/travel-blog-f05ae/configs 200
+[debug] [2024-09-11T23:01:37.001Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/travel-blog-f05ae/configs {}
+[debug] [2024-09-11T23:01:37.002Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2024-09-11T23:01:37.988Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-09-11T23:01:37.988Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-09-11T23:01:37.989Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-09-11T23:01:37.995Z] Found firebase-functions binary at 'C:\Users\dinam\Projects\travel_blog\tree-chronicles\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8616
+
+[debug] [2024-09-11T23:01:38.502Z] Got response from /__/functions.yaml {"endpoints":{"addmessage":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"addmessage"},"makeuppercase":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"messages/{documentId}"},"retry":false},"entryPoint":"makeuppercase"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\dinam\Projects\travel_blog\tree-chronicles\functions (86.72 KB) for uploading 
+[debug] [2024-09-11T23:01:38.555Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/travel-blog-f05ae/locations/-/functions [none]
+[debug] [2024-09-11T23:01:39.266Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/travel-blog-f05ae/locations/-/functions 200
+[debug] [2024-09-11T23:01:39.266Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/travel-blog-f05ae/locations/-/functions {}
+[debug] [2024-09-11T23:01:39.267Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-09-11T23:01:39.886Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/-/functions 200
+[debug] [2024-09-11T23:01:39.886Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/-/functions {}
+[debug] [2024-09-11T23:01:39.888Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/travel-blog-f05ae/databases/(default) [none]
+[debug] [2024-09-11T23:01:40.287Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/travel-blog-f05ae/databases/(default) 200
+[debug] [2024-09-11T23:01:40.287Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/travel-blog-f05ae/databases/(default) {"name":"projects/travel-blog-f05ae/databases/(default)","uid":"2c8e52fd-3a12-4a7f-95fb-8452c8e639e4","createTime":"2023-07-25T19:25:20.256045Z","updateTime":"2023-07-25T19:25:20.256045Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-09-11T22:01:41.294406Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IP70/sj/u4gDMJijwOCt4IUD"}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-09-11T23:01:40.292Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com [none]
+[debug] [2024-09-11T23:01:40.292Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:40.293Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com [none]
+[debug] [2024-09-11T23:01:40.293Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:40.294Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/pubsub.googleapis.com [none]
+[debug] [2024-09-11T23:01:40.294Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/pubsub.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:40.295Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/storage.googleapis.com [none]
+[debug] [2024-09-11T23:01:40.295Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/storage.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:40.687Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com 200
+[debug] [2024-09-11T23:01:40.687Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2024-09-11T23:01:40.689Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com:enable [none]
+[debug] [2024-09-11T23:01:40.689Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com:enable x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:40.694Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/pubsub.googleapis.com 200
+[debug] [2024-09-11T23:01:40.694Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-09-11T23:01:40.696Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/storage.googleapis.com 200
+[debug] [2024-09-11T23:01:40.696Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-09-11T23:01:40.749Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com 200
+[debug] [2024-09-11T23:01:40.749Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2024-09-11T23:01:40.749Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com:enable [none]
+[debug] [2024-09-11T23:01:40.749Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com:enable x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:41.478Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com:enable 200
+[debug] [2024-09-11T23:01:41.479Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2024-09-11T23:01:41.526Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com:enable 200
+[debug] [2024-09-11T23:01:41.526Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com:enable [omitted]
+[debug] [2024-09-11T23:01:51.487Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com [none]
+[debug] [2024-09-11T23:01:51.488Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:51.533Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com [none]
+[debug] [2024-09-11T23:01:51.533Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:51.905Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com 200
+[debug] [2024-09-11T23:01:51.905Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-09-11T23:01:51.951Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com 200
+[debug] [2024-09-11T23:01:51.952Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/travel-blog-f05ae/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-09-11T23:01:51.954Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/854150745332/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-09-11T23:01:51.955Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/854150745332/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-09-11T23:01:52.470Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/854150745332/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-09-11T23:01:52.470Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/854150745332/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-854150745332@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"115369411561404384156"}}
+[debug] [2024-09-11T23:01:52.830Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/854150745332/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-09-11T23:01:52.830Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/854150745332/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-854150745332@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"111954939002773889537"}}
+[debug] [2024-09-11T23:01:52.831Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:getIamPolicy [none]
+[debug] [2024-09-11T23:01:53.135Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:getIamPolicy 200
+[debug] [2024-09-11T23:01:53.135Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:getIamPolicy {"version":1,"etag":"BwYh3/lHxKs=","bindings":[{"role":"roles/appengine.serviceAgent","members":["serviceAccount:service-854150745332@gcp-gae-service.iam.gserviceaccount.com"]},{"role":"roles/artifactregistry.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-artifactregistry.iam.gserviceaccount.com"]},{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:854150745332@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-854150745332@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/cloudscheduler.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-cloudscheduler.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com","serviceAccount:854150745332@cloudservices.gserviceaccount.com","serviceAccount:travel-blog-f05ae@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-854150745332@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com","serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-854150745332@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:Dina.M.Zakaria@gmail.com"]},{"role":"roles/pubsub.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-854150745332@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.serviceUsageConsumer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]}]}
+[debug] [2024-09-11T23:01:53.136Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:setIamPolicy [none]
+[debug] [2024-09-11T23:01:53.136Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:setIamPolicy {"policy":{"version":1,"etag":"BwYh3/lHxKs=","bindings":[{"role":"roles/appengine.serviceAgent","members":["serviceAccount:service-854150745332@gcp-gae-service.iam.gserviceaccount.com"]},{"role":"roles/artifactregistry.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-artifactregistry.iam.gserviceaccount.com"]},{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:854150745332@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-854150745332@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/cloudscheduler.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-cloudscheduler.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com","serviceAccount:854150745332@cloudservices.gserviceaccount.com","serviceAccount:travel-blog-f05ae@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-854150745332@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com","serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-854150745332@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com","serviceAccount:service-854150745332@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:Dina.M.Zakaria@gmail.com"]},{"role":"roles/pubsub.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-854150745332@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.serviceUsageConsumer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/run.invoker","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2024-09-11T23:01:54.167Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:setIamPolicy 200
+[debug] [2024-09-11T23:01:54.167Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/854150745332:setIamPolicy {"version":1,"etag":"BwYh3/nzEs4=","bindings":[{"role":"roles/appengine.serviceAgent","members":["serviceAccount:service-854150745332@gcp-gae-service.iam.gserviceaccount.com"]},{"role":"roles/artifactregistry.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-artifactregistry.iam.gserviceaccount.com"]},{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:854150745332@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-854150745332@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/cloudscheduler.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-cloudscheduler.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com","serviceAccount:854150745332@cloudservices.gserviceaccount.com","serviceAccount:travel-blog-f05ae@appspot.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-854150745332@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com","serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-854150745332@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com","serviceAccount:service-854150745332@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:Dina.M.Zakaria@gmail.com"]},{"role":"roles/pubsub.serviceAgent","members":["serviceAccount:service-854150745332@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/run.invoker","members":["serviceAccount:854150745332-compute@developer.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-854150745332@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.serviceUsageConsumer","members":["serviceAccount:github-action-685722635@travel-blog-f05ae.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-6cdrx@travel-blog-f05ae.iam.gserviceaccount.com"]}]}
+[debug] [2024-09-11T23:01:54.167Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae [none]
+[debug] [2024-09-11T23:01:54.450Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae 200
+[debug] [2024-09-11T23:01:54.450Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/travel-blog-f05ae {"projectId":"travel-blog-f05ae","projectNumber":"854150745332","displayName":"travel-blog","name":"projects/travel-blog-f05ae","resources":{"hostingSite":"travel-blog-f05ae","storageBucket":"travel-blog-f05ae.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_955b5cdf-27bc-452b-b381-56416232314e"}
+[debug] [2024-09-11T23:01:54.452Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2024-09-11T23:01:54.452Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions [none]
+[debug] [2024-09-11T23:01:54.453Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions x-goog-quota-user=projects/travel-blog-f05ae
+[debug] [2024-09-11T23:01:54.453Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-09-11T23:01:54.636Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions 200
+[debug] [2024-09-11T23:01:54.636Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-blog-f05ae:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2024-09-11T23:01:54.636Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2024-09-11T23:01:54.637Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-09-11T23:01:55.423Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-09-11T23:01:55.423Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-854150745332-us-central1/bb549a49-dfc9-4721-bd48-90dade84d73d.zip?GoogleAccessId=service-854150745332@gcf-admin-robot.iam.gserviceaccount.com&Expires=1726097516&Signature=f1doqLcOuTeYJzrAM%2FrTa0LDGE6H2koOlL%2BANMTp6J4wVizIRGC3BPM9XGBJ8gfWe5CgyfAAplXeLdhvkziMcOT%2FFhCe%2BZS0aSmLl%2B4ZrxKr%2BrqKCrPiGG69q2MnmJiyK1IRgaIRo%2BonnR5TyB54GdiXIQ%2FDgyEttkwtnq9pr7nWz7lvH%2B60LKTVv6bM7zZd%2FbSJ%2B4%2FTzd4UJjdJAdpklwsjIBMpjc6s1%2BQMBYS8AK4faUoRBbQRMw2K3LNObEjAvko7CD4TWIUwKrwo0Ha4YFjysRNgoquJ2U0RluzEF0e6HeuGUvRhSi3fR6EDuAkaDVhFslz7tOHxLMUHdjNkeQ%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-854150745332-us-central1","object":"bb549a49-dfc9-4721-bd48-90dade84d73d.zip"}}
+[debug] [2024-09-11T23:01:55.425Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-854150745332-us-central1/bb549a49-dfc9-4721-bd48-90dade84d73d.zip GoogleAccessId=service-854150745332%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1726097516&Signature=f1doqLcOuTeYJzrAM%2FrTa0LDGE6H2koOlL%2BANMTp6J4wVizIRGC3BPM9XGBJ8gfWe5CgyfAAplXeLdhvkziMcOT%2FFhCe%2BZS0aSmLl%2B4ZrxKr%2BrqKCrPiGG69q2MnmJiyK1IRgaIRo%2BonnR5TyB54GdiXIQ%2FDgyEttkwtnq9pr7nWz7lvH%2B60LKTVv6bM7zZd%2FbSJ%2B4%2FTzd4UJjdJAdpklwsjIBMpjc6s1%2BQMBYS8AK4faUoRBbQRMw2K3LNObEjAvko7CD4TWIUwKrwo0Ha4YFjysRNgoquJ2U0RluzEF0e6HeuGUvRhSi3fR6EDuAkaDVhFslz7tOHxLMUHdjNkeQ%3D%3D
+[debug] [2024-09-11T23:01:55.425Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-854150745332-us-central1/bb549a49-dfc9-4721-bd48-90dade84d73d.zip [stream]
+[debug] [2024-09-11T23:01:55.814Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-854150745332-us-central1/bb549a49-dfc9-4721-bd48-90dade84d73d.zip 200
+[debug] [2024-09-11T23:01:55.814Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-854150745332-us-central1/bb549a49-dfc9-4721-bd48-90dade84d73d.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (2nd Gen) function addmessage(us-central1)... 
+[info] i  functions: creating Node.js 18 (2nd Gen) function makeuppercase(us-central1)... 
+[debug] [2024-09-11T23:01:55.827Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions functionId=addmessage
+[debug] [2024-09-11T23:01:55.827Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions {"name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-uploads-854150745332-us-central1","object":"bb549a49-dfc9-4721-bd48-90dade84d73d.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"}}
+[debug] [2024-09-11T23:01:57.247Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions 200
+[debug] [2024-09-11T23:01:57.247Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2024-09-11T23:01:57.249Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:01:57.566Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:01:57.567Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2024-09-11T23:01:58.072Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:01:58.073Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:01:58.392Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:01:58.392Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:01:59.399Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:01:59.399Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:01:59.730Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:01:59.731Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:01.746Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:01.747Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:02.071Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:02.071Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:06.080Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:06.081Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:06.404Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:06.404Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:14.418Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:14.418Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:14.735Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:14.735Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:24.737Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:24.738Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:25.019Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:25.019Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:35.031Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:35.031Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:35.370Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:35.371Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:45.378Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:45.378Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:45.697Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:45.697Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/854150745332/locations/us-central1/builds/9e538caa-eb39-43b5-855c-5ef0dc3462ec"},"done":false}
+[debug] [2024-09-11T23:02:55.709Z] [create-default-us-central1-addmessage] Retrying task index 0
+[debug] [2024-09-11T23:02:55.710Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 [none]
+[debug] [2024-09-11T23:02:56.016Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 200
+[debug] [2024-09-11T23:02:56.017Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149 {"name":"projects/travel-blog-f05ae/locations/us-central1/operations/operation-1726095717174-621dffa120e64-ac8c2a6b-327b2149","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-09-11T23:01:58.220684941Z","endTime":"2024-09-11T23:02:52.489493917Z","target":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/travel-blog-f05ae/locations/us-central1/functions/addmessage","buildConfig":{"runtime":"nodejs18","entryPoint":"addmessage","source":{"storageSource":{"bucket":"gcf-v2-sources-854150745332-us-central1","object":"addmessage/function-source.zip","generation":"1726095717870511"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage","FUNCTION_TARGET":"addmessage","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"854150745332-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","message":"Deleting function artifacts in Artifact Registry","state":"COMPLETE"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/travel-blog-f05ae/locations/us-central1/services/addmessage"}],"operationType":"CREATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Build failed with status: FAILURE and message: npm error code EUSAGE\nnpm error\nnpm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm error\nnpm error Missing: jest@29.7.0 from lock file\nnpm error Missing: @jest/core@29.7.0 from lock file\nnpm error Missing: @jest/types@29.6.3 from lock file\nnpm error Missing: import-local@3.2.0 from lock file\nnpm error Missing: jest-cli@29.7.0 from lock file\nnpm error Missing: @jest/console@29.7.0 from lock file\nnpm error Missing: @jest/reporters@29.7.0 from lock file\nnpm error Missing: @jest/test-result@29.7.0 from lock file\nnpm error Missing: @jest/transform@29.7.0 from lock file\nnpm error Missing: ansi-escapes@4.3.2 from lock file\nnpm error Missing: ci-info@3.9.0 from lock file\nnpm error Missing: exit@0.1.2 from lock file\nnpm error Missing: jest-changed-files@29.7.0 from lock file\nnpm error Missing: jest-config@29.7.0 from lock file\nnpm error Missing: jest-haste-map@29.7.0 from lock file\nnpm error Missing: jest-message-util@29.7.0 from lock file\nnpm error Missing: jest-regex-util@29.6.3 from lock file\nnpm error Missing: jest-resolve@29.7.0 from lock file\nnpm error Missing: jest-resolve-dependencies@29.7.0 from lock file\nnpm error Missing: jest-runner@29.7.0 from lock file\nnpm error Missing: jest-runtime@29.7.0 from lock file\nnpm error Missing: jest-snapshot@29.7.0 from lock file\nnpm error Missing: jest-util@29.7.0 from lock file\nnpm error Missing: jest-validate@29.7.0 from lock file\nnpm error Missing: jest-watcher@29.7.0 from lock file\nnpm error Missing: micromatch@4.0.8 from lock file\nnpm error Missing: pretty-format@29.7.0 from lock file\nnpm error Missing: slash@3.0.0 from lock file\nnpm error Missing: @bcoe/v8-coverage@0.2.3 from lock file\nnpm error Missing: @jridgewell/trace-mapping@0.3.25 from lock file\nnpm error Missing: collect-v8-coverage@1.0.2 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: istanbul-lib-coverage@3.2.2 from lock file\nnpm error Missing: istanbul-lib-instrument@6.0.3 from lock file\nnpm error Missing: istanbul-lib-report@3.0.1 from lock file\nnpm error Missing: istanbul-lib-source-maps@4.0.1 from lock file\nnpm error Missing: istanbul-reports@3.1.7 from lock file\nnpm error Missing: jest-worker@29.7.0 from lock file\nnpm error Missing: string-length@4.0.2 from lock file\nnpm error Missing: v8-to-istanbul@9.3.0 from lock file\nnpm error Missing: @types/istanbul-lib-coverage@2.0.6 from lock file\nnpm error Missing: @babel/core@7.25.2 from lock file\nnpm error Missing: babel-plugin-istanbul@6.1.1 from lock file\nnpm error Missing: convert-source-map@2.0.0 from lock file\nnpm error Missing: pirates@4.0.6 from lock file\nnpm error Missing: write-file-atomic@4.0.2 from lock file\nnpm error Missing: @ampproject/remapping@2.3.0 from lock file\nnpm error Missing: @babel/code-frame@7.24.7 from lock file\nnpm error Missing: @babel/generator@7.25.6 from lock file\nnpm error Missing: @babel/helper-compilation-targets@7.25.2 from lock file\nnpm error Missing: @babel/helper-module-transforms@7.25.2 from lock file\nnpm error Missing: @babel/helpers@7.25.6 from lock file\nnpm error Missing: @babel/template@7.25.0 from lock file\nnpm error Missing: @babel/traverse@7.25.6 from lock file\nnpm error Missing: gensync@1.0.0-beta.2 from lock file\nnpm error Missing: json5@2.2.3 from lock file\nnpm error Missing: semver@6.3.1 from lock file\nnpm error Missing: @jridgewell/gen-mapping@0.3.5 from lock file\nnpm error Missing: @babel/highlight@7.24.7 from lock file\nnpm error Missing: picocolors@1.1.0 from lock file\nnpm error Missing: jsesc@2.5.2 from lock file\nnpm error Missing: @babel/compat-data@7.25.4 from lock file\nnpm error Missing: @babel/helper-validator-option@7.24.8 from lock file\nnpm error Missing: browserslist@4.23.3 from lock file\nnpm error Missing: lru-cache@5.1.1 from lock file\nnpm error Missing: semver@6.3.1 from lock file\nnpm error Missing: @babel/helper-module-imports@7.24.7 from lock file\nnpm error Missing: @babel/helper-simple-access@7.24.7 from lock file\nnpm error Missing: chalk@2.4.2 from lock file\nnpm error Missing: js-tokens@4.0.0 from lock file\nnpm error Missing: globals@11.12.0 from lock file\nnpm error Missing: @jest/schemas@29.6.3 from lock file\nnpm error Missing: @types/istanbul-reports@3.0.4 from lock file\nnpm error Missing: @types/yargs@17.0.33 from lock file\nnpm error Missing: @sinclair/typebox@0.27.8 from lock file\nnpm error Missing: @jridgewell/set-array@1.2.1 from lock file\nnpm error Missing: @jridgewell/sourcemap-codec@1.5.0 from lock file\nnpm error Missing: @jridgewell/resolve-uri@3.1.2 from lock file\nnpm error Missing: @types/istanbul-lib-report@3.0.3 from lock file\nnpm error Missing: @types/yargs-parser@21.0.3 from lock file\nnpm error Missing: type-fest@0.21.3 from lock file\nnpm error Missing: @babel/helper-plugin-utils@7.24.8 from lock file\nnpm error Missing: @istanbuljs/load-nyc-config@1.1.0 from lock file\nnpm error Missing: @istanbuljs/schema@0.1.3 from lock file\nnpm error Missing: istanbul-lib-instrument@5.2.1 from lock file\nnpm error Missing: test-exclude@6.0.0 from lock file\nnpm error Missing: camelcase@5.3.1 from lock file\nnpm error Missing: find-up@4.1.0 from lock file\nnpm error Missing: get-package-type@0.1.0 from lock file\nnpm error Missing: js-yaml@3.14.1 from lock file\nnpm error Missing: resolve-from@5.0.0 from lock file\nnpm error Missing: caniuse-lite@1.0.30001660 from lock file\nnpm error Missing: electron-to-chromium@1.5.20 from lock file\nnpm error Missing: node-releases@2.0.18 from lock file\nnpm error Missing: update-browserslist-db@1.1.0 from lock file\nnpm error Missing: pkg-dir@4.2.0 from lock file\nnpm error Missing: resolve-cwd@3.0.0 from lock file\nnpm error Missing: make-dir@4.0.0 from lock file\nnpm error Missing: html-escaper@2.0.2 from lock file\nnpm error Missing: execa@5.1.1 from lock file\nnpm error Missing: get-stream@6.0.1 from lock file\nnpm error Missing: human-signals@2.1.0 from lock file\nnpm error Missing: merge-stream@2.0.0 from lock file\nnpm error Missing: npm-run-path@4.0.1 from lock file\nnpm error Missing: onetime@5.1.2 from lock file\nnpm error Missing: signal-exit@3.0.7 from lock file\nnpm error Missing: strip-final-newline@2.0.0 from lock file\nnpm error Missing: create-jest@29.7.0 from lock file\nnpm error Missing: prompts@2.4.2 from lock file\nnpm error Missing: @jest/test-sequencer@29.7.0 from lock file\nnpm error Missing: babel-jest@29.7.0 from lock file\nnpm error Missing: deepmerge@4.3.1 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: jest-circus@29.7.0 from lock file\nnpm error Missing: jest-environment-node@29.7.0 from lock file\nnpm error Missing: jest-get-type@29.6.3 from lock file\nnpm error Missing: parse-json@5.2.0 from lock file\nnpm error Missing: @types/babel__core@7.20.5 from lock file\nnpm error Missing: babel-preset-jest@29.6.3 from lock file\nnpm error Missing: @types/babel__generator@7.6.8 from lock file\nnpm error Missing: @types/babel__template@7.4.4 from lock file\nnpm error Missing: @types/babel__traverse@7.20.6 from lock file\nnpm error Missing: babel-plugin-jest-hoist@29.6.3 from lock file\nnpm error Missing: babel-preset-current-node-syntax@1.1.0 from lock file\nnpm error Missing: @babel/plugin-syntax-async-generators@7.8.4 from lock file\nnpm error Missing: @babel/plugin-syntax-bigint@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-class-properties@7.12.13 from lock file\nnpm error Missing: @babel/plugin-syntax-class-static-block@7.14.5 from lock file\nnpm error Missing: @babel/plugin-syntax-import-attributes@7.25.6 from lock file\nnpm error Missing: @babel/plugin-syntax-import-meta@7.10.4 from lock file\nnpm error Missing: @babel/plugin-syntax-json-strings@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-logical-assignment-operators@7.10.4 from lock file\nnpm error Missing: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-numeric-separator@7.10.4 from lock file\nnpm error Missing: @babel/plugin-syntax-object-rest-spread@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-optional-catch-binding@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-optional-chaining@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-private-property-in-object@7.14.5 from lock file\nnpm error Missing: @babel/plugin-syntax-top-level-await@7.14.5 from lock file\nnpm error Missing: @jest/environment@29.7.0 from lock file\nnpm error Missing: @jest/expect@29.7.0 from lock file\nnpm error Missing: co@4.6.0 from lock file\nnpm error Missing: dedent@1.5.3 from lock file\nnpm error Missing: is-generator-fn@2.1.0 from lock file\nnpm error Missing: jest-each@29.7.0 from lock file\nnpm error Missing: jest-matcher-utils@29.7.0 from lock file\nnpm error Missing: pure-rand@6.1.0 from lock file\nnpm error Missing: stack-utils@2.0.6 from lock file\nnpm error Missing: @jest/fake-timers@29.7.0 from lock file\nnpm error Missing: jest-mock@29.7.0 from lock file\nnpm error Missing: expect@29.7.0 from lock file\nnpm error Missing: @sinonjs/fake-timers@10.3.0 from lock file\nnpm error Missing: @sinonjs/commons@3.0.1 from lock file\nnpm error Missing: type-detect@4.0.8 from lock file\nnpm error Missing: @jest/expect-utils@29.7.0 from lock file\nnpm error Missing: @types/graceful-fs@4.1.9 from lock file\nnpm error Missing: anymatch@3.1.3 from lock file\nnpm error Missing: fb-watchman@2.0.2 from lock file\nnpm error Missing: fsevents@2.3.3 from lock file\nnpm error Missing: walker@1.0.8 from lock file\nnpm error Missing: normalize-path@3.0.0 from lock file\nnpm error Missing: picomatch@2.3.1 from lock file\nnpm error Missing: bser@2.1.1 from lock file\nnpm error Missing: node-int64@0.4.0 from lock file\nnpm error Missing: jest-diff@29.7.0 from lock file\nnpm error Missing: diff-sequences@29.6.3 from lock file\nnpm error Missing: @types/stack-utils@2.0.3 from lock file\nnpm error Missing: jest-pnp-resolver@1.2.3 from lock file\nnpm error Missing: resolve@1.22.8 from lock file\nnpm error Missing: resolve.exports@2.0.2 from lock file\nnpm error Missing: emittery@0.13.1 from lock file\nnpm error Missing: jest-docblock@29.7.0 from lock file\nnpm error Missing: jest-leak-detector@29.7.0 from lock file\nnpm error Missing: source-map-support@0.5.13 from lock file\nnpm error Missing: detect-newline@3.1.0 from lock file\nnpm error Missing: @jest/globals@29.7.0 from lock file\nnpm error Missing: @jest/source-map@29.6.3 from lock file\nnpm error Missing: cjs-module-lexer@1.4.1 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: strip-bom@4.0.0 from lock file\nnpm error Missing: @babel/plugin-syntax-jsx@7.24.7 from lock file\nnpm error Missing: @babel/plugin-syntax-typescript@7.25.4 from lock file\nnpm error Missing: camelcase@6.3.0 from lock file\nnpm error Missing: leven@3.1.0 from lock file\nnpm error Missing: supports-color@8.1.1 from lock file\nnpm error Missing: braces@3.0.3 from lock file\nnpm error Missing: fill-range@7.1.1 from lock file\nnpm error Missing: to-regex-range@5.0.1 from lock file\nnpm error Missing: mimic-fn@2.1.0 from lock file\nnpm error Missing: error-ex@1.3.2 from lock file\nnpm error Missing: json-parse-even-better-errors@2.3.1 from lock file\nnpm error Missing: lines-and-columns@1.2.4 from lock file\nnpm error Missing: is-arrayish@0.2.1 from lock file\nnpm error Missing: find-up@4.1.0 from lock file\nnpm error Missing: ansi-styles@5.2.0 from lock file\nnpm error Missing: react-is@18.3.1 from lock file\nnpm error Missing: kleur@3.0.3 from lock file\nnpm error Missing: sisteransi@1.0.5 from lock file\nnpm error Missing: is-core-module@2.15.1 from lock file\nnpm error Missing: path-parse@1.0.7 from lock file\nnpm error Missing: supports-preserve-symlinks-flag@1.0.0 from lock file\nnpm error Missing: resolve-from@5.0.0 from lock file\nnpm error Missing: buffer-from@1.1.2 from lock file\nnpm error Missing: escape-string-regexp@2.0.0 from lock file\nnpm error Missing: char-regex@1.0.2 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: is-number@7.0.0 from lock file\nnpm error Missing: makeerror@1.0.12 from lock file\nnpm error Missing: tmpl@1.0.5 from lock file\nnpm error Missing: yallist@3.1.1 from lock file\nnpm error Missing: ansi-styles@3.2.1 from lock file\nnpm error Missing: escape-string-regexp@1.0.5 from lock file\nnpm error Missing: supports-color@5.5.0 from lock file\nnpm error Missing: color-convert@1.9.3 from lock file\nnpm error Missing: color-name@1.1.3 from lock file\nnpm error Missing: has-flag@3.0.0 from lock file\nnpm error Missing: locate-path@5.0.0 from lock file\nnpm error Missing: argparse@1.0.10 from lock file\nnpm error Missing: sprintf-js@1.0.3 from lock file\nnpm error Missing: p-locate@4.1.0 from lock file\nnpm error Missing: p-limit@2.3.0 from lock file\nnpm error Missing: p-try@2.2.0 from lock file\nnpm error Missing: semver@6.3.1 from lock file\nnpm error Missing: locate-path@5.0.0 from lock file\nnpm error Missing: p-locate@4.1.0 from lock file\nnpm error Missing: p-limit@2.3.0 from lock file\nnpm error\nnpm error Clean install a project\nnpm error\nnpm error Usage:\nnpm error npm ci\nnpm error\nnpm error Options:\nnpm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\n\nnpm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2024-09-11T23_02_17_053Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332."}}
+[debug] [2024-09-11T23:02:56.018Z] Got source token undefined for region us-central1
+[debug] [2024-09-11T23:02:56.018Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions functionId=makeuppercase
+[debug] [2024-09-11T23:02:56.018Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions {"name":"projects/travel-blog-f05ae/locations/us-central1/functions/makeuppercase","buildConfig":{"runtime":"nodejs18","entryPoint":"makeuppercase","source":{"storageSource":{"bucket":"gcf-v2-uploads-854150745332-us-central1","object":"bb549a49-dfc9-4721-bd48-90dade84d73d.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"travel-blog-f05ae","EVENTARC_CLOUD_EVENT_SOURCE":"projects/travel-blog-f05ae/locations/us-central1/services/makeuppercase","FUNCTION_SIGNATURE_TYPE":"cloudevent","FUNCTION_TARGET":"makeuppercase"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","retryPolicy":"RETRY_POLICY_DO_NOT_RETRY","eventFilters":[{"attribute":"database","value":"(default)"},{"attribute":"namespace","value":"(default)"},{"attribute":"document","value":"messages/{documentId}","operator":"match-path-pattern"}],"triggerRegion":"nam5"}}
+[error] Build failed with status: FAILURE and message: npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm error
+npm error Missing: jest@29.7.0 from lock file
+npm error Missing: @jest/core@29.7.0 from lock file
+npm error Missing: @jest/types@29.6.3 from lock file
+npm error Missing: import-local@3.2.0 from lock file
+npm error Missing: jest-cli@29.7.0 from lock file
+npm error Missing: @jest/console@29.7.0 from lock file
+npm error Missing: @jest/reporters@29.7.0 from lock file
+npm error Missing: @jest/test-result@29.7.0 from lock file
+npm error Missing: @jest/transform@29.7.0 from lock file
+npm error Missing: ansi-escapes@4.3.2 from lock file
+npm error Missing: ci-info@3.9.0 from lock file
+npm error Missing: exit@0.1.2 from lock file
+npm error Missing: jest-changed-files@29.7.0 from lock file
+npm error Missing: jest-config@29.7.0 from lock file
+npm error Missing: jest-haste-map@29.7.0 from lock file
+npm error Missing: jest-message-util@29.7.0 from lock file
+npm error Missing: jest-regex-util@29.6.3 from lock file
+npm error Missing: jest-resolve@29.7.0 from lock file
+npm error Missing: jest-resolve-dependencies@29.7.0 from lock file
+npm error Missing: jest-runner@29.7.0 from lock file
+npm error Missing: jest-runtime@29.7.0 from lock file
+npm error Missing: jest-snapshot@29.7.0 from lock file
+npm error Missing: jest-util@29.7.0 from lock file
+npm error Missing: jest-validate@29.7.0 from lock file
+npm error Missing: jest-watcher@29.7.0 from lock file
+npm error Missing: micromatch@4.0.8 from lock file
+npm error Missing: pretty-format@29.7.0 from lock file
+npm error Missing: slash@3.0.0 from lock file
+npm error Missing: @bcoe/v8-coverage@0.2.3 from lock file
+npm error Missing: @jridgewell/trace-mapping@0.3.25 from lock file
+npm error Missing: collect-v8-coverage@1.0.2 from lock file
+npm error Missing: glob@7.2.3 from lock file
+npm error Missing: istanbul-lib-coverage@3.2.2 from lock file
+npm error Missing: istanbul-lib-instrument@6.0.3 from lock file
+npm error Missing: istanbul-lib-report@3.0.1 from lock file
+npm error Missing: istanbul-lib-source-maps@4.0.1 from lock file
+npm error Missing: istanbul-reports@3.1.7 from lock file
+npm error Missing: jest-worker@29.7.0 from lock file
+npm error Missing: string-length@4.0.2 from lock file
+npm error Missing: v8-to-istanbul@9.3.0 from lock file
+npm error Missing: @types/istanbul-lib-coverage@2.0.6 from lock file
+npm error Missing: @babel/core@7.25.2 from lock file
+npm error Missing: babel-plugin-istanbul@6.1.1 from lock file
+npm error Missing: convert-source-map@2.0.0 from lock file
+npm error Missing: pirates@4.0.6 from lock file
+npm error Missing: write-file-atomic@4.0.2 from lock file
+npm error Missing: @ampproject/remapping@2.3.0 from lock file
+npm error Missing: @babel/code-frame@7.24.7 from lock file
+npm error Missing: @babel/generator@7.25.6 from lock file
+npm error Missing: @babel/helper-compilation-targets@7.25.2 from lock file
+npm error Missing: @babel/helper-module-transforms@7.25.2 from lock file
+npm error Missing: @babel/helpers@7.25.6 from lock file
+npm error Missing: @babel/template@7.25.0 from lock file
+npm error Missing: @babel/traverse@7.25.6 from lock file
+npm error Missing: gensync@1.0.0-beta.2 from lock file
+npm error Missing: json5@2.2.3 from lock file
+npm error Missing: semver@6.3.1 from lock file
+npm error Missing: @jridgewell/gen-mapping@0.3.5 from lock file
+npm error Missing: @babel/highlight@7.24.7 from lock file
+npm error Missing: picocolors@1.1.0 from lock file
+npm error Missing: jsesc@2.5.2 from lock file
+npm error Missing: @babel/compat-data@7.25.4 from lock file
+npm error Missing: @babel/helper-validator-option@7.24.8 from lock file
+npm error Missing: browserslist@4.23.3 from lock file
+npm error Missing: lru-cache@5.1.1 from lock file
+npm error Missing: semver@6.3.1 from lock file
+npm error Missing: @babel/helper-module-imports@7.24.7 from lock file
+npm error Missing: @babel/helper-simple-access@7.24.7 from lock file
+npm error Missing: chalk@2.4.2 from lock file
+npm error Missing: js-tokens@4.0.0 from lock file
+npm error Missing: globals@11.12.0 from lock file
+npm error Missing: @jest/schemas@29.6.3 from lock file
+npm error Missing: @types/istanbul-reports@3.0.4 from lock file
+npm error Missing: @types/yargs@17.0.33 from lock file
+npm error Missing: @sinclair/typebox@0.27.8 from lock file
+npm error Missing: @jridgewell/set-array@1.2.1 from lock file
+npm error Missing: @jridgewell/sourcemap-codec@1.5.0 from lock file
+npm error Missing: @jridgewell/resolve-uri@3.1.2 from lock file
+npm error Missing: @types/istanbul-lib-report@3.0.3 from lock file
+npm error Missing: @types/yargs-parser@21.0.3 from lock file
+npm error Missing: type-fest@0.21.3 from lock file
+npm error Missing: @babel/helper-plugin-utils@7.24.8 from lock file
+npm error Missing: @istanbuljs/load-nyc-config@1.1.0 from lock file
+npm error Missing: @istanbuljs/schema@0.1.3 from lock file
+npm error Missing: istanbul-lib-instrument@5.2.1 from lock file
+npm error Missing: test-exclude@6.0.0 from lock file
+npm error Missing: camelcase@5.3.1 from lock file
+npm error Missing: find-up@4.1.0 from lock file
+npm error Missing: get-package-type@0.1.0 from lock file
+npm error Missing: js-yaml@3.14.1 from lock file
+npm error Missing: resolve-from@5.0.0 from lock file
+npm error Missing: caniuse-lite@1.0.30001660 from lock file
+npm error Missing: electron-to-chromium@1.5.20 from lock file
+npm error Missing: node-releases@2.0.18 from lock file
+npm error Missing: update-browserslist-db@1.1.0 from lock file
+npm error Missing: pkg-dir@4.2.0 from lock file
+npm error Missing: resolve-cwd@3.0.0 from lock file
+npm error Missing: make-dir@4.0.0 from lock file
+npm error Missing: html-escaper@2.0.2 from lock file
+npm error Missing: execa@5.1.1 from lock file
+npm error Missing: get-stream@6.0.1 from lock file
+npm error Missing: human-signals@2.1.0 from lock file
+npm error Missing: merge-stream@2.0.0 from lock file
+npm error Missing: npm-run-path@4.0.1 from lock file
+npm error Missing: onetime@5.1.2 from lock file
+npm error Missing: signal-exit@3.0.7 from lock file
+npm error Missing: strip-final-newline@2.0.0 from lock file
+npm error Missing: create-jest@29.7.0 from lock file
+npm error Missing: prompts@2.4.2 from lock file
+npm error Missing: @jest/test-sequencer@29.7.0 from lock file
+npm error Missing: babel-jest@29.7.0 from lock file
+npm error Missing: deepmerge@4.3.1 from lock file
+npm error Missing: glob@7.2.3 from lock file
+npm error Missing: jest-circus@29.7.0 from lock file
+npm error Missing: jest-environment-node@29.7.0 from lock file
+npm error Missing: jest-get-type@29.6.3 from lock file
+npm error Missing: parse-json@5.2.0 from lock file
+npm error Missing: @types/babel__core@7.20.5 from lock file
+npm error Missing: babel-preset-jest@29.6.3 from lock file
+npm error Missing: @types/babel__generator@7.6.8 from lock file
+npm error Missing: @types/babel__template@7.4.4 from lock file
+npm error Missing: @types/babel__traverse@7.20.6 from lock file
+npm error Missing: babel-plugin-jest-hoist@29.6.3 from lock file
+npm error Missing: babel-preset-current-node-syntax@1.1.0 from lock file
+npm error Missing: @babel/plugin-syntax-async-generators@7.8.4 from lock file
+npm error Missing: @babel/plugin-syntax-bigint@7.8.3 from lock file
+npm error Missing: @babel/plugin-syntax-class-properties@7.12.13 from lock file
+npm error Missing: @babel/plugin-syntax-class-static-block@7.14.5 from lock file
+npm error Missing: @babel/plugin-syntax-import-attributes@7.25.6 from lock file
+npm error Missing: @babel/plugin-syntax-import-meta@7.10.4 from lock file
+npm error Missing: @babel/plugin-syntax-json-strings@7.8.3 from lock file
+npm error Missing: @babel/plugin-syntax-logical-assignment-operators@7.10.4 from lock file
+npm error Missing: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3 from lock file
+npm error Missing: @babel/plugin-syntax-numeric-separator@7.10.4 from lock file
+npm error Missing: @babel/plugin-syntax-object-rest-spread@7.8.3 from lock file
+npm error Missing: @babel/plugin-syntax-optional-catch-binding@7.8.3 from lock file
+npm error Missing: @babel/plugin-syntax-optional-chaining@7.8.3 from lock file
+npm error Missing: @babel/plugin-syntax-private-property-in-object@7.14.5 from lock file
+npm error Missing: @babel/plugin-syntax-top-level-await@7.14.5 from lock file
+npm error Missing: @jest/environment@29.7.0 from lock file
+npm error Missing: @jest/expect@29.7.0 from lock file
+npm error Missing: co@4.6.0 from lock file
+npm error Missing: dedent@1.5.3 from lock file
+npm error Missing: is-generator-fn@2.1.0 from lock file
+npm error Missing: jest-each@29.7.0 from lock file
+npm error Missing: jest-matcher-utils@29.7.0 from lock file
+npm error Missing: pure-rand@6.1.0 from lock file
+npm error Missing: stack-utils@2.0.6 from lock file
+npm error Missing: @jest/fake-timers@29.7.0 from lock file
+npm error Missing: jest-mock@29.7.0 from lock file
+npm error Missing: expect@29.7.0 from lock file
+npm error Missing: @sinonjs/fake-timers@10.3.0 from lock file
+npm error Missing: @sinonjs/commons@3.0.1 from lock file
+npm error Missing: type-detect@4.0.8 from lock file
+npm error Missing: @jest/expect-utils@29.7.0 from lock file
+npm error Missing: @types/graceful-fs@4.1.9 from lock file
+npm error Missing: anymatch@3.1.3 from lock file
+npm error Missing: fb-watchman@2.0.2 from lock file
+npm error Missing: fsevents@2.3.3 from lock file
+npm error Missing: walker@1.0.8 from lock file
+npm error Missing: normalize-path@3.0.0 from lock file
+npm error Missing: picomatch@2.3.1 from lock file
+npm error Missing: bser@2.1.1 from lock file
+npm error Missing: node-int64@0.4.0 from lock file
+npm error Missing: jest-diff@29.7.0 from lock file
+npm error Missing: diff-sequences@29.6.3 from lock file
+npm error Missing: @types/stack-utils@2.0.3 from lock file
+npm error Missing: jest-pnp-resolver@1.2.3 from lock file
+npm error Missing: resolve@1.22.8 from lock file
+npm error Missing: resolve.exports@2.0.2 from lock file
+npm error Missing: emittery@0.13.1 from lock file
+npm error Missing: jest-docblock@29.7.0 from lock file
+npm error Missing: jest-leak-detector@29.7.0 from lock file
+npm error Missing: source-map-support@0.5.13 from lock file
+npm error Missing: detect-newline@3.1.0 from lock file
+npm error Missing: @jest/globals@29.7.0 from lock file
+npm error Missing: @jest/source-map@29.6.3 from lock file
+npm error Missing: cjs-module-lexer@1.4.1 from lock file
+npm error Missing: glob@7.2.3 from lock file
+npm error Missing: strip-bom@4.0.0 from lock file
+npm error Missing: @babel/plugin-syntax-jsx@7.24.7 from lock file
+npm error Missing: @babel/plugin-syntax-typescript@7.25.4 from lock file
+npm error Missing: camelcase@6.3.0 from lock file
+npm error Missing: leven@3.1.0 from lock file
+npm error Missing: supports-color@8.1.1 from lock file
+npm error Missing: braces@3.0.3 from lock file
+npm error Missing: fill-range@7.1.1 from lock file
+npm error Missing: to-regex-range@5.0.1 from lock file
+npm error Missing: mimic-fn@2.1.0 from lock file
+npm error Missing: error-ex@1.3.2 from lock file
+npm error Missing: json-parse-even-better-errors@2.3.1 from lock file
+npm error Missing: lines-and-columns@1.2.4 from lock file
+npm error Missing: is-arrayish@0.2.1 from lock file
+npm error Missing: find-up@4.1.0 from lock file
+npm error Missing: ansi-styles@5.2.0 from lock file
+npm error Missing: react-is@18.3.1 from lock file
+npm error Missing: kleur@3.0.3 from lock file
+npm error Missing: sisteransi@1.0.5 from lock file
+npm error Missing: is-core-module@2.15.1 from lock file
+npm error Missing: path-parse@1.0.7 from lock file
+npm error Missing: supports-preserve-symlinks-flag@1.0.0 from lock file
+npm error Missing: resolve-from@5.0.0 from lock file
+npm error Missing: buffer-from@1.1.2 from lock file
+npm error Missing: escape-string-regexp@2.0.0 from lock file
+npm error Missing: char-regex@1.0.2 from lock file
+npm error Missing: glob@7.2.3 from lock file
+npm error Missing: is-number@7.0.0 from lock file
+npm error Missing: makeerror@1.0.12 from lock file
+npm error Missing: tmpl@1.0.5 from lock file
+npm error Missing: yallist@3.1.1 from lock file
+npm error Missing: ansi-styles@3.2.1 from lock file
+npm error Missing: escape-string-regexp@1.0.5 from lock file
+npm error Missing: supports-color@5.5.0 from lock file
+npm error Missing: color-convert@1.9.3 from lock file
+npm error Missing: color-name@1.1.3 from lock file
+npm error Missing: has-flag@3.0.0 from lock file
+npm error Missing: locate-path@5.0.0 from lock file
+npm error Missing: argparse@1.0.10 from lock file
+npm error Missing: sprintf-js@1.0.3 from lock file
+npm error Missing: p-locate@4.1.0 from lock file
+npm error Missing: p-limit@2.3.0 from lock file
+npm error Missing: p-try@2.2.0 from lock file
+npm error Missing: semver@6.3.1 from lock file
+npm error Missing: locate-path@5.0.0 from lock file
+npm error Missing: p-locate@4.1.0 from lock file
+npm error Missing: p-limit@2.3.0 from lock file
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+
+npm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2024-09-11T23_02_17_053Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332.
+[debug] [2024-09-11T23:03:11.869Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions 400
+[debug] [2024-09-11T23:03:11.869Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/travel-blog-f05ae/locations/us-central1/functions {"error":{"code":400,"message":"Validation failed for trigger projects/travel-blog-f05ae/locations/nam5/triggers/makeuppercase-823544: Invalid resource state for \"\": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role.","status":"FAILED_PRECONDITION"}}
+[warn] !  functions: HTTP Error: 400, Validation failed for trigger projects/travel-blog-f05ae/locations/nam5/triggers/makeuppercase-823544: Invalid resource state for "": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role. 
+[warn] !  functions: Since this is your first time using 2nd gen functions, we need a little bit longer to finish setting everything up. Retry the deployment in a few minutes. 
+[warn] !  functions:  failed to create function projects/travel-blog-f05ae/locations/us-central1/functions/makeuppercase 
+[error] Failed to create function projects/travel-blog-f05ae/locations/us-central1/functions/makeuppercase
+[debug] [2024-09-11T23:03:11.881Z] Total Function Deployment time: 76057
+[debug] [2024-09-11T23:03:11.881Z] 2 Functions Deployed
+[debug] [2024-09-11T23:03:11.881Z] 2 Functions Errored
+[debug] [2024-09-11T23:03:11.881Z] 0 Function Deployments Aborted
+[debug] [2024-09-11T23:03:11.881Z] Average Function Deployment time: 68138.5
+[info] 
+[info] Functions deploy had errors with the following functions:
+	addmessage(us-central1)
+	makeuppercase(us-central1)
+[debug] [2024-09-11T23:03:12.005Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-09-11T23:03:12.006Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/addmessage [none]
+[debug] [2024-09-11T23:03:12.007Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase [none]
+[debug] [2024-09-11T23:03:12.009Z] >>> [apiv2][query] GET https://us.gcr.io/v2/travel-blog-f05ae/gcf/us-central1/tags/list [none]
+[debug] [2024-09-11T23:03:12.357Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/addmessage 404
+[debug] [2024-09-11T23:03:12.357Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/addmessage {"error":{"code":404,"message":"Package \"projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/addmessage\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-09-11T23:03:12.383Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase 404
+[debug] [2024-09-11T23:03:12.383Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase {"error":{"code":404,"message":"Package \"projects/travel-blog-f05ae/locations/us-central1/repositories/gcf-artifacts/packages/makeuppercase\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-09-11T23:03:12.408Z] <<< [apiv2][status] GET https://us.gcr.io/v2/travel-blog-f05ae/gcf/us-central1/tags/list 200
+[debug] [2024-09-11T23:03:12.408Z] <<< [apiv2][body] GET https://us.gcr.io/v2/travel-blog-f05ae/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"travel-blog-f05ae/gcf/us-central1","tags":[]}
+[debug] [2024-09-11T23:03:12.410Z] Could not find image for function projects/travel-blog-f05ae/locations/us-central1/functions/addmessage
+[debug] [2024-09-11T23:03:12.410Z] Could not find image for function projects/travel-blog-f05ae/locations/us-central1/functions/makeuppercase
+[debug] [2024-09-11T23:03:12.410Z] Functions deploy failed.
+[debug] [2024-09-11T23:03:12.411Z] {
+  "endpoint": {
+    "id": "addmessage",
+    "project": "travel-blog-f05ae",
+    "region": "us-central1",
+    "entryPoint": "addmessage",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}",
+      "GCLOUD_PROJECT": "travel-blog-f05ae",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/travel-blog-f05ae/locations/us-central1/services/addmessage"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Build failed with status: FAILURE and message: npm error code EUSAGE\nnpm error\nnpm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm error\nnpm error Missing: jest@29.7.0 from lock file\nnpm error Missing: @jest/core@29.7.0 from lock file\nnpm error Missing: @jest/types@29.6.3 from lock file\nnpm error Missing: import-local@3.2.0 from lock file\nnpm error Missing: jest-cli@29.7.0 from lock file\nnpm error Missing: @jest/console@29.7.0 from lock file\nnpm error Missing: @jest/reporters@29.7.0 from lock file\nnpm error Missing: @jest/test-result@29.7.0 from lock file\nnpm error Missing: @jest/transform@29.7.0 from lock file\nnpm error Missing: ansi-escapes@4.3.2 from lock file\nnpm error Missing: ci-info@3.9.0 from lock file\nnpm error Missing: exit@0.1.2 from lock file\nnpm error Missing: jest-changed-files@29.7.0 from lock file\nnpm error Missing: jest-config@29.7.0 from lock file\nnpm error Missing: jest-haste-map@29.7.0 from lock file\nnpm error Missing: jest-message-util@29.7.0 from lock file\nnpm error Missing: jest-regex-util@29.6.3 from lock file\nnpm error Missing: jest-resolve@29.7.0 from lock file\nnpm error Missing: jest-resolve-dependencies@29.7.0 from lock file\nnpm error Missing: jest-runner@29.7.0 from lock file\nnpm error Missing: jest-runtime@29.7.0 from lock file\nnpm error Missing: jest-snapshot@29.7.0 from lock file\nnpm error Missing: jest-util@29.7.0 from lock file\nnpm error Missing: jest-validate@29.7.0 from lock file\nnpm error Missing: jest-watcher@29.7.0 from lock file\nnpm error Missing: micromatch@4.0.8 from lock file\nnpm error Missing: pretty-format@29.7.0 from lock file\nnpm error Missing: slash@3.0.0 from lock file\nnpm error Missing: @bcoe/v8-coverage@0.2.3 from lock file\nnpm error Missing: @jridgewell/trace-mapping@0.3.25 from lock file\nnpm error Missing: collect-v8-coverage@1.0.2 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: istanbul-lib-coverage@3.2.2 from lock file\nnpm error Missing: istanbul-lib-instrument@6.0.3 from lock file\nnpm error Missing: istanbul-lib-report@3.0.1 from lock file\nnpm error Missing: istanbul-lib-source-maps@4.0.1 from lock file\nnpm error Missing: istanbul-reports@3.1.7 from lock file\nnpm error Missing: jest-worker@29.7.0 from lock file\nnpm error Missing: string-length@4.0.2 from lock file\nnpm error Missing: v8-to-istanbul@9.3.0 from lock file\nnpm error Missing: @types/istanbul-lib-coverage@2.0.6 from lock file\nnpm error Missing: @babel/core@7.25.2 from lock file\nnpm error Missing: babel-plugin-istanbul@6.1.1 from lock file\nnpm error Missing: convert-source-map@2.0.0 from lock file\nnpm error Missing: pirates@4.0.6 from lock file\nnpm error Missing: write-file-atomic@4.0.2 from lock file\nnpm error Missing: @ampproject/remapping@2.3.0 from lock file\nnpm error Missing: @babel/code-frame@7.24.7 from lock file\nnpm error Missing: @babel/generator@7.25.6 from lock file\nnpm error Missing: @babel/helper-compilation-targets@7.25.2 from lock file\nnpm error Missing: @babel/helper-module-transforms@7.25.2 from lock file\nnpm error Missing: @babel/helpers@7.25.6 from lock file\nnpm error Missing: @babel/template@7.25.0 from lock file\nnpm error Missing: @babel/traverse@7.25.6 from lock file\nnpm error Missing: gensync@1.0.0-beta.2 from lock file\nnpm error Missing: json5@2.2.3 from lock file\nnpm error Missing: semver@6.3.1 from lock file\nnpm error Missing: @jridgewell/gen-mapping@0.3.5 from lock file\nnpm error Missing: @babel/highlight@7.24.7 from lock file\nnpm error Missing: picocolors@1.1.0 from lock file\nnpm error Missing: jsesc@2.5.2 from lock file\nnpm error Missing: @babel/compat-data@7.25.4 from lock file\nnpm error Missing: @babel/helper-validator-option@7.24.8 from lock file\nnpm error Missing: browserslist@4.23.3 from lock file\nnpm error Missing: lru-cache@5.1.1 from lock file\nnpm error Missing: semver@6.3.1 from lock file\nnpm error Missing: @babel/helper-module-imports@7.24.7 from lock file\nnpm error Missing: @babel/helper-simple-access@7.24.7 from lock file\nnpm error Missing: chalk@2.4.2 from lock file\nnpm error Missing: js-tokens@4.0.0 from lock file\nnpm error Missing: globals@11.12.0 from lock file\nnpm error Missing: @jest/schemas@29.6.3 from lock file\nnpm error Missing: @types/istanbul-reports@3.0.4 from lock file\nnpm error Missing: @types/yargs@17.0.33 from lock file\nnpm error Missing: @sinclair/typebox@0.27.8 from lock file\nnpm error Missing: @jridgewell/set-array@1.2.1 from lock file\nnpm error Missing: @jridgewell/sourcemap-codec@1.5.0 from lock file\nnpm error Missing: @jridgewell/resolve-uri@3.1.2 from lock file\nnpm error Missing: @types/istanbul-lib-report@3.0.3 from lock file\nnpm error Missing: @types/yargs-parser@21.0.3 from lock file\nnpm error Missing: type-fest@0.21.3 from lock file\nnpm error Missing: @babel/helper-plugin-utils@7.24.8 from lock file\nnpm error Missing: @istanbuljs/load-nyc-config@1.1.0 from lock file\nnpm error Missing: @istanbuljs/schema@0.1.3 from lock file\nnpm error Missing: istanbul-lib-instrument@5.2.1 from lock file\nnpm error Missing: test-exclude@6.0.0 from lock file\nnpm error Missing: camelcase@5.3.1 from lock file\nnpm error Missing: find-up@4.1.0 from lock file\nnpm error Missing: get-package-type@0.1.0 from lock file\nnpm error Missing: js-yaml@3.14.1 from lock file\nnpm error Missing: resolve-from@5.0.0 from lock file\nnpm error Missing: caniuse-lite@1.0.30001660 from lock file\nnpm error Missing: electron-to-chromium@1.5.20 from lock file\nnpm error Missing: node-releases@2.0.18 from lock file\nnpm error Missing: update-browserslist-db@1.1.0 from lock file\nnpm error Missing: pkg-dir@4.2.0 from lock file\nnpm error Missing: resolve-cwd@3.0.0 from lock file\nnpm error Missing: make-dir@4.0.0 from lock file\nnpm error Missing: html-escaper@2.0.2 from lock file\nnpm error Missing: execa@5.1.1 from lock file\nnpm error Missing: get-stream@6.0.1 from lock file\nnpm error Missing: human-signals@2.1.0 from lock file\nnpm error Missing: merge-stream@2.0.0 from lock file\nnpm error Missing: npm-run-path@4.0.1 from lock file\nnpm error Missing: onetime@5.1.2 from lock file\nnpm error Missing: signal-exit@3.0.7 from lock file\nnpm error Missing: strip-final-newline@2.0.0 from lock file\nnpm error Missing: create-jest@29.7.0 from lock file\nnpm error Missing: prompts@2.4.2 from lock file\nnpm error Missing: @jest/test-sequencer@29.7.0 from lock file\nnpm error Missing: babel-jest@29.7.0 from lock file\nnpm error Missing: deepmerge@4.3.1 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: jest-circus@29.7.0 from lock file\nnpm error Missing: jest-environment-node@29.7.0 from lock file\nnpm error Missing: jest-get-type@29.6.3 from lock file\nnpm error Missing: parse-json@5.2.0 from lock file\nnpm error Missing: @types/babel__core@7.20.5 from lock file\nnpm error Missing: babel-preset-jest@29.6.3 from lock file\nnpm error Missing: @types/babel__generator@7.6.8 from lock file\nnpm error Missing: @types/babel__template@7.4.4 from lock file\nnpm error Missing: @types/babel__traverse@7.20.6 from lock file\nnpm error Missing: babel-plugin-jest-hoist@29.6.3 from lock file\nnpm error Missing: babel-preset-current-node-syntax@1.1.0 from lock file\nnpm error Missing: @babel/plugin-syntax-async-generators@7.8.4 from lock file\nnpm error Missing: @babel/plugin-syntax-bigint@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-class-properties@7.12.13 from lock file\nnpm error Missing: @babel/plugin-syntax-class-static-block@7.14.5 from lock file\nnpm error Missing: @babel/plugin-syntax-import-attributes@7.25.6 from lock file\nnpm error Missing: @babel/plugin-syntax-import-meta@7.10.4 from lock file\nnpm error Missing: @babel/plugin-syntax-json-strings@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-logical-assignment-operators@7.10.4 from lock file\nnpm error Missing: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-numeric-separator@7.10.4 from lock file\nnpm error Missing: @babel/plugin-syntax-object-rest-spread@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-optional-catch-binding@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-optional-chaining@7.8.3 from lock file\nnpm error Missing: @babel/plugin-syntax-private-property-in-object@7.14.5 from lock file\nnpm error Missing: @babel/plugin-syntax-top-level-await@7.14.5 from lock file\nnpm error Missing: @jest/environment@29.7.0 from lock file\nnpm error Missing: @jest/expect@29.7.0 from lock file\nnpm error Missing: co@4.6.0 from lock file\nnpm error Missing: dedent@1.5.3 from lock file\nnpm error Missing: is-generator-fn@2.1.0 from lock file\nnpm error Missing: jest-each@29.7.0 from lock file\nnpm error Missing: jest-matcher-utils@29.7.0 from lock file\nnpm error Missing: pure-rand@6.1.0 from lock file\nnpm error Missing: stack-utils@2.0.6 from lock file\nnpm error Missing: @jest/fake-timers@29.7.0 from lock file\nnpm error Missing: jest-mock@29.7.0 from lock file\nnpm error Missing: expect@29.7.0 from lock file\nnpm error Missing: @sinonjs/fake-timers@10.3.0 from lock file\nnpm error Missing: @sinonjs/commons@3.0.1 from lock file\nnpm error Missing: type-detect@4.0.8 from lock file\nnpm error Missing: @jest/expect-utils@29.7.0 from lock file\nnpm error Missing: @types/graceful-fs@4.1.9 from lock file\nnpm error Missing: anymatch@3.1.3 from lock file\nnpm error Missing: fb-watchman@2.0.2 from lock file\nnpm error Missing: fsevents@2.3.3 from lock file\nnpm error Missing: walker@1.0.8 from lock file\nnpm error Missing: normalize-path@3.0.0 from lock file\nnpm error Missing: picomatch@2.3.1 from lock file\nnpm error Missing: bser@2.1.1 from lock file\nnpm error Missing: node-int64@0.4.0 from lock file\nnpm error Missing: jest-diff@29.7.0 from lock file\nnpm error Missing: diff-sequences@29.6.3 from lock file\nnpm error Missing: @types/stack-utils@2.0.3 from lock file\nnpm error Missing: jest-pnp-resolver@1.2.3 from lock file\nnpm error Missing: resolve@1.22.8 from lock file\nnpm error Missing: resolve.exports@2.0.2 from lock file\nnpm error Missing: emittery@0.13.1 from lock file\nnpm error Missing: jest-docblock@29.7.0 from lock file\nnpm error Missing: jest-leak-detector@29.7.0 from lock file\nnpm error Missing: source-map-support@0.5.13 from lock file\nnpm error Missing: detect-newline@3.1.0 from lock file\nnpm error Missing: @jest/globals@29.7.0 from lock file\nnpm error Missing: @jest/source-map@29.6.3 from lock file\nnpm error Missing: cjs-module-lexer@1.4.1 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: strip-bom@4.0.0 from lock file\nnpm error Missing: @babel/plugin-syntax-jsx@7.24.7 from lock file\nnpm error Missing: @babel/plugin-syntax-typescript@7.25.4 from lock file\nnpm error Missing: camelcase@6.3.0 from lock file\nnpm error Missing: leven@3.1.0 from lock file\nnpm error Missing: supports-color@8.1.1 from lock file\nnpm error Missing: braces@3.0.3 from lock file\nnpm error Missing: fill-range@7.1.1 from lock file\nnpm error Missing: to-regex-range@5.0.1 from lock file\nnpm error Missing: mimic-fn@2.1.0 from lock file\nnpm error Missing: error-ex@1.3.2 from lock file\nnpm error Missing: json-parse-even-better-errors@2.3.1 from lock file\nnpm error Missing: lines-and-columns@1.2.4 from lock file\nnpm error Missing: is-arrayish@0.2.1 from lock file\nnpm error Missing: find-up@4.1.0 from lock file\nnpm error Missing: ansi-styles@5.2.0 from lock file\nnpm error Missing: react-is@18.3.1 from lock file\nnpm error Missing: kleur@3.0.3 from lock file\nnpm error Missing: sisteransi@1.0.5 from lock file\nnpm error Missing: is-core-module@2.15.1 from lock file\nnpm error Missing: path-parse@1.0.7 from lock file\nnpm error Missing: supports-preserve-symlinks-flag@1.0.0 from lock file\nnpm error Missing: resolve-from@5.0.0 from lock file\nnpm error Missing: buffer-from@1.1.2 from lock file\nnpm error Missing: escape-string-regexp@2.0.0 from lock file\nnpm error Missing: char-regex@1.0.2 from lock file\nnpm error Missing: glob@7.2.3 from lock file\nnpm error Missing: is-number@7.0.0 from lock file\nnpm error Missing: makeerror@1.0.12 from lock file\nnpm error Missing: tmpl@1.0.5 from lock file\nnpm error Missing: yallist@3.1.1 from lock file\nnpm error Missing: ansi-styles@3.2.1 from lock file\nnpm error Missing: escape-string-regexp@1.0.5 from lock file\nnpm error Missing: supports-color@5.5.0 from lock file\nnpm error Missing: color-convert@1.9.3 from lock file\nnpm error Missing: color-name@1.1.3 from lock file\nnpm error Missing: has-flag@3.0.0 from lock file\nnpm error Missing: locate-path@5.0.0 from lock file\nnpm error Missing: argparse@1.0.10 from lock file\nnpm error Missing: sprintf-js@1.0.3 from lock file\nnpm error Missing: p-locate@4.1.0 from lock file\nnpm error Missing: p-limit@2.3.0 from lock file\nnpm error Missing: p-try@2.2.0 from lock file\nnpm error Missing: semver@6.3.1 from lock file\nnpm error Missing: locate-path@5.0.0 from lock file\nnpm error Missing: p-locate@4.1.0 from lock file\nnpm error Missing: p-limit@2.3.0 from lock file\nnpm error\nnpm error Clean install a project\nnpm error\nnpm error Usage:\nnpm error npm ci\nnpm error\nnpm error Options:\nnpm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\n\nnpm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2024-09-11T23_02_17_053Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/9e538caa-eb39-43b5-855c-5ef0dc3462ec?project=854150745332.",
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2024-09-11T23:03:12.411Z] {
+  "endpoint": {
+    "id": "makeuppercase",
+    "project": "travel-blog-f05ae",
+    "region": "us-central1",
+    "entryPoint": "makeuppercase",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "eventTrigger": {
+      "eventType": "google.cloud.firestore.document.v1.created",
+      "retry": false,
+      "eventFilters": {
+        "database": "(default)",
+        "namespace": "(default)"
+      },
+      "eventFilterPathPatterns": {
+        "document": "messages/{documentId}"
+      },
+      "region": "nam5"
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"travel-blog-f05ae\",\"storageBucket\":\"travel-blog-f05ae.appspot.com\",\"locationId\":\"us-central\"}",
+      "GCLOUD_PROJECT": "travel-blog-f05ae",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/travel-blog-f05ae/locations/us-central1/services/makeuppercase"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "ac3b4cb48c33d1c5b9f6cb4f5fa3cd95e31c3755"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/travel-blog-f05ae/locations/us-central1/functions/makeuppercase"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/travel-blog-f05ae/locations/us-central1/functions/makeuppercase",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Validation failed for trigger projects/travel-blog-f05ae/locations/nam5/triggers/makeuppercase-823544: Invalid resource state for \"\": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role.",
+            "status": "FAILED_PRECONDITION"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, Validation failed for trigger projects/travel-blog-f05ae/locations/nam5/triggers/makeuppercase-823544: Invalid resource state for \"\": Permission denied while using the Eventarc Service Agent. If you recently started to use Eventarc, it may take a few minutes before all necessary permissions are propagated to the Service Agent. Otherwise, verify that it has Eventarc Service Agent role.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[error] Error: There was an error deploying functions:
+[error] - Error Failed to create function addmessage in region us-central1
+[error] - Error Failed to create function makeuppercase in region us-central1

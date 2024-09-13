@@ -1,7 +1,7 @@
 import React from 'react';
 // import NavBar from '../NavBar/NavBar';
 import AltNavBar from '../AltNavBar/AltNavBar';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import './MapLayout.css'
 const MapLayout =({active, setActive, user, handleLogout}) =>{

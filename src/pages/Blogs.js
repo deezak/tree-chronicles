@@ -71,9 +71,9 @@ const Blogs = ({ setActive, user, active }) => {
         <div>
             <h2 className='latest-posts'>Latest Posts</h2>
             {loading ? (
-                <div class="blocks-loading">
-                    <div class="block-loading orange"></div>
-                    <div class="block-loading blue"></div>
+                <div className="blocks-loading">
+                    <div className="block-loading orange"></div>
+                    <div className="block-loading blue"></div>
                 </div>
             ) : (
                 <div style={{ flex: "1" }}>

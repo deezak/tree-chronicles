@@ -18,6 +18,7 @@ import NotFound from './pages/NotFound';
 import { useEffect } from "react";
 import MapLayout from './components/MapLayout/MapLayout';
 import Auth from './pages/Auth';
+import SearchResult from './pages/SearchResult';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { auth } from "./firebase";
@@ -85,6 +86,7 @@ function App() {
                 )}></Route>
           <Route path='/blogs' element={< Blogs setActive={setActive} user={user} active ={active}/>}></Route>
           <Route path='/login' element={<Auth setActive={setActive} setUser={setUser}/>}></Route>
+          <Route path='/search' element={<SearchResult user={user} />} />
           <Route path='*' element={< NotFound />}></Route>
         </Route>
 

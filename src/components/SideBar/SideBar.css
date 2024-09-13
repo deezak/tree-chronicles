@@ -1,2 +1,69 @@
-@import 'react-bootstrap-sidebar-menu/dist/sidebar-menu.scss';
+.side-bar-list-down {
+    
+    padding-top: 6vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    justify-content: space-evenly;
+    padding-right: 40px;
+  }
+  
+  .side-bar-list-down li {
+    position: relative;
+    list-style: none;
+  }
+  
+  .side-bar-list-down li a {
+    font-size: 5em;
+    text-decoration: none;
+    letter-spacing: 3px;
+    line-height: 1em;
+    /* text-transform: uppercase; */
+    color: transparent;
+    -webkit-text-stroke: 0.7px rgba(224, 224, 224, 0.8);
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-family: 'glassure';
+  }
+  
+  .side-bar-list-down li a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--clr);
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: width 1s ease;
+    border-right: 8px solid var(--clr);
+    -webkit-text-stroke: 1px var(--clr);
+  }
+  
+  .side-bar-list-down li a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 50px var(--clr));
+  }
+  
+  .side-bar-list-down li a:hover {
+    color: var(--clr);
+    -webkit-text-stroke: 0px;
+    filter: drop-shadow(0 0 2px var(--clr));
+  }
+  
+  .side-bar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .side-bar-list a {
+    
+    padding-left: 0.75em;
 
+    color: var(--dark-complement);
+  }
+  

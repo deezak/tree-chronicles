@@ -3,7 +3,7 @@ import './Detail.css';
 import { useParams } from 'react-router-dom';
 import {doc, getDoc} from 'firebase/firestore';
 import {db} from '../firebase';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Carousel } from 'react-bootstrap';
 
 // import SideBar from '../components/SideBar/SideBar';
@@ -16,17 +16,17 @@ const Detail = () => {
         id && getBlogDetail();
     }, [id])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [imageIndex])
+    // }, [imageIndex])
 
-    const incrementIndex = () => {
-        setIndex(imageIndex + 1);
-    }
+    // const incrementIndex = () => {
+    //     setIndex(imageIndex + 1);
+    // }
 
-    const decrementIndex = () => {
-        setIndex(imageIndex - 1);
-    }
+    // const decrementIndex = () => {
+    //     setIndex(imageIndex - 1);
+    // }
 
     const getBlogDetail = async() => {
         const docRef = doc(db, "blogs", id);
@@ -93,8 +93,16 @@ return (
             {/* // Disable auto sliding */}
                 {blog?.imgUrls.map((imageUrl, index) => (
                     <Carousel.Item key={index}>
-                        <img src={imageUrl} className="d-block w-100" alt={`Slide ${index}`} style={{ maxHeight: '100.5vh',  margin: '0 auto', objectFit: 'cover',overflow: 'hidden', // Clip the image
-                                    objectPosition:"center" }}/>
+                        <div className="halftone">
+                            <img src={imageUrl} className="d-block w-100" alt={`Slide ${index}`} style={{ maxHeight: '100.5vh',  margin: '0 auto', objectFit: 'cover',overflow: 'hidden', // Clip the image
+                                        objectPosition:"center" }}/>
+                        </div>
+                        {/* <div className="halftone-k">
+                            <img src={imageUrl} className="d-block w-100" alt={`Slide ${index}`} style={{ maxHeight: '100.5vh',  margin: '0 auto', objectFit: 'cover',overflow: 'hidden', // Clip the image
+                                        objectPosition:"center" }}/>
+                        </div> */}
+                        <div className="halftone-color-overlay"></div>
+                        
                         {/* <Carousel.Caption>
                             <h3>{blog?.title}</h3>
                             <p>{blog?.timestamp.toDate().toDateString()}</p>
@@ -110,7 +118,7 @@ return (
                 </div> */}
                 <div className='middle-part'>
                     <h2>{blog?.title}</h2>
-                    <span style={{ color: 'rgba(255,255,255,1)'}}>{blog?.timestamp.toDate().toDateString()}</span>
+                    <span style={{ color: 'rgba(255,255,255,1)', fontFamily:"'feelings'", fontWeight:"400"}}>{blog?.timestamp.toDate().toDateString().substring(4)}</span>
                 </div>
                 {/* <div className="right-arrow">
                     {imageIndex < blog?.imgUrls.length - 1 ? (
@@ -123,17 +131,17 @@ return (
             <div className='padding'>
                 <div className='row mx-0' style={{ justifyContent: "space-between"}}>
                     <div className='p-4 col-md-8'>
-                        <span className='meta-info text-start' style={{fontFamily:"tropikal"}}>
-                            By <p className='author'>{blog?.author}</p>&nbsp;&nbsp;
+                        <span className='meta-info text-start' style={{fontFamily:"cutout"}}>
+                            By <span className='author'>{blog?.author}</span>&nbsp;&nbsp;
                             {blog?.timestamp.toDate().toDateString()}
                         </span>
-                        <p className='text-start'>{blog?.description}</p>
+                        <p className='p-text-start' style={{fontFamily:"feelings"}}>{blog?.description}</p>
                     </div>
                     <div className='col-md-3 right-column' style={{ height: '100%', display: "flex",flexDirection: "column", justifyContent: "center", alignItems: "center", alignContent: "space-around" }}>
-                        <h5 style={{ marginTop: '8px', marginBottom: '15px', fontSize: '20px', fontWeight: '600', color: '#8d8d8d', fontFamily:"poppins" }}>Tags</h5>
-                        <ul style={{ listStyle: 'none', padding: 0 , display:"flex", flexWrap:"wrap", justifyContent:"center", fontFamily:"poppins"}}>
+                        <h5 style={{ marginTop: '8px', marginBottom: '15px', fontSize: '20px', fontWeight: '500', color: 'rgb(94, 94, 94)', fontFamily:"cutout" }}>Tags</h5>
+                        <ul style={{ listStyle: 'none', padding: 0 , display:"flex", flexWrap:"wrap", justifyContent:"center", fontFamily:"standard", fontWeight:"400"}}>
                             {blog?.tags.map((tag, index) => (
-                                <li key={index} style={{ marginBottom: '0.5rem', fontSize: '0.9rem', backgroundColor: '#f2f2f2', borderRadius: '0.25rem', padding: '0.25rem 0.5rem', display: 'inline-block', marginRight: '0.5rem', color: '#666' }}>{tag}</li>
+                                <li key={index} style={{ marginBottom: '0.5rem', fontSize: '1rem', backgroundColor: '#f2f2f2', borderRadius: '0.25rem', padding: '0.25rem 0.5rem', display: 'inline-block', marginRight: '0.5rem', color: '#666' }}>{tag}</li>
                             ))}
                         </ul>
                     </div>

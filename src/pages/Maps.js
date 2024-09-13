@@ -17,11 +17,13 @@ import { collection, deleteDoc, doc, query, getDocs, where } from 'firebase/fire
 import { db } from '../firebase';
 import latLong from '../assets/mapJson/latLong.json';
 // import * as d3 from "d3";
-import { ComposableMap,ZoomableGroup,Geographies,Geography,Marker, useZoomPan } from "react-simple-maps"
+import { ComposableMap,ZoomableGroup,Geographies,Geography,Marker } from "react-simple-maps"
 import { geoPath } from "d3-geo";
 import { geoTimes } from "d3-geo-projection";
 import BlogPost from "../components/BlogPost";
 import { toast } from "react-toastify";
+import { zoom as d3Zoom, zoomIdentity } from "d3-zoom";
+import { select } from "d3-selection";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Maps({setActive, user, active}) {
@@ -32,21 +34,22 @@ function Maps({setActive, user, active}) {
 
   const [loading, setLoading] = useState(true);
   const [markers, setMarkers] = useState([]);
-  const [count, setCount] = useState(null);
+  // const [countryCount, setCountryCount] = useState(null);
   // const [currentPage, setCurrentPage] = useState(1);
   const [lastVisible, setLastVisible] = useState(null);
   // const [noOfPages, setNoOfPages] = useState(null);
-  const [content, setContent] = useState("");
+  const [toolTipPosition, setToolTipPosition] = useState({ x: 0, y: 0 });
+  const [toolTipContent, setToolTipContent] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [defaultZoom, setZoom] = useState(2);
-  const [defaultCenter, setCenter] = useState([10, 35]);
+  const [defaultCenter, setCenter] = useState([10, 30]);
   const [countryBlogs, setCountryBlogs] = useState([]);
   // const [scrollPosition, setScrollPosition] = useState(0);
 
   const projection = () => {
     return geoTimes()
-      .translate([800 / 2, 450 / 2])
-      .scale(160);
+      .translate([width / 2, height / 2])
+      .scale(1);
   };
   const containerRef = useRef();
 
@@ -58,17 +61,18 @@ function Maps({setActive, user, active}) {
   // }
 
 
-  const getCountryList = useCallback(async () => {
-    setLoading(true);
-    const blogRef = collection(db, "blogs");
-    // const first = query(blogRef, orderBy("timestamp", "desc"), limit(4));
-    const first = query(blogRef); //TODO: QUERY BY COUNTRY
-    const docSnapshot = await getDocs(first);
-    setMarkers(docSnapshot.docs.map((doc) => ({ id: doc.id, country: doc.data().country, lat: latLong.find(c => c.name === doc.data().country).latitude, long: latLong.find(c => c.name === doc.data().country).longitude})));
-    setCount(docSnapshot.size);
-    setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
-    setLoading(false);
-  }, []);
+  // const getCountryList = useCallback(async () => {
+  //   // setLoading(true);
+  //   const blogRef = collection(db, "blogs");
+  //   // const first = query(blogRef, orderBy("timestamp", "desc"), limit(4));
+  //   const first = query(blogRef); //TODO: QUERY BY COUNTRY
+  //   const docSnapshot = await getDocs(first);
+  //   setMarkers(docSnapshot.docs.map((doc) => ({ id: doc.id, country: doc.data().country, lat: latLong.find(c => c.name === doc.data().country).latitude, long: latLong.find(c => c.name === doc.data().country).longitude})));
+  //   // setCountryCount(docSnapshot.size);
+  //   // setCountryCount();
+  //   setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
+  //   // setLoading(false);
+  // }, []);
 
   const handleDelete = async(id) => {
     if (window.confirm("Are you sure wanted to delete that blog ?")) {
@@ -83,12 +87,12 @@ function Maps({setActive, user, active}) {
     }
   };
 
-  console.log("markers", markers);
-  console.log("USER ON BLOGS " + user?.uid);
-
+  // console.log("markers", markers);
+  // console.log("USER ON BLOGS " + user?.uid);
+  // console.log("number of country's visited: " + countryCount);
 
   const width = 980;
-  const height = 377;
+  const height = 400;
 
  
   // const CustomZoomableGroup = ({ children, ...restProps }) => {
@@ -102,44 +106,95 @@ function Maps({setActive, user, active}) {
   // };
 
   const getCountryBlogs= useCallback(async () => {
-    setLoading(true);
+    // setLoading(true);
     try {
       const first = query(collection(db, "blogs"),
                     where("country", "==", selectedCountry));
       const docSnapshot = await getDocs(first);
       setCountryBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-      setCount(docSnapshot.size);
+      // setCountryCount(docSnapshot.size);
       setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
     } catch (error) {
       console.error("Error getting country blogs: ", error);
     }
-    setLoading(false);
+    // setLoading(false);
   }, [selectedCountry]);
 
   //ON COUNTRY CLICK, IF BLOGS EXIST LIST AND PUT CITY MARKERS
   const handleCountryClick = (geo) => {
     setSelectedCountry(geo.properties.name);
-    // console.log("GEO CUNT " + geo.properties.name);
-    // console.log("SEL CUNT " + selectedCountry);
-    // getCountryBlogs();
+    console.log("GEO CUNT " + geo.properties.name);
+    
+    
     const path = geoPath().projection(projection());
     const centroid = projection().invert(path.centroid(geo));
     setCenter(centroid);
-    setZoom(8)
     
   };
-
+  // Fetch the country list once when the component mounts
   useEffect(() => {
+    setLoading(true);
+    const getCountryList = async () => {
+    //   // setLoading(true);
+    //   const blogRef = collection(db, "blogs");
+    //   // const first = query(blogRef, orderBy("timestamp", "desc"), limit(4));
+    //   const first = query(blogRef); //TODO: QUERY BY COUNTRY
+    //   const docSnapshot = await getDocs(first);
+    //   setMarkers(docSnapshot.docs.map((doc) => ({ id: doc.id, country: doc.data().country, lat: latLong.find(c => c.name === doc.data().country).latitude, long: latLong.find(c => c.name === doc.data().country).longitude})));
+    //   // setCountryCount(docSnapshot.size);
+    //   // setCountryCount();
+    //   setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
+    //   // setLoading(false);
+    // };
+    try {
+      const blogRef = collection(db, "blogs");
+      const first = query(blogRef);
+      const docSnapshot = await getDocs(first);
+      setMarkers(docSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        country: doc.data().country,
+        lat: latLong.find(c => c.name === doc.data().country).latitude,
+        long: latLong.find(c => c.name === doc.data().country).longitude
+      })));
+      setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error getting country list: ", error);
+      setLoading(false);
+    }
+  };
     getCountryList();
-    getCountryBlogs();
-
-
-  }, [selectedCountry, getCountryBlogs, getCountryList]);
+  }, []);
 
   useEffect(() =>{
-    // console.log("SELECTED CUNT: " + selectedCountry + " has " + countryBlogs.length + " BLOGS");
+    console.log("BLOG LENGTH: " + markers.length);
+    console.log("FIND BLOG: " + markers.find(m => m.country === selectedCountry));
+    const zoomLevel = markers.find(marker => marker.country === selectedCountry) ? 8 : 2;
+    setZoom(zoomLevel);
+  },[markers, selectedCountry]);
 
-  }, [selectedCountry, countryBlogs]);
+  useEffect(() => {
+    if (selectedCountry) {
+      getCountryBlogs();
+    }
+  }, [selectedCountry, getCountryBlogs]);
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   getCountryBlogs();
+  //   setLoading(false);
+  //   // console.log("SEL CUNT " + selectedCountry);
+  //   // if (markers.length > 0) {
+  //   //   const zoomLevel = markers.find(marker => marker.country === selectedCountry) ? 8 : 2;
+  //   //   setZoom(zoomLevel);
+  //   // }
+
+  // }, [getCountryBlogs]);
+
+  // useEffect(() =>{
+  //   // console.log("SELECTED CUNT: " + selectedCountry + " has " + countryBlogs.length + " BLOGS");
+
+  // }, [selectedCountry, countryBlogs]);
 
   //HANDLE IF ZOOM < 8, GO BACK TO REGULAR VIEW
   const handleMoveEnd = (position) => {
@@ -150,13 +205,23 @@ function Maps({setActive, user, active}) {
     // setCenter(position.center);
     
   };
+  const handleMouseMove = (e) => {
+    setToolTipPosition({
+      x: e.pageX,
+      y: e.pageY,
+    });
+  };
 
 
   return (
     <>
-    
-    {/* <Tooltip id="my-tooltip">{content}</Tooltip> */}
-     <ComposableMap className="map-container" width={width}
+    {loading ? (
+      <div className="blocks-loading">
+        <div className="block-loading orange"></div>
+        <div className="block-loading blue"></div>
+      </div>
+    ) : (
+      <ComposableMap className="map-container" width={width}
         height={height}
         style={{
           
@@ -165,7 +230,7 @@ function Maps({setActive, user, active}) {
             width: "100%",
             height: "auto",
         }}>
-          <ZoomableGroup zoom={defaultZoom} center={defaultCenter} onMoveEnd={handleMoveEnd} >
+          <ZoomableGroup zoom={defaultZoom} transitionduration={100} center={defaultCenter} onMoveEnd={handleMoveEnd} >
           {/* {position => ( */}
           <>
           {/* console.log("POSITION "+ position.k);
@@ -184,29 +249,33 @@ function Maps({setActive, user, active}) {
                 onMouseEnter={() =>{
                   
                   const NAME = geo.properties.name;
-                  console.log("GEO: ", NAME);
-                  setContent(NAME);
+                  // console.log("GEO: ", NAME);
+                  setToolTipContent(NAME);
                 }}
                 onMouseLeave={() =>{
-                  setContent("");
+                  setToolTipContent("");
                 }}
+                onMouseMove={handleMouseMove}
                 style={{
                   
                   hover:{
-                    fill: selectedCountry === geo.properties.name ? "#d2b138" : "#d2b138",
+                    fill: selectedCountry === geo.properties.name ? "var(--yellow-dark)" : "#e2e2e2fa",
                     outline: "none",
-                    // boxShadow: "2px 2px 8px var(--magic-yellow)",
+                    stroke:"#ffffff",
+                    strokeWidth:"1"
+                    // boxShadow: "2px 2px 10px var(--magic-yellow)"
                   },
                   default: { 
                     outline: "#ff",
-                    fill: "#090b05",//"var(--dark-complement)",
-                    stroke:"var(--outline-color)",
-                    strokeWidth:"0.4"
-                    // background: "url('./fairyforest.jpg')"
-                  // fill:"url('./assets/images/fairyforest.jpg')",
+                    transitionDuration: "0.2s",
+                    fill: "#b3b3b350",//"var(--dark-complement)",
+                    // fill: `url('../assets/images/textures/texture.svg')`,
+                    stroke:"#fafafaa0",
+                    strokeWidth:"0.2"
                   },
                   pressed: { outline: "none" },
                 }}
+                data-tip="" // This enables the tooltip on hover
                 />
               ))
             }
@@ -217,7 +286,7 @@ function Maps({setActive, user, active}) {
             <Marker key={`${country}-${index}`} coordinates={[long, lat]}>
               <g
                   fill="none"
-                  stroke="var(--magic-yellow)"
+                  stroke="var(--yellow-dark)"
                   strokeWidth={1.5}
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -225,7 +294,7 @@ function Maps({setActive, user, active}) {
                   className="scaleM"
                   style={{boxShadow: "2px 2px 8px var(--magic-yellow)"}}
                 >
-                  <circle fill ="var(--magic-yellow)" cx="12" cy="10" r={3} />
+                  <circle fill ="var(--yellow-dark)" cx="12" cy="10" r={3} />
                   <path 
                   d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
                 </g>
@@ -244,13 +313,37 @@ function Maps({setActive, user, active}) {
           </ ZoomableGroup>
 
     </ComposableMap>
+
+    
+      
+    )}
+    
+    {toolTipContent && (
+        <div
+          style={{
+            position: "absolute",
+            top: toolTipPosition.y + 10,
+            left: toolTipPosition.x + 10,
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            fontFamily:"standard",
+            color: "#fff",
+            padding: "5px",
+            borderRadius: "0px",
+            pointerEvents: "none", // Prevents blocking interactions
+          }}
+        >
+          {toolTipContent}
+        </div>
+      )}
+    {/* <Tooltip id="my-tooltip">{content}</Tooltip> */}
+     
       {/* <div ref={chartRef} />
       <div ref={dragRef} />
       <div ref={projectionRef} />
       <div ref={heightRef} /> */}
       {/* <p>Credit: <a href="https://observablehq.com/d/569d101dd5bd332b">Versor dragging (early version) by D3</a></p> */}
       
-      {countryBlogs.length > 0 && (
+      {countryBlogs.length > 0 && !loading && (
         <div className="blog-overlay" ref={containerRef} >
           {/* {countryBlogs.length > 3 && (
             <FontAwesomeIcon className= "right-arrow" onClick={() => handleScroll(300)} icon="fa-solid fa-angle-right" />

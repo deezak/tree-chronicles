@@ -54,19 +54,21 @@
 
 .menu-bar{
   z-index: 10;
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 255, 255, 0.20);
   font-size: 22px;
   display: flex;
   justify-content: flex-begin;
-  margin-left: 11px;
-  margin-top: 30px;
+  margin-left: 1.5%;
+  margin-top: 5%;
+  transform: scale(1.3);
 }
 
 .menu-bar:hover{
   z-index: 10;
   color: rgba(255, 255, 255, 1);
+
   /* font-size: 22px; */
-  scale: 1.2;
+  /* scale: 1.2; */
   transition: 0.5s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 .container{

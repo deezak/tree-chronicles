@@ -59,13 +59,13 @@
   .container-fluid-about {
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 59%;
     transform: translateY(-50%) translateX(-50%);
     width: 100%;
   }
   .ticket {
     display: flex;
-    border-radius: 7px;
+    border-radius: 0px;
     /* display: inline-block; */
     max-width: 75vw;
     text-align: left;
@@ -80,7 +80,7 @@
   .ticket.dark {
     background-color: var(--dark-complement);
     color: white;
-    box-shadow: 0px 0px 25px #2f3322;
+    box-shadow: 0px 0px 25px #ffffff0f;
   }
   /* .ticket.light {
     background-color: white;
@@ -92,31 +92,26 @@
   .ticket-head {
     background-position: center;
     background-size: cover;
-    border-radius: 7px 0 0 7px;
+    border-radius: 0px 0 0 0px;
     color: white;
     width: 700px;
     height: 100%;
     position: relative;
   }
   .ticket-head .from-to {
-    text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.9);
-    /* position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%); */
-    font-size: 24px;
+    /* text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.9); */
+    font-size: 1.8em;
     font-weight: 600;
     /* font-family: 'glassure'; */
-    
     width: 100%;
     display: flex;
-    padding-bottom: 265px;;
+    padding-bottom: 76%;
     height: inherit;
-    color: whitesmoke;
+    color: #000000;
     z-index: 2;
+    justify-content: center;
+    align-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
   }
   .fa-plane{
     color:var(--dark-complement);
@@ -136,31 +131,51 @@
     transform: rotate(135deg) translate(25%, 25%);
   }
   .ticket-body {
+    display: flex;
+    flex-direction: column;
     border-right: 1px dashed white;
-    padding: 0px 80px 0px 35px;
+    padding: 4vh 3vw 4vh 3vw;
     position: relative;
+    
   }
   .ticket-body p {
     color: #A2A2A2;
     font-size: 12px;
+    font-family: "cutout";
+  }
+  .all-flight-info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2vh;
   }
   .ticket-body .flight-info {
     margin-top: 15px;
+    flex-direction: column;
+  }
+  .ticket-body .flight-info .info, h4, p {
+    width: fit-content;
+    font-weight: 300;
+  }
+
+  .ticket-body .flight-info .f-right{
+    padding-left:2vw;
   }
   .ticket-body .flight-date {
     font-size: 12px;
     margin-top: 15px;
   }
   .passenger{
-    position: relative;
-    top: 45px;
+    display: flex;
+    flex-direction: column;
+    /* position: relative;
+    top: 45px; */
   }
   .passenger h4{
     color: var(--magic-yellow);
-    font-weight: 100;
-    text-shadow: 0px 0px 5px;
-    font-size: 35px;
-    /* font-family: 'glassure'; */
+    font-weight: 500;
+    /* text-shadow: 0px 0px 0.4em; */
+    font-size: 3.5em;
+    font-family: 'glassure';
   }
   .ticket-body:before,
   .ticket-body:after {
@@ -181,83 +196,11 @@
     /* transform: translate(70%, -45%); */
   }
   .barcode {
-    left: 107%;
-    height: 130px;
-    margin-right: 100px;
-    margin-top: 5px;
-    transform: translate(-90px, -90px);
-    width: 130px;
-    position: relative;
-    top: 36px;
+    margin-left: 2vw;
+    /* margin-bottom: 2vh; */
+    height: 120px;
+    width: 120px;
   }
-
-    /* position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 1px 0 0 1px,
-           5px 0 0 1px,
-           10px 0 0 1px,
-           11px 0 0 1px,
-           15px 0 0 1px,
-           18px 0 0 1px,
-           22px 0 0 1px,
-           23px 0 0 1px,
-           26px 0 0 1px,
-           30px 0 0 1px,
-           35px 0 0 1px,
-           37px 0 0 1px,
-           41px 0 0 1px,
-           44px 0 0 1px,
-           47px 0 0 1px,
-           51px 0 0 1px,
-           56px 0 0 1px,
-           59px 0 0 1px,
-           64px 0 0 1px,
-           68px 0 0 1px,
-           72px 0 0 1px,
-           74px 0 0 1px,
-           77px 0 0 1px,
-           81px 0 0 1px,
-           85px 0 0 1px,
-           88px 0 0 1px,
-           92px 0 0 1px,
-           95px 0 0 1px,
-           96px 0 0 1px,
-           97px 0 0 1px,
-           101px 0 0 1px,
-           105px 0 0 1px,
-           109px 0 0 1px,
-           110px 0 0 1px,
-           113px 0 0 1px,
-           116px 0 0 1px,
-           120px 0 0 1px,
-           123px 0 0 1px,
-           127px 0 0 1px,
-           130px 0 0 1px,
-           131px 0 0 1px,
-           134px 0 0 1px,
-           135px 0 0 1px,
-           138px 0 0 1px,
-           141px 0 0 1px,
-           144px 0 0 1px,
-           147px 0 0 1px,
-           148px 0 0 1px,
-           151px 0 0 1px,
-           155px 0 0 1px,
-           158px 0 0 1px,
-           162px 0 0 1px,
-           165px 0 0 1px,
-           168px 0 0 1px,
-           173px 0 0 1px,
-           176px 0 0 1px,
-           177px 0 0 1px,
-           180px 0 0 1px;
-    display: inline-block;
-    height: 30px;
-    margin-right: 85px;
-    margin-top: 25px;
-    transform: translateX(-90px);
-    width: 0; */
   
   .disclaimer h3{
     font-family: 'glassure';
@@ -267,10 +210,12 @@
 
   .disclaimer {
     color: var(--grey-accent);
-    font-family: "IM Fell French Canon";
-    font-size: 14px;
+    /* font-family: "IM Fell French Canon"; */
+    font-family: "standard";
+    font-size: 16px;
+    font-weight:300;
     font-style: italic;
-    line-height: 1.25;
+    line-height: 1.2;
     padding: 15px 25px;
     text-transform: none;
   }

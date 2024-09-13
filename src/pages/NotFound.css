@@ -1,10 +1,10 @@
-@font-face {
+/* @font-face {
     font-family: 'bungee-shade';
     src: url('../assets/fonts/BungeeShade-Regular.ttf');
-}
+} */
 
 .not-found{
-    font-family: 'bungee-shade';
+    /* font-family: 'bungee-shade'; */
     font-size: 80px;
     height: 60%;
     font-weight: 600;
