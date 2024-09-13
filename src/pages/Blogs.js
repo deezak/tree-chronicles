@@ -8,44 +8,73 @@ import PaginationControls from '../components/PaginationControls/PaginationContr
 const Blogs = ({ setActive, user, active }) => {
     const [loading, setLoading] = useState(true);
     const [blogs, setBlogs] = useState([]);
-    const [count, setCount] = useState(null);
-    const [lastVisible, setLastVisible] = useState(null);
+    // const [count, setCount] = useState(null);
+    const [lastVisible] = useState(null);
     const [noOfPages, setNoOfPages] = useState(null);
     const [currentPage, setCurrentPage] = useState(1); // Track current page
     const [perPage, setPerPage] = useState(6); // Number of blogs per page
 
-    const getBlogsData = async (page = 1) => {
-        setLoading(true);
-        const blogRef = collection(db, "blogs");
-        let q = query(blogRef, orderBy("timestamp", "desc"), limit(perPage));
+    // const getBlogsData = async (page = 1) => {
+    //     setLoading(true);
+    //     const blogRef = collection(db, "blogs");
+    //     let q = query(blogRef, orderBy("timestamp", "desc"), limit(perPage));
 
-        if (page > 1) {
-            q = query(q, startAfter(lastVisible));
-        }
+    //     if (page > 1) {
+    //         q = query(q, startAfter(lastVisible));
+    //     }
 
-        const docSnapshot = await getDocs(q);
-        setBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-        setCount(docSnapshot.size);
-        setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1] || null);
-        setLoading(false);
-    };
+    //     const docSnapshot = await getDocs(q);
+    //     setBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    //     setCount(docSnapshot.size);
+    //     setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1] || null);
+    //     setLoading(false);
+    // };
 
     useEffect(() => {
+        const getBlogsData = async (page = 1) => {
+            setLoading(true);
+            const blogRef = collection(db, "blogs");
+            let q = query(blogRef, orderBy("timestamp", "desc"), limit(perPage));
+    
+            if (page > 1 && lastVisible.current) {
+                // q = query(q, startAfter(lastVisible));
+                q = query(blogRef, orderBy("timestamp", "desc"), startAfter(lastVisible.current), limit(perPage));
+            }
+    
+            const docSnapshot = await getDocs(q);
+            setBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+            // setCount(docSnapshot.size);
+            // setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1] || null);
+            lastVisible.current = docSnapshot.docs[docSnapshot.docs.length - 1] || null;
+            setLoading(false);
+        };
+        
+        const getTotalBlogs = async () => {
+            const blogRef = collection(db, "blogs");
+            const docSnapshot = await getDocs(blogRef);
+            const totalBlogs = docSnapshot.size;
+            const totalPage = Math.ceil(totalBlogs / perPage);
+            setNoOfPages(totalPage);
+        };
         getBlogsData(currentPage);
         getTotalBlogs();
         setActive("blogs");
-        setPerPage(6);
-        if(count >0)
-          console.log("COUNT:" + count);
-    }, [setActive, currentPage]);
+        
+        // if(count >0)
+        //   console.log("COUNT:" + count);
+    }, [setActive, currentPage, perPage, lastVisible]);
 
-    const getTotalBlogs = async () => {
-        const blogRef = collection(db, "blogs");
-        const docSnapshot = await getDocs(blogRef);
-        const totalBlogs = docSnapshot.size;
-        const totalPage = Math.ceil(totalBlogs / perPage);
-        setNoOfPages(totalPage);
-    };
+    useEffect(() => {
+        setPerPage(6);
+    },[setPerPage]);
+
+    // const getTotalBlogs = async () => {
+    //     const blogRef = collection(db, "blogs");
+    //     const docSnapshot = await getDocs(blogRef);
+    //     const totalBlogs = docSnapshot.size;
+    //     const totalPage = Math.ceil(totalBlogs / perPage);
+    //     setNoOfPages(totalPage);
+    // };
 
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this blog?")) {

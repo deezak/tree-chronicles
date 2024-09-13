@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 // import AltNavBar from '../AltNavBar/AltNavBar';
 import SideBar from '../SideBar/SideBar';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const BlogDetailLayout =({active, setActive, user, handleLogout}) =>{
+const BlogDetailLayout =({setActive, user, handleLogout}) =>{
     // const userId = user?.uid;
 
     // const [active, setActive, user] = useState("home");

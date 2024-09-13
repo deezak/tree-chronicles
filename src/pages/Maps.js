@@ -22,9 +22,8 @@ import { geoPath } from "d3-geo";
 import { geoTimes } from "d3-geo-projection";
 import BlogPost from "../components/BlogPost";
 import { toast } from "react-toastify";
-import { zoom as d3Zoom, zoomIdentity } from "d3-zoom";
-import { select } from "d3-selection";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { zoom as d3Zoom, zoomIdentity } from "d3-zoom";
+// import { select } from "d3-selection";
 
 function Maps({setActive, user, active}) {
   // const chartRef = useRef();
@@ -36,7 +35,7 @@ function Maps({setActive, user, active}) {
   const [markers, setMarkers] = useState([]);
   // const [countryCount, setCountryCount] = useState(null);
   // const [currentPage, setCurrentPage] = useState(1);
-  const [lastVisible, setLastVisible] = useState(null);
+  const [setLastVisible] = useState(null);
   // const [noOfPages, setNoOfPages] = useState(null);
   const [toolTipPosition, setToolTipPosition] = useState({ x: 0, y: 0 });
   const [toolTipContent, setToolTipContent] = useState("");
@@ -118,7 +117,7 @@ function Maps({setActive, user, active}) {
       console.error("Error getting country blogs: ", error);
     }
     // setLoading(false);
-  }, [selectedCountry]);
+  }, [selectedCountry, setLastVisible]);
 
   //ON COUNTRY CLICK, IF BLOGS EXIST LIST AND PUT CITY MARKERS
   const handleCountryClick = (geo) => {
@@ -164,7 +163,7 @@ function Maps({setActive, user, active}) {
     }
   };
     getCountryList();
-  }, []);
+  }, [setLastVisible]);
 
   useEffect(() =>{
     console.log("BLOG LENGTH: " + markers.length);

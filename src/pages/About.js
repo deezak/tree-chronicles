@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const About = () => {
   return (
     // <div className="ticket">
