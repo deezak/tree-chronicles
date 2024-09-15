@@ -76,12 +76,10 @@ const About = () => {
         
         {/* </div> */}
       </div>
-      <div className="footer">
         <div className="disclaimer">
           <h3>aBouT Me</h3>
         Welcome to an insight into my year away from home.
 After finishing my bachelor’s degree in Computer Engineering and finding myself burnt out after spending years listening to everyone but myself, I decided to take a year off to practice freedom of movement and finally ask myself what do I *want* to do, not what do I *have* to do.          </div>
-      </div>
     </div>
   </div>
 </div>

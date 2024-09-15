@@ -1,9 +1,21 @@
 .no-scroll{
   overflow: hidden;
 }
+@media (max-width: 767px) {
+ 
+}
+/* tablet view */
+@media (min-width: 769px) {
+  
+}
+/* desktop */
+@media only screen and (min-width: 1280px) {
+  
+}
 .map-container {
-  position: relative;
-  /* transition: transform 0.5s ease-in-out; Adjust timing as needed */
+  position: absolute;
+  transition: transform 0.5s ease-in-out; 
+  /* Adjust timing as needed */
 
 }
 

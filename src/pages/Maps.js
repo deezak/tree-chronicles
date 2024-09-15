@@ -1,77 +1,35 @@
-// import React from 'react';
-// import './Maps.css';
-// const Maps = () => {
-//   return (
-//     <div style={{flex: "1"}}>Maps</div>
-//   )
-// }
-
-// export default Maps
-
 import React, {useState, useEffect, useCallback, useRef} from "react";
-// import { Tooltip } from 'react-tooltip';
 import './Maps.css';
-// import {Runtime, Inspector} from "@observablehq/runtime";
-// import notebook from "569d101dd5bd332b";
 import { collection, deleteDoc, doc, query, getDocs, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import latLong from '../assets/mapJson/latLong.json';
-// import * as d3 from "d3";
 import { ComposableMap,ZoomableGroup,Geographies,Geography,Marker } from "react-simple-maps"
 import { geoPath } from "d3-geo";
 import { geoTimes } from "d3-geo-projection";
 import BlogPost from "../components/BlogPost";
 import { toast } from "react-toastify";
-// import { zoom as d3Zoom, zoomIdentity } from "d3-zoom";
-// import { select } from "d3-selection";
+import useWindowSize from '../components/useWindowSize';
 
 function Maps({setActive, user, active}) {
-  // const chartRef = useRef();
-  // const dragRef = useRef();
-  // const projectionRef = useRef();
-  // const heightRef = useRef();
-
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
+  const isTablet = width >= 768 && width < 1280;
+  const isDesktop = width >= 1280;
   const [loading, setLoading] = useState(true);
   const [markers, setMarkers] = useState([]);
-  // const [countryCount, setCountryCount] = useState(null);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [setLastVisible] = useState(null);
-  // const [noOfPages, setNoOfPages] = useState(null);
   const [toolTipPosition, setToolTipPosition] = useState({ x: 0, y: 0 });
   const [toolTipContent, setToolTipContent] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [defaultZoom, setZoom] = useState(2);
   const [defaultCenter, setCenter] = useState([10, 30]);
   const [countryBlogs, setCountryBlogs] = useState([]);
-  // const [scrollPosition, setScrollPosition] = useState(0);
 
   const projection = () => {
     return geoTimes()
-      .translate([width / 2, height / 2])
+      .translate([setMapDimensions.width / 2, setMapDimensions.height / 2])
       .scale(1);
   };
   const containerRef = useRef();
-
-
-  // const handleScroll = (scrollAmount) =>{
-  //   const newScrollPosition = scrollPosition + scrollAmount;
-  //   setScrollPosition(newScrollPosition);
-  //   containerRef.current.scrollLeft = newScrollPosition;
-  // }
-
-
-  // const getCountryList = useCallback(async () => {
-  //   // setLoading(true);
-  //   const blogRef = collection(db, "blogs");
-  //   // const first = query(blogRef, orderBy("timestamp", "desc"), limit(4));
-  //   const first = query(blogRef); //TODO: QUERY BY COUNTRY
-  //   const docSnapshot = await getDocs(first);
-  //   setMarkers(docSnapshot.docs.map((doc) => ({ id: doc.id, country: doc.data().country, lat: latLong.find(c => c.name === doc.data().country).latitude, long: latLong.find(c => c.name === doc.data().country).longitude})));
-  //   // setCountryCount(docSnapshot.size);
-  //   // setCountryCount();
-  //   setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
-  //   // setLoading(false);
-  // }, []);
 
   const handleDelete = async(id) => {
     if (window.confirm("Are you sure wanted to delete that blog ?")) {
@@ -90,19 +48,17 @@ function Maps({setActive, user, active}) {
   // console.log("USER ON BLOGS " + user?.uid);
   // console.log("number of country's visited: " + countryCount);
 
-  const width = 980;
-  const height = 400;
+  const setMapDimensions = () => {
+    if (isDesktop) {
+      return { width: 980, height: 400 };
+    } else if (isTablet) {
+      return { width: 650, height: 400 };
+    } else if (isMobile) {
+      return { width: 420, height: 400 };
+    }
+    return { width: 1024, height: 600 };  // Fallback/default dimensions
+  };
 
- 
-  // const CustomZoomableGroup = ({ children, ...restProps }) => {
-  //   const { mapRef, transformString, position } = useZoomPan(restProps);
-  //   return (
-  //     <g ref={mapRef}>
-  //       <rect width={width} height={height} fill="transparent" />
-  //       <g transform={transformString}>{children(position)}</g>
-  //     </g>
-  //   );
-  // };
 
   const getCountryBlogs= useCallback(async () => {
     // setLoading(true);
@@ -134,17 +90,6 @@ function Maps({setActive, user, active}) {
   useEffect(() => {
     setLoading(true);
     const getCountryList = async () => {
-    //   // setLoading(true);
-    //   const blogRef = collection(db, "blogs");
-    //   // const first = query(blogRef, orderBy("timestamp", "desc"), limit(4));
-    //   const first = query(blogRef); //TODO: QUERY BY COUNTRY
-    //   const docSnapshot = await getDocs(first);
-    //   setMarkers(docSnapshot.docs.map((doc) => ({ id: doc.id, country: doc.data().country, lat: latLong.find(c => c.name === doc.data().country).latitude, long: latLong.find(c => c.name === doc.data().country).longitude})));
-    //   // setCountryCount(docSnapshot.size);
-    //   // setCountryCount();
-    //   setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1]);
-    //   // setLoading(false);
-    // };
     try {
       const blogRef = collection(db, "blogs");
       const first = query(blogRef);
@@ -178,23 +123,6 @@ function Maps({setActive, user, active}) {
     }
   }, [selectedCountry, getCountryBlogs]);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   getCountryBlogs();
-  //   setLoading(false);
-  //   // console.log("SEL CUNT " + selectedCountry);
-  //   // if (markers.length > 0) {
-  //   //   const zoomLevel = markers.find(marker => marker.country === selectedCountry) ? 8 : 2;
-  //   //   setZoom(zoomLevel);
-  //   // }
-
-  // }, [getCountryBlogs]);
-
-  // useEffect(() =>{
-  //   // console.log("SELECTED CUNT: " + selectedCountry + " has " + countryBlogs.length + " BLOGS");
-
-  // }, [selectedCountry, countryBlogs]);
-
   //HANDLE IF ZOOM < 8, GO BACK TO REGULAR VIEW
   const handleMoveEnd = (position) => {
     // console.log("ZOOM LEVEL : " +position.zoom);
@@ -220,14 +148,14 @@ function Maps({setActive, user, active}) {
         <div className="block-loading blue"></div>
       </div>
     ) : (
-      <ComposableMap className="map-container" width={width}
-        height={height}
+      <ComposableMap className="map-container" width={setMapDimensions().width}
+        height={setMapDimensions().height}
         style={{
           
             // background-image: "url('./assets/images/fairyforest.jpg')",
             // fill: "url('./fairyforest.jpg')",
             width: "100%",
-            height: "auto",
+            height: "100%",
         }}>
           <ZoomableGroup zoom={defaultZoom} transitionduration={100} center={defaultCenter} onMoveEnd={handleMoveEnd} >
           {/* {position => ( */}
@@ -308,7 +236,6 @@ function Maps({setActive, user, active}) {
             
           ))}
           </>
-           {/* )} */}
           </ ZoomableGroup>
 
     </ComposableMap>
@@ -334,22 +261,8 @@ function Maps({setActive, user, active}) {
           {toolTipContent}
         </div>
       )}
-    {/* <Tooltip id="my-tooltip">{content}</Tooltip> */}
-     
-      {/* <div ref={chartRef} />
-      <div ref={dragRef} />
-      <div ref={projectionRef} />
-      <div ref={heightRef} /> */}
-      {/* <p>Credit: <a href="https://observablehq.com/d/569d101dd5bd332b">Versor dragging (early version) by D3</a></p> */}
-      
-      {countryBlogs.length > 0 && !loading && (
+    {countryBlogs.length > 0 && !loading && (
         <div className="blog-overlay" ref={containerRef} >
-          {/* {countryBlogs.length > 3 && (
-            <FontAwesomeIcon className= "right-arrow" onClick={() => handleScroll(300)} icon="fa-solid fa-angle-right" />
-          )}    
-          {countryBlogs.length > 3 && (
-            <FontAwesomeIcon className= "left-arrow" onClick={() => handleScroll(-300)} icon="fa-solid fa-angle-left" />
-          )}  */}
           <div style={{flex: "1"}}>
           <h2 className='blog-header'>{selectedCountry}</h2>
           <BlogPost className="blogs-flex"
@@ -363,6 +276,7 @@ function Maps({setActive, user, active}) {
         </div>
         
       )}
+    
     </>
   );
 }

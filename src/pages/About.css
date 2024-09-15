@@ -1,57 +1,211 @@
-/* .ticket {
-    width: 400px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 50px auto;
-    color: whitesmoke;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-  }
-  
-  .header {
-    text-align: center;
-  }
-  
-  .content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .photo {
-    flex: 0 0 150px; 
-    margin-right: 20px;
-  }
-  
-  .photo img {
-    width: 100%;
-    border-radius: 50%; 
-  }
-  
-  .about {
-    flex: 1; 
-  }
-  
-  .about h2 {
-    margin-top: 0;
-  }
-  
-  .about p {
-    font-size: 16px;
-  }
-   */
-   
-	@font-face {
+  @font-face {
 		font-family: 'glassure';
 		src: url('../assets/fonts/Glassure.otf');
 	}
+/* mobile */
+  @media only screen and (max-width: 768px) {
+    .ticket-head {
+      background-position: center;
+      background-size: cover;
+      border-radius: 0px 0 0 0px;
+      color: white;
+      width: 120px;
+      height: 25%;
+      /* position: absolute; */
+      top: 6%;
+      right: 11%;
+    }
 
-   body {
-    /* background-color: #FFB563; */
-    font-family: "Montserrat", "Helvetica Neue", "Open Sans", "Arial";
-    font-weight: 300;
+    .disclaimer h3{
+      font-family: 'glassure';
+      color:var(--magic-yellow);
+      font-style: normal;
+    }
+  
+    .disclaimer {
+      color: var(--grey-accent);
+      /* font-family: "IM Fell French Canon"; */
+      font-family: "standard";
+      font-size: 16px;
+      font-weight:300;
+      font-style: italic;
+      line-height: 1.2;
+      padding: 15px 25px;
+      text-transform: none;
+      text-align: center;
+    }
+    .container-fluid-about {
+      position: absolute;
+      left: 50%;
+      top: 59%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 50%;
+      /* height:80%; */
+    }
+    .passenger h4{
+      color: var(--magic-yellow);
+      font-weight: 500;
+      /* text-shadow: 0px 0px 0.4em; */
+      font-size: 3.5em;
+      font-family: 'glassure';
+    }
+    .all-flight-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 2vh;
+    }
+    .passenger{
+      display: flex;
+      flex-direction: column;
+      /* position: relative;
+      top: 45px; */
+    }
+    .barcode {
+      left: 10%;
+      height: 100px;
+      width: 100px;
+      position: relative;
+    }
+    .ticket {
+      display: flex;
+      border-radius: 0px;
+      /* display: inline-block; */
+      /* max-width: 75vw; */
+      text-align: left;
+      /* height:350px; */
+      text-transform: uppercase;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    .ticket-body {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px dashed white;
+      padding: 4vh 3vw 4vh 3vw;
+      position: relative;
+      width: 70%;
+      
+    }
+    .ticket-body p {
+      color: #A2A2A2;
+      font-size: 12px;
+      margin-bottom:0em;
+      font-family: "cutout";
+    }
+    .ticket.dark {
+      background-color: var(--dark-complement);
+      color: white;
+      box-shadow: 0px 0px 25px #ffffff0f;
+    }
   }
-  .ticket-container{
+  /* tablet */
+  @media only screen and (min-width: 768px) and (max-width:1279px){
+    .ticket-head {
+      background-position: center;
+      background-size: cover;
+      border-radius: 0px 0 0 0px;
+      color: white;
+      width: 120px;
+      height: 25%;
+      /* position: absolute; */
+      top: 6%;
+      right: 11%;
+    }
+
+    .disclaimer h3{
+      font-family: 'glassure';
+      color:var(--magic-yellow);
+      font-style: normal;
+    }
+  
+    .disclaimer {
+      color: var(--grey-accent);
+      /* font-family: "IM Fell French Canon"; */
+      font-family: "standard";
+      font-size: 16px;
+      font-weight:300;
+      font-style: italic;
+      line-height: 1.2;
+      padding: 15px 25px;
+      text-transform: none;
+      text-align: center;
+    }
+    .container-fluid-about {
+      position: absolute;
+      left: 50%;
+      top: 59%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 50%;
+      /* height:80%; */
+    }
+    .passenger h4{
+      color: var(--magic-yellow);
+      font-weight: 500;
+      /* text-shadow: 0px 0px 0.4em; */
+      font-size: 3.5em;
+      font-family: 'glassure';
+    }
+    .all-flight-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 2vh;
+    }
+    .passenger{
+      display: flex;
+      flex-direction: column;
+      /* position: relative;
+      top: 45px; */
+    }
+    .barcode {
+      left: 5%;
+      height: 110px;
+      width: 110px;
+      position: relative;
+    }
+    .ticket {
+      display: flex;
+      border-radius: 0px;
+      /* display: inline-block; */
+      /* max-width: 75vw; */
+      text-align: left;
+      /* height:350px; */
+      text-transform: uppercase;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    .ticket-body {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px dashed white;
+      padding: 4vh 3vw 4vh 3vw;
+      position: relative;
+      width: 70%;
+      
+    }
+    .ticket-body p {
+      color: #A2A2A2;
+      font-size: 12px;
+      margin-bottom:0em;
+      font-family: "cutout";
+    }
+    .ticket.dark {
+      background-color: var(--dark-complement);
+      color: white;
+      box-shadow: 0px 0px 25px #ffffff0f;
+    }
+
+  }
+  /* desktop */
+  @media only screen and (min-width: 1280px) {
+    .ticket-container{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -196,10 +350,10 @@
     /* transform: translate(70%, -45%); */
   }
   .barcode {
-    margin-left: 2vw;
-    /* margin-bottom: 2vh; */
-    height: 120px;
-    width: 120px;
+    left: 10%;
+    height: 100px;
+    width: 100px;
+    position: relative;
   }
   
   .disclaimer h3{
@@ -244,3 +398,10 @@
     padding: 0;
   }
   
+  }
+
+   body {
+    /* background-color: #FFB563; */
+    font-family: "Montserrat", "Helvetica Neue", "Open Sans", "Arial";
+    font-weight: 300;
+  }

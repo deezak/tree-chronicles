@@ -1,3 +1,44 @@
+
+/* mobile view */
+  @media (max-width: 767px) {
+    .side-bar-list-down li a {
+      font-size: 4em;
+      /* -webkit-text-stroke: 0.4px rgba(224, 224, 224, 0.9); */
+      color:#ffe55088;
+    }
+  }
+  /* tablet view */
+  @media (min-width: 769px) {
+    .side-bar-list-down li a {
+      font-size: 3.5em;
+      /* -webkit-text-stroke: 0.4px rgba(224, 224, 224, 0.8); */
+      color:#ffe55088;
+    }
+  }
+  /* desktop */
+	@media only screen and (min-width: 1280px) {
+		.side-bar-list-down li a {
+      font-size: 4em;
+      -webkit-text-stroke: 0.7px rgba(224, 224, 224, 0.8);
+      color:transparent;
+    }
+    
+    
+    .side-bar-list-down li a:hover::before {
+      width: 100%;
+      filter: drop-shadow(0 0 50px var(--magic-yellow));
+    }
+    
+    
+    
+    
+	}
+  .side-bar-list-down li a:hover {
+    color: var(--magic-yellow);
+    -webkit-text-stroke: 0px;
+    filter: drop-shadow(0 0 2px var(--magic-yellow));
+  }
+
 .side-bar-list-down {
     
     padding-top: 6vh;
@@ -13,46 +54,33 @@
     position: relative;
     list-style: none;
   }
+  .side-bar-list-down li a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--magic-yellow);
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: width 1s ease;
+    border-right: 8px solid var(--magic-yellow);
+    -webkit-text-stroke: 1px var(--magic-yellow);
+  }
   
   .side-bar-list-down li a {
-    font-size: 5em;
     text-decoration: none;
     letter-spacing: 3px;
     line-height: 1em;
     /* text-transform: uppercase; */
-    color: transparent;
-    -webkit-text-stroke: 0.7px rgba(224, 224, 224, 0.8);
+    /* color: transparent; */
     position: relative;
     display: inline-block;
     overflow: hidden;
     font-family: 'glassure';
   }
   
-  .side-bar-list-down li a::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--clr);
-    width: 0;
-    height: 100%;
-    overflow: hidden;
-    transition: width 1s ease;
-    border-right: 8px solid var(--clr);
-    -webkit-text-stroke: 1px var(--clr);
-  }
-  
-  .side-bar-list-down li a:hover::before {
-    width: 100%;
-    filter: drop-shadow(0 0 50px var(--clr));
-  }
-  
-  .side-bar-list-down li a:hover {
-    color: var(--clr);
-    -webkit-text-stroke: 0px;
-    filter: drop-shadow(0 0 2px var(--clr));
-  }
-  
+
   .side-bar-list {
     display: flex;
     flex-direction: row;

@@ -43,6 +43,18 @@
     /* mix-blend-mode: screen;
     background-blend-mode: multiply; */
   }
+  .halftone img {
+    object-fit: cover; /* Cover the entire container without stretching */
+    width: 100%;
+    height: 100%; /* Limit the height to 100vh */
+    object-position: center;
+}
+.blog-single-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0; /* Ensure no gap between the image and content */
+  /* background-color: white; Set a background color to contrast with the image */
+}
   .halftone::after {
     content:'';
     position: absolute;

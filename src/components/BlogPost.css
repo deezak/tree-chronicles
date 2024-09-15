@@ -247,8 +247,9 @@ h3:after {
 .utility-list {
   list-style-type: none;
   margin: 0 0 0px 0px;
-  padding: 0 0 10px 15px;
+  padding: 0 0 10px 0px;
   width: 100%;
+  justify-content: space-around
 
 }
 .utility-list li {

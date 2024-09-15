@@ -29,39 +29,107 @@
     justify-content: center;
     /* letter-spacing: 0.5em; */
     /* font-weight: 100; */
-    width: 45%;
 }
+/* Show on small screens (768px and below) */
+@media (max-width: 767px) {
+    .big-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: inherit;
+        align-items: flex-start;
+        padding-bottom: 3vh;
+        
+        /* letter-spacing: 0.5em; */
+        /* font-weight: 100; */
+        /* width: 45%; */
+    }
+    .the{
+        font-size: 1.5em;
+        padding-right:0.2em;
+        display: flex;
+        justify-content: flex-start;
+        /* padding: 11vh 0.5vw 0px 2vw; */
+        vertical-align: top;
+        align-items: flex-start;
+    
+    }
+    
+    .tree-chronicles{
+        font-family: 'glassure';
+        font-size: 5.2em;
+        font-weight: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--magic-yellow);
+        line-height: 1.05;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width:1279px){
+    .big-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: inherit;
+        align-items: flex-start;
+        padding-bottom: 3vh;
+        
+        /* letter-spacing: 0.5em; */
+        /* font-weight: 100; */
+        /* width: 45%; */
+    }
+    .the{
+        font-size: 2em;
+        padding-right:0.2em;
+        color: var(--magic-yellow);
+        justify-content: flex-start;
+        /* padding: 11vh 0.5vw 0px 2vw; */
+        vertical-align: top;
+        align-items: flex-start;
+    
+    }
+    
+    .tree-chronicles{
+        font-size: 8em;
+        font-weight: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--magic-yellow);
+        line-height: 1.05;
+    }
+}
+  @media only screen and (min-width: 1280px) {
+    .the{
+        font-size: 2em;
+        justify-content: flex-start;
+        vertical-align: top;
+        align-items: flex-start;
+    }
+    .tree-chronicles{
+        font-size: 7em;
+    }
+  }
+
 
 .the{
     font-family: 'dancing';
-    font-size: 40px;
     display: flex;
     letter-spacing: normal;
     font-weight:lighter;
     color: var(--magic-yellow);
-    justify-content: flex-start;
-    /* padding: 11vh 0.5vw 0px 2vw; */
-    vertical-align: top;
-    align-items: flex-start;
-
 }
 
 .tree-chronicles{
     font-family: 'glassure';
-    font-size: 130px;
     font-weight: 100;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: var(--magic-yellow);
     line-height: 1.05;
-}
-
-.by-dina{
-    font-family: 'calligraffitti';
-    font-size: 26px;
-    display:flex;
-    justify-content: flex-end;
-    flex-direction: column;
 }

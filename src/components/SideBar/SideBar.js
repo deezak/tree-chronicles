@@ -3,7 +3,7 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom';
 import { Container, Offcanvas } from 'react-bootstrap';  
 import {useState} from 'react'  ;
-// import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SideBar.css';
 
 const SideBar = ({setActive, user}) => {
@@ -14,9 +14,8 @@ const SideBar = ({setActive, user}) => {
   console.log("userId", userId);
   console.log("name", user?.displayName); 
   return (
-    
     <>  
-    <Container >  
+    <Container>  
       {/* <Button variant="primary" onClick={showSidebar}>  
         Launch Sidebar  
       </Button> */}
@@ -35,31 +34,13 @@ const SideBar = ({setActive, user}) => {
           {/* Some dummy text, we can have any text or element at at this place.   */}
           <ul className='side-bar-list-down'>
           
-            {/* <li className='side-bar-list' onClick={() => setActive("home") }><img className="side-bar-icon" width="30" height="30" src="https://img.icons8.com/pulsar-line/48/home-page.png" alt="home-page"/><Link to="/">Home</Link></li>
-            <li className='side-bar-list' onClick={() => setActive("blogs")}><img className="side-bar-icon" width="30" height="30" src="https://img.icons8.com/pulsar-line/48/blog.png" alt="blog"/><Link to="/blogs">Blog</Link></li>
-            <li className='side-bar-list' onClick={() => setActive("maps")}><img className="side-bar-icon" width="30" height="30" src="https://img.icons8.com/pulsar-line/48/globe-asia.png" alt="globe-asia"/><Link to="/maps">Map</Link></li>
-            <li className='side-bar-list' onClick={() => setActive("about")}><img className="side-bar-icon" width="30" height="30" src="https://img.icons8.com/pulsar-line/48/information.png" alt="information"/><Link to="/about">About Me</Link></li> */}
-            <li className='side-bar-list' data-text="Home" style={{'--clr':"var(--magic-yellow)"}}>
-              <a href='/'>&nbsp;HoMe&nbsp;</a>
-            </li>
-            <li className='side-bar-list' data-text="Blogs" style={{'--clr':"var(--magic-yellow)"}}>
-              <a href='/blogs'>&nbsp;BLoGs&nbsp;</a>
-            </li>
-            <li className='side-bar-list' data-text="Map" style={{'--clr':"var(--magic-yellow)"}}>
-              <a href='/maps'>&nbsp;MaP&nbsp;</a>
-            </li>
-            <li className='side-bar-list' data-text="About" style={{'--clr':"var(--magic-yellow)"}}>
-              <a href='/about'>&nbsp;ABouT&nbsp;</a>
-            </li>
-            {/* <li style={{color:"#dc00d4"}}>
-              <a href='/'>sp;&nbsp;</a>
-            </li> */}
+            <li className='side-bar-list' onClick={() => setActive("home") }><Link to="/">Home</Link></li>
+            <li className='side-bar-list' onClick={() => setActive("blogs")}><Link to="/blogs">Blog</Link></li>
+            <li className='side-bar-list' onClick={() => setActive("maps")}><Link to="/maps">Maps</Link></li>
+            <li className='side-bar-list' onClick={() => setActive("about")}><Link to="/about">About</Link></li>
             {userId ?(
               <>
-                <li className='side-bar-list' data-text="Create" style={{'--clr':"var(--magic-yellow)"}}>
-                  <a href='/create'>&nbsp;CReaTe&nbsp;</a>
-                </li>
-                {/* <li className='side-bar-list' onClick={() => setActive("create")}><img className="side-bar-icon" width="30" height="30" src="https://img.icons8.com/pulsar-line/48/create-new.png" alt="create-new"/><Link to="/create">Create</Link></li> */}
+                <li className='side-bar-list' onClick={() => setActive("create")}><Link to="/create">Create</Link></li>
               </>
             ):(
               <></>

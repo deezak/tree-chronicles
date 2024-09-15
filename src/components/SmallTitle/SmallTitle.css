@@ -13,32 +13,81 @@
     src: url('../../assets/fonts/Calligraffitti-Regular.ttf');
 }
 
+@media (max-width: 767px) {
+    .small-tree-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* width: 35vw; */
+    }
+    
+    .small-the{
+        font-size: 15px;
+        padding: 1em 0.3em 0px 1em;
+        vertical-align: top;
+    }
+    
+    .small-tree-chronicles{
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+    .small-tree-chronicles{
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+    .small-the{
+        font-size: 15px;
+        padding-top: 2.3em;
+        padding-right: 0.3em;
+    }
+}
+@media (min-width: 1280px) {
+    .small-tree-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* width: 35vw; */
+    }
+    
+    .small-the{
+        font-size: 26px;
+        padding: 1em 0.3em 0px 1em;
+        vertical-align: top;
+    }
+    
+    .small-tree-chronicles{
+        font-size: 3em;
+        letter-spacing: 2px;
+    }
+
+}
+
 .small-tree-title{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 35vw;
+    /* width: 35vw; */
 }
 
 .small-the{
     font-family: 'dancing';
-    font-size: 26px;
     display: flex;
     justify-content: flex-start;
-    padding: 8px 10px 0px 20px;
     vertical-align: top;
-    color: var(--magic-yellow);
+    
+    color:var(--magic-yellow);
 }
 
 .small-tree-chronicles{
     font-family: 'glassure';
-    font-size: 55px;
-    letter-spacing: 2px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--magic-yellow);
+    color:var(--magic-yellow);
+    z-index: 100;
 }
 
 /* .by-dina{

@@ -9,7 +9,7 @@ const PlaceCounter = ({ countryCount, cityCount, loading  }) => {
   }
 
   return (
-    <div style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", textAlign:"center", width:"37vw"}}>
+    <div className="place" >
       <div className= "flex-across-counter">
         <div className="counter-unit">
         <h1 className='placecounter-label'>Countries Visited:</h1> 

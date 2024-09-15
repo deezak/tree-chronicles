@@ -69,10 +69,10 @@ function App() {
 
         <Route element={<BasicLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout}/>}>
           {/* <Route exact path='/' element={< Home setActive={setActive}/>}></Route> */}
-          <Route path='/about' element={< About />}></Route>
+          <Route path='/about' element={< About setActive={setActive} active={active}/>}></Route>
           <Route path='/update/:id' element={
             user?.uid ? (
-                  <AddEditBlog user={user} setActive={setActive} />
+                  <AddEditBlog user={user} setActive={setActive} active={active}/>
                 ) : (
                   <Navigate to="/" />
                 )
@@ -80,18 +80,18 @@ function App() {
           {/* <Route path="/detail/:id" element={<Detail setActive={setActive} user={user} />}/> */}
           <Route path='/create' element={
             user?.uid ? (
-                  <AddEditBlog user={user} />
+                  <AddEditBlog user={user} setActive={setActive} active={active}/>
                 ) : (
                   <Navigate to="/" />
                 )}></Route>
           <Route path='/blogs' element={< Blogs setActive={setActive} user={user} active ={active}/>}></Route>
-          <Route path='/login' element={<Auth setActive={setActive} setUser={setUser}/>}></Route>
-          <Route path='/search' element={<SearchResult user={user} />} />
+          <Route path='/login' element={<Auth setActive={setActive} setUser={setUser} active={active}/>}></Route>
+          <Route path='/search' element={<SearchResult user={user} setActive={setActive} active={active}/>} />
           <Route path='*' element={< NotFound />}></Route>
         </Route>
 
         <Route element={<MapLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout} setCount={setCountryCount}/>}>
-          <Route exact path='/maps' element={< Maps />}></Route>
+          <Route exact path='/maps' element={< Maps user={user} setActive={setActive} active={active}/>}></Route>
         </Route>
 
         </Routes>

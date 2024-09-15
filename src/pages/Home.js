@@ -4,8 +4,13 @@ import "./Home.css";
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import PlaceCounter from '../components/PlaceCounter/PlaceCounter';
+import useWindowSize from '../components/useWindowSize';
 
 const Home = () => {
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
+  const isTablet = width >= 768 && width < 1280;
+  const isDesktop = width >= 1280;
   const [uniqueCountryCount, setUniqueCountryCount] = useState(0);
   const [uniqueCityCount, setUniqueCityCount] = useState(0);
   const [loading, setLoading] = useState(true); // Add loading state
@@ -48,13 +53,33 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="Home-Page" style={{  width:"100vw", display: "flex", flexDirection: "row", textAlign: "left", justifyContent: "space-evenly" }}>
-      <BigTitle />
-      <PlaceCounter 
-        loading={loading} // Pass loading state
-        countryCount={uniqueCountryCount} 
-        cityCount={uniqueCityCount} 
-      />
+    <div>
+      {isMobile &&
+            <div className="Home-Page">
+            <BigTitle />
+            <PlaceCounter 
+              loading={loading} // Pass loading state
+              countryCount={uniqueCountryCount} 
+              cityCount={uniqueCityCount} />
+      </div>}
+      {isTablet &&
+            <div className="Home-Page">
+               {/* style={{  width:"100vw", display: "flex", flexDirection: "column", textAlign: "left", justifyContent: "space-evenly" }}> */}
+            <BigTitle />
+            <PlaceCounter 
+              loading={loading} // Pass loading state
+              countryCount={uniqueCountryCount} 
+              cityCount={uniqueCityCount} />
+      </div>}
+      {isDesktop &&
+            <div className="Home-Page" style={{  width:"100vw", display: "flex", flexDirection: "row", textAlign: "left", justifyContent: "space-evenly" }}>
+            <BigTitle />
+            <PlaceCounter 
+              loading={loading} // Pass loading state
+              countryCount={uniqueCountryCount} 
+              cityCount={uniqueCityCount} />
+      </div>}
+      
     </div>
   );
 };

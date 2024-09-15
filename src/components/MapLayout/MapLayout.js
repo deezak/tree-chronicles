@@ -6,15 +6,12 @@ import { Outlet } from 'react-router-dom';
 import './MapLayout.css'
 const MapLayout =({active, setActive, user, handleLogout}) =>{
     return(
-        <>
         <div className = "mapLayout">
             <AltNavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
             <Outlet className="page-body"/>
             {/* <Sides/> */}
             {/* <Footer className="layout-footer"/> */}
         </div>
-        {/* <main>{children}</main> */}
-        </>
     )
 }
 

@@ -66,7 +66,7 @@
 
 }
 .std-nav-bar-wrapper{
-    width: 100%;
+    
     /* height: 49px; */
     text-align: center;
     flex-shrink: 0;
@@ -74,21 +74,73 @@
     /* height: 85px; */
     display: flex;
     justify-content: space-between;
-    /* padding: 11vh 2vw 0vh 2vw; */
-    /* margin: 12vh 7vw 0vw 7vw; */
-    /* padding: 0.2rem calc((100vw - 1000px) / 2); */
     z-index: 12;
     align-items: center;
     
 }
+
+@media only screen and (max-width: 767px) {
+    .std-nav-bar-wrapper{
+    width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding: 0vh 2vw;
+    }
+    .list-right{
+        padding-right:1vw;
+        width:100vw;
+        display:inline;
+    }
+    .list-left a{
+        padding: 14px 20px;
+        font-size: 0.5em;
+    }
+    .std-nav-bar-wrapper .list-left{
+        padding-left:1em;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width:1279px){
+    .std-nav-bar-wrapper{
+        width: 100%;
+        padding: 0vh 2vw;
+        }
+        .list-right{
+            padding-right:1vw;
+            width:100vw;
+            display:inline;
+        }
+        .list-left a{
+            padding: 14px 20px;
+            font-size: 0.5em;
+        }
+        .std-nav-bar-wrapper .list-left{
+            padding-left:1em;
+        }
+}
+  @media only screen and (min-width: 1280px) {
+    .list-right{
+        float:right;
+        padding-right: 4rem;
+    }
+    .std-nav-bar-wrapper{
+        /* width: 100vw; */
+    }
+    .list-left a{
+        padding: 14px 20px;
+        font-size: 2em;
+    }
+    .std-nav-bar-wrapper .list-left{
+        padding-left:4em;
+    }
+}
+
 .font-icon{
     font-size: 25px;
 }
 .list-left a{
     display: flex;
     /* width: 50vw; */
-    padding: 14px 20px;
-    font-size: 30px;
+    /* padding: 14px 20px; */
     /* margin: 17vh 0vh 10vh 2vh ; */
     align-items: center;
     /* font-weight: 500; */
@@ -107,8 +159,8 @@
 
 .list-right{
     float:right;
-    padding-right: 4rem;
-    padding-left: 0;
+    /* padding-right: 4rem; */
+    /* padding-left: 0; */
     /* width: 30vw; */
     display: flex;
     justify-content: flex-end;
