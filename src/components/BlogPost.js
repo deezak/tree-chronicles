@@ -28,8 +28,10 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
         )}
         <div className='blog-card-flex'>
             <div className="title-content">
-              <h3><a href={`/detail/${item.id}`}>{item.title}</a></h3>
-              {/* <div class="intro"> <a href="#">Inspiration</a> </div> */}
+              
+              <Link to={`/detail/${item.id}`}>
+                <h3>{item.title}</h3>
+              </Link>
             </div>
             <div className="card-info short-description">
             {item.description}
