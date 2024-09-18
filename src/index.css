@@ -1,11 +1,11 @@
 
-/* html, body{
+html, body{
   padding: 0;
   margin: 0;
-} */
+}
 body {
   /* margin: 0; */
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   height: 100%;
     
     /* overflow: auto; 
