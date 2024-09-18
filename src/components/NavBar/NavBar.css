@@ -84,7 +84,7 @@
     width: 100%;
       display: flex;
       flex-direction: row;
-      padding: 3vh 2vw 0vh 2vw;
+      /* padding: 1vh 2vw 0vh 2vw; */
     }
     .list-right{
         padding-right:1vw;

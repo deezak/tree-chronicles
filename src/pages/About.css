@@ -2,18 +2,28 @@
 		font-family: 'glassure';
 		src: url('../assets/fonts/Glassure.otf');
 	}
-/* mobile */
-  @media only screen and (max-width: 768px) {
+  /* small mobile */
+  @media only screen and (max-width: 425px) {
     .ticket-head {
       background-position: center;
       background-size: cover;
       border-radius: 0px 0 0 0px;
       color: white;
       width: 100%;
-      height: 25%;
+      height: 21%;
       position: absolute;
-      top: -23%;
+      top: -21%;
       right: 0%;
+    }
+    .flight-info {
+      width: 53%;
+    }
+    .ticket-head img{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      /* top: -2px; */
+  
     }
 
     .disclaimer h3{
@@ -38,8 +48,123 @@
     }
     .container-fluid-about {
       position: absolute;
-      transform: translateY(43%) translateX(25%);
-      width: 69%;
+      transform: translateY(37%) translateX(12%);
+      width: 82%;
+    }
+    .passenger h4{
+      color: var(--magic-yellow);
+      font-weight: 500;
+      /* text-shadow: 0px 0px 0.4em; */
+      font-size: 2.5em;
+      font-family: 'glassure';
+    }
+    .all-flight-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 2vh;
+    }
+    .passenger{
+      display: flex;
+      flex-direction: column;
+      /* position: relative;
+      top: 45px; */
+    }
+    .barcode {
+      left: 58%;
+      top: 14%;
+      height: 90px;
+      width: 90px;
+      position: absolute;
+    }
+    .ticket {
+      display: flex;
+      border-radius: 0px;
+      /* display: inline-block; */
+      /* max-width: 75vw; */
+      text-align: left;
+      /* height:350px; */
+      text-transform: uppercase;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    .ticket-body {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px dashed white;
+      padding: 4vh 0vw 4vh 0vw;
+      position: relative;
+      width: 79%;
+      
+    }
+    .ticket-body p {
+      color: #A2A2A2;
+      font-size: 12px;
+      margin-bottom:0em;
+      font-family: "cutout";
+    }
+    .ticket.dark {
+      /* background-color: var(--dark-complement); */
+      background-image: url("../assets/images/textures/blackcrinkle.jpg");
+      background-size: cover;
+      color: white;
+      box-shadow: 0px 0px 25px #ffffff0f;
+    }
+    .flight-info .f-right{
+      flex-direction: column;
+    }
+  }
+/* reg mobile */
+  @media only screen and (max-width: 768px) and (min-width: 426px) {
+    .ticket-head {
+      background-position: center;
+      background-size: cover;
+      border-radius: 0px 0 0 0px;
+      color: white;
+      width: 100%;
+      height: 40%;
+      position: absolute;
+      top: -38%;
+      right: 0%;
+    }
+    .flight-info {
+      width: 44%;
+    }
+    .ticket-head img{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      /* top: -2px; */
+  
+    }
+
+    .disclaimer h3{
+      font-family: 'glassure';
+      color:var(--magic-yellow);
+      font-style: normal;
+      text-align: center;
+      font-size: 2.5em;
+    }
+  
+    .disclaimer {
+      color: var(--grey-accent);
+      /* font-family: "IM Fell French Canon"; */
+      font-family: "standard";
+      font-size: 16px;
+      font-weight:300;
+      font-style: italic;
+      line-height: 1.2;
+      padding: 15px 25px;
+      text-transform: none;
+      text-align: center;
+    }
+    .container-fluid-about {
+      position: absolute;
+      transform: translateY(55%) translateX(50%);
+      width: 50%;
     }
     .passenger h4{
       color: var(--magic-yellow);
@@ -61,7 +186,124 @@
       top: 45px; */
     }
     .barcode {
-      left: 56%;
+      left: 53%;
+      top: 11%;
+      height: 110px;
+      width: 110px;
+      position: absolute;
+    }
+    .ticket {
+      display: flex;
+      border-radius: 0px;
+      /* display: inline-block; */
+      /* max-width: 75vw; */
+      text-align: left;
+      /* height:350px; */
+      text-transform: uppercase;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    .ticket-body {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px dashed white;
+      padding: 4vh 0vw 4vh 0vw;
+      position: relative;
+      width: 74%;
+      
+    }
+    .ticket-body p {
+      color: #A2A2A2;
+      font-size: 12px;
+      margin-bottom:0em;
+      font-family: "cutout";
+    }
+    .ticket.dark {
+      /* background-color: var(--dark-complement); */
+      background-image: url("../assets/images/textures/blackcrinkle.jpg");
+      background-size: cover;
+      color: white;
+      box-shadow: 0px 0px 25px #ffffff0f;
+    }
+    .flight-info .f-right{
+      flex-direction: column;
+    }
+  }
+  /* tablet */
+  @media only screen and (min-width: 768px) and (max-width:1279px){
+    .ticket-head {
+      background-position: center;
+        background-size: cover;
+        border-radius: 0px 0 0 0px;
+        color: white;
+        width: 29%;
+        height: 50%;
+        position: absolute;
+        top: 7%;
+        right: 13%;
+    }
+    .ticket-head img{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      /* right: 1px; */
+  
+    }
+
+    .disclaimer h3{
+      font-family: 'glassure';
+      color:var(--magic-yellow);
+      font-style: normal;
+      text-align: center;
+      font-size: 2.5em;
+    }
+  
+    .disclaimer {
+      color: var(--grey-accent);
+      /* font-family: "IM Fell French Canon"; */
+      font-family: "standard";
+      font-size: 16px;
+      font-weight:300;
+      font-style: italic;
+      line-height: 1.2;
+      padding: 15px 25px;
+      text-transform: none;
+      text-align: center;
+    }
+    .container-fluid-about {
+      position: absolute;
+      transform: translateY(17%) translateX(25%);
+      width: 69%;
+      height: 85%;
+  }
+
+    .passenger h4{
+      color: var(--magic-yellow);
+      font-weight: 500;
+      /* text-shadow: 0px 0px 0.4em; */
+      font-size: 3em;
+      font-family: 'glassure';
+    }
+    .all-flight-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-bottom: 0vh;
+    }
+    .flight-info {
+      width: 36%;
+    }
+    .passenger{
+      display: flex;
+      flex-direction: column;
+      /* position: relative;
+      top: 45px; */
+    }
+    .barcode {
+      left: 30%;
       top: 11%;
       height: 110px;
       width: 110px;
@@ -100,111 +342,11 @@
       /* background-color: var(--dark-complement); */
       background-image: url("../assets/images/textures/blackcrinkle.jpg");
       color: white;
+      background-size: contain;
       box-shadow: 0px 0px 25px #ffffff0f;
     }
     .flight-info .f-right{
       flex-direction: column;
-    }
-  }
-  /* tablet */
-  @media only screen and (min-width: 768px) and (max-width:1279px){
-    .ticket-head {
-      background-position: center;
-      background-size: cover;
-      border-radius: 0px 0 0 0px;
-      color: white;
-      width: 120px;
-      height: 25%;
-      /* position: absolute; */
-      top: 6%;
-      right: 11%;
-    }
-
-    .disclaimer h3{
-      font-family: 'glassure';
-      color:var(--magic-yellow);
-      font-style: normal;
-      text-align: center;
-    }
-  
-    .disclaimer {
-      color: var(--grey-accent);
-      /* font-family: "IM Fell French Canon"; */
-      font-family: "standard";
-      font-size: 16px;
-      font-weight:300;
-      font-style: italic;
-      line-height: 1.2;
-      padding: 15px 25px;
-      text-transform: none;
-      text-align: center;
-    }
-    .container-fluid-about {
-      position: absolute;
-      left: 50%;
-      top: 59%;
-      transform: translateY(-50%) translateX(-50%);
-      width: 50%;
-      /* height:80%; */
-    }
-    .passenger h4{
-      color: var(--magic-yellow);
-      font-weight: 500;
-      /* text-shadow: 0px 0px 0.4em; */
-      font-size: 3.5em;
-      font-family: 'glassure';
-    }
-    .all-flight-info{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding-bottom: 2vh;
-    }
-    .passenger{
-      display: flex;
-      flex-direction: column;
-      /* position: relative;
-      top: 45px; */
-    }
-    .barcode {
-      left: 5%;
-      height: 110px;
-      width: 110px;
-      position: absolute;
-        }
-    .ticket {
-      display: flex;
-      border-radius: 0px;
-      /* display: inline-block; */
-      /* max-width: 75vw; */
-      text-align: left;
-      /* height:350px; */
-      text-transform: uppercase;
-      width: 100%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  
-    }
-    .ticket-body {
-      display: flex;
-      flex-direction: column;
-      border-bottom: 1px dashed white;
-      padding: 4vh 3vw 4vh 3vw;
-      position: relative;
-      width: 70%;
-      
-    }
-    .ticket-body p {
-      color: #A2A2A2;
-      font-size: 12px;
-      margin-bottom:0em;
-      font-family: "cutout";
-    }
-    .ticket.dark {
-      background-image: url("../assets/images/textures/blackcrinkle.jpg");
-      color: white;
-      box-shadow: 0px 0px 25px #ffffff0f;
     }
 
   }
@@ -254,9 +396,13 @@
     background-size: cover;
     border-radius: 0px 0 0 0px;
     color: white;
-    width: 700px;
+    width: 86vw;
     height: 100%;
     position: relative;
+  }
+  .ticket-head img{
+    height:100%;
+    width:100%;
   }
   .ticket-head .from-to {
     /* text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.9); */
@@ -307,6 +453,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 2vh;
+    width: 19vw;
   }
   .ticket-body .flight-info {
     margin-top: 15px;
@@ -357,9 +504,10 @@
     /* transform: translate(70%, -45%); */
   }
   .barcode {
-    left: 10%;
-    height: 100px;
-    width: 100px;
+    left: 58%;
+    top: 12%;
+    height: 120px;
+    width: 120px;
     position: absolute;
   }
   
@@ -368,15 +516,18 @@
     color:var(--magic-yellow);
     font-style: normal;
     text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
   }
 
   .disclaimer {
     color: var(--grey-accent);
     /* font-family: "IM Fell French Canon"; */
     font-family: "standard";
-    font-size: 16px;
-    font-weight:300;
-    font-style: italic;
+    font-size: 1.2em;
+    font-weight:500;
+    text-align: center;
+    /* font-style: italic; */
     line-height: 1.2;
     padding: 15px 25px;
     text-transform: none;

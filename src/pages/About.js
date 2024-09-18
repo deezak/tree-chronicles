@@ -24,7 +24,9 @@ const About = () => {
 
   <div className="ticket-container">
     <div className="ticket dark">
+
       <div className="ticket-head" style={{backgroundImage: `url("./meme.jpg")`}}>
+        <img src="./frame.png" alt="frame"/> 
         <div className="layer"></div>
         {/* <div className="from-to">
           <div className='from-location'>JAX</div> 

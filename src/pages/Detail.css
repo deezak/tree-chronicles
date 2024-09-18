@@ -1,3 +1,59 @@
+/* mobile view */
+  @media (max-width: 767px) {
+    .prev-icon{
+      scale: 0.04;
+      left: 8vw;
+    }
+    
+    .next-icon{
+      scale: 0.04;
+      right: 8vw;
+    }
+  }
+
+  /* tablet  */
+  @media only screen and (min-width: 768px) and (max-width:1279px){
+    .prev-icon{
+      scale: 0.05;
+      left: 3vw;
+    }
+    
+    .next-icon{
+      scale: 0.05;
+      right: 3vw;
+    }
+  }
+
+  /* desktop */
+  @media (min-width: 1280px) {
+    .prev-icon{
+      scale: 0.05;
+      left: 3vw;
+    }
+    
+    .next-icon{
+      scale: 0.05;
+      right: 3vw;
+      opacity:0.8;
+    }
+
+  }
+
+  .prev-icon{
+    z-index: 100;
+    width: fit-content;
+    filter: invert(1);
+    position: relative;
+  }
+  
+  .next-icon{
+    z-index: 100;
+    width: fit-content;
+    filter: invert(1);
+    position: relative;
+    transform: rotate(180deg);
+  }
+
 .left-arrow{
     width: 10%;
     font-size: 40px;
@@ -24,26 +80,8 @@
     z-index: 100;
 }
 
-.prev-icon{
-  scale: 0.05;
-  z-index: 100;
-  width: fit-content;
-  filter: invert(1);
-  position: relative;
-  left: 3vw;
-  opacity:0.8;
-}
 
-.next-icon{
-  scale: 0.05;
-  z-index: 100;
-  width: fit-content;
-  filter: invert(1);
-  position: relative;
-  right: 3vw;
-  opacity:0.8;
-  transform: rotate(180deg);
-}
+
 
 
 .halftone {
