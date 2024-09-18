@@ -227,15 +227,11 @@ function Maps({setActive, user, active}) {
                   d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
                 </g> */}
                 <image
-                  href={"./215.png"} // Use 'href' to link the image
+                  href={"./star-yellow.png"} // Use 'href' to link the image
                   width="9" // Set the width of the image
                   height="9" // Set the height of the image
                   transform="translate(-4,-6)" // Adjust positioning
-                  style={{ 
-                    filter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)',
-                    WebkitFilter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)', // for Safari/Chrome
-                    MozFilter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)', // for Firefox
-                    pointerEvents: "none",
+                  style={{ pointerEvents: "none",
                    }}
                 />
               {/* <text
