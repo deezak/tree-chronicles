@@ -41,8 +41,8 @@ const About = () => {
             <h4>Dina<br/>Zakaria</h4>
             <img className="barcode" src='./qr.png' alt="qr code" />
           </div>
-          
         </div>
+
         
         <div className = "all-flight-info">
           <div className="flight-info row">
@@ -74,6 +74,8 @@ const About = () => {
             </div>
           </div>
         </div>
+        <img className="squiggle" src="./squiggle.png" style={{filter:"invert(0.85)"}}alt="marker line"/>
+
         {/* <div className="flight-date">Flight Time: ASAP</div> */}
         {/* <div className="barcode"> */}
         
