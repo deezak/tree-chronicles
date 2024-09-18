@@ -37,7 +37,10 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             {item.description}
           <Link to={`/detail/${item.id}`}>
             {/* <a href="#">Read Article<FontAwesomeIcon icon="fa-solid fa-angle-right" style={{marginLeft:"5px"}}/></a> */}
-            <button ><span>Read Article</span><FontAwesomeIcon icon="fa-solid fa-angle-right" style={{marginLeft:"5px"}}/></button>
+            <button >
+              <span>Read Article</span>
+              <FontAwesomeIcon icon="fa-solid fa-angle-right" style={{marginLeft:"5px"}}/>
+            </button>
 
           </Link>
             </div>
@@ -49,10 +52,19 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             {/* <li><span class="licon icon-like"></span><a href="#">2</a></li>
             <li><span class="licon icon-com"></span><a href="#">12</a></li> */}
             {/* <li><span class="licon icon-dat"></span>{item.timestamp.toDate().toDateString()}</li> */}
-            <li><FontAwesomeIcon icon="fa-regular fa-calendar" style={{marginRight:"7px"}}/>{item.timestamp.toDate().toDateString().substring(4)}</li>
+            <li>
+              {/* <FontAwesomeIcon icon="fa-regular fa-calendar" style={{marginRight:"7px"}}/> */}
+              <img src="./212.png" alt="box" style={{width:"20px", height:"20px", marginRight:"5px", paddingBottom:"5px",filter:"invert(1)"}}/>
+              {item.timestamp.toDate().toDateString().substring(4)}
+              </li>
+
             {/* <li className='category bg-light text-primary opacity-50'><span className="licon"></span><a href="#">{item.category}</a></li> */}
             {/* <li><FontAwesomeIcon icon="fa-solid fa-rectangle-list" style={{marginRight:"7px", marginLeft:"20px"}} />{item.category}</li> */}
-            <li><FontAwesomeIcon icon="fa-solid fa-clipboard-list"style={{marginRight:"7px", marginLeft:"20px"}} />{item.category}</li>
+            <li>
+              {/* <FontAwesomeIcon icon="fa-solid fa-clipboard-list"style={{marginRight:"7px", marginLeft:"20px"}} /> */}
+              <img src="./214.png" alt="box" style={{width:"20px", height:"20px",marginRight:"5px",  paddingBottom:"5px",filter:"invert(1)"}}/>
+              {item.category}
+              </li>
           </ul>
         </div>
         <div className="gradient-overlay"></div>

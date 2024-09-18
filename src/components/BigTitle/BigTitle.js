@@ -11,8 +11,11 @@ const BigTitle = () => {
   return (
     <div>
        {isMobile && <div className="big-title">
+          
+          <div className="tree-chronicles">
           <div className="the">the</div>
-          <div className="tree-chronicles"><span>TRee</span> <span>ChRoNiCLeS</span></div>
+            <span>TRee</span> <span>ChRoNiCLeS</span>
+            </div>
           {/* <div className= "by-dina"> by Dina</div> */}
         </div>}
         {isTablet && <div className="big-title">

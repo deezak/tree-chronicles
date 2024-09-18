@@ -26,7 +26,7 @@ function Maps({setActive, user, active}) {
 
   const projection = () => {
     return geoTimes()
-      .translate([setMapDimensions.width / 2, setMapDimensions.height / 2])
+      .translate([setMapDimensions().width / 2, setMapDimensions().height / 2])
       .scale(1);
   };
   const containerRef = useRef();
@@ -162,6 +162,7 @@ function Maps({setActive, user, active}) {
           <>
           {/* console.log("POSITION "+ position.k);
           console.log("SCALE "+ 1/position.k); */}
+        
               <Geographies geography="/worldMap.json">
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -186,19 +187,19 @@ function Maps({setActive, user, active}) {
                 style={{
                   
                   hover:{
-                    fill: selectedCountry === geo.properties.name ? "var(--yellow-dark)" : "#e2e2e2fa",
+                    fill: selectedCountry === geo.properties.name ? "var(--yellow-dark)" : "#f3f3f330",
                     outline: "none",
-                    stroke:"#ffffff",
-                    strokeWidth:"1"
+                    stroke:"#e2e2e2fa",
+                    strokeWidth:"1.1"
                     // boxShadow: "2px 2px 10px var(--magic-yellow)"
                   },
                   default: { 
                     outline: "#ff",
-                    transitionDuration: "0.2s",
-                    fill: "#b3b3b350",//"var(--dark-complement)",
+                    transitionDuration: "0.2s", 
+                    fill: "#1f1f1f",//"var(--dark-complement)",
                     // fill: `url('../assets/images/textures/texture.svg')`,
-                    stroke:"#fafafaa0",
-                    strokeWidth:"0.2"
+                    stroke:"#fafafa50",
+                    strokeWidth:"0.6"
                   },
                   pressed: { outline: "none" },
                 }}
@@ -211,7 +212,7 @@ function Maps({setActive, user, active}) {
             
           {markers.map(({ country, lat, long }, index) => (
             <Marker key={`${country}-${index}`} coordinates={[long, lat]}>
-              <g
+              {/* <g
                   fill="none"
                   stroke="var(--yellow-dark)"
                   strokeWidth={1.5}
@@ -224,14 +225,23 @@ function Maps({setActive, user, active}) {
                   <circle fill ="var(--yellow-dark)" cx="12" cy="10" r={3} />
                   <path 
                   d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                </g>
-              <text
+                </g> */}
+                <image
+                  href={"./215.png"} // Use 'href' to link the image
+                  width="9" // Set the width of the image
+                  height="9" // Set the height of the image
+                  transform="translate(-4,-6)" // Adjust positioning
+                  style={{ boxShadow: '2px 2px 8px var(--magic-yellow)',
+                    filter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)',
+                    pointerEvents: "none",
+                   }}
+                />
+              {/* <text
                 textAnchor="middle"
                 y={10}
                 style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
               >
-                {/* {1/position.k} */}
-              </text>
+              </text> */}
             </Marker>
             
           ))}

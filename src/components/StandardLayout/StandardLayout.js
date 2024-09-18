@@ -12,7 +12,10 @@ const StandardLayout =({active, setActive, user, handleLogout}) =>{
         <>
         <div className = "standardLayout">
             {/* <div className='rectangle-border'> */}
-                <NavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
+                <NavBar setActive ={setActive} 
+                    active={active} 
+                    user={user} 
+                    handleLogout={handleLogout} />
                 <Outlet className="page-body"/>
             {/* </div> */}
             {/* <Sides/> */}

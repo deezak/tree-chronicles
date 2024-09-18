@@ -36,9 +36,10 @@ const About = () => {
         <div style={{display:"flex", alignItems:"center"}}>
           <div className="passenger">
             <p>passenger</p>
-            <h4>Dina Zakaria</h4>
+            <h4>Dina<br/>Zakaria</h4>
+            <img className="barcode" src='./qr.png' alt="qr code" />
           </div>
-          <img className="barcode" src='./qr.png' alt="qr code" />
+          
         </div>
         
         <div className = "all-flight-info">

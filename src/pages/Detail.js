@@ -26,8 +26,14 @@ return (
     <div className='single'>
         <div className='blog-title-box'>
             <Carousel style={{ maxHeight: '100vh' }} activeIndex={imageIndex} onSelect={(selectedIndex) => setIndex(selectedIndex)}
-            nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{scale: "1.3", zIndex: "100"}}/>}
-            prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{scale: "1.3", zIndex: "100"}}/>}
+            // nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{scale: "1.3", zIndex: "100"}}/>}
+            // prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{scale: "1.3", zIndex: "100"}}/>}
+            nextIcon={<span aria-hidden="true" className="next-icon">
+                <img src="../markerArrow.png" alt="arrow"/> 
+                </span>}
+            prevIcon={<span aria-hidden="true" className="prev-icon" > 
+                <img src="../markerArrow.png" alt="arrow" style={{opacity:"0.8"}}/>  
+                </span>}
             interval={null} > 
             {/* // Disable auto sliding */}
                 {blog?.imgUrls.map((imageUrl, index) => (

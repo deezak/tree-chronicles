@@ -31,7 +31,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
   return (
     <>
       {isMobile && <div className="std-nav-bar-wrapper">
-        <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between", width:"100%", alignItems:"center"}}>
+        <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between",height:"100%", width:"100%", alignItems:"center"}}>
           
           <SideBar className="list-left" user={user} setActive={setActive} style={{position:"relative"}}></SideBar>
           
@@ -62,7 +62,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
           </ul>         
     </div>}
     {isTablet && <div className="std-nav-bar-wrapper">
-      <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between", width:"100%", alignItems:"center"}}>
+      <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between", height:"100%",width:"100%", alignItems:"center"}}>
           
           <SideBar className="list-left" user={user} setActive = {setActive}style={{position:"relative"}}></SideBar>
           
@@ -93,15 +93,39 @@ const NavBar = ({setActive, user, handleLogout}) => {
           </ul>             
     </div>}
     {isDesktop && <div className="std-nav-bar-wrapper">
-        <nav style={{display:"flex", justifyContent:"space-between", width:"100%", alignItems:"center"}}>
-          <ul className ="list-left">
-            <li onClick={() => setActive("home") }><Link to="/">Home</Link></li>
-            <li onClick={() => setActive("blogs")}><Link to="/blogs">Blog</Link></li>
-            <li onClick={() => setActive("maps")}><Link to="/maps">Maps</Link></li>
-            <li onClick={() => setActive("about")}><Link to="/about">About</Link></li>
+        <nav style={{display:"flex", justifyContent:"space-between", width:"100%", height:"100%", alignItems:"center"}}>
+          <ul className ="list-left"> 	
+
+            <li onClick={() => setActive("home") }>
+              <Link to="/">Home</Link>
+              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              </li>
+            
+            
+            <li onClick={() => setActive("blogs")}>
+              <Link to="/blogs">Blog</Link>
+              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              </li>
+
+            <li onClick={() => setActive("maps")}>
+              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              <Link to="/maps">Maps</Link>
+              </li>
+
+            <li onClick={() => setActive("about")}>
+              <Link to="/about">About</Link>
+              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+
+              </li>
+
             {userId ?(
               <>
-                <li onClick={() => setActive("create")}><Link to="/create">Create</Link></li>
+                <li onClick={() => setActive("create")}>
+                  
+                  <Link to="/create">Create</Link>
+                  <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+                  </li>
+
               </>
             ):(
               <></>

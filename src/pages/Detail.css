@@ -24,6 +24,28 @@
     z-index: 100;
 }
 
+.prev-icon{
+  scale: 0.05;
+  z-index: 100;
+  width: fit-content;
+  filter: invert(1);
+  position: relative;
+  left: 3vw;
+  opacity:0.8;
+}
+
+.next-icon{
+  scale: 0.05;
+  z-index: 100;
+  width: fit-content;
+  filter: invert(1);
+  position: relative;
+  right: 3vw;
+  opacity:0.8;
+  transform: rotate(180deg);
+}
+
+
 .halftone {
     --halftone-size: 2px;
     --halftone-bleed: 1;

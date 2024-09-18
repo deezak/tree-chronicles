@@ -184,6 +184,23 @@ $yellow:#f5bc04;
   }
 // mobile view
   @media (max-width: 767px) {
+	.blog-title-box{
+		.blog-title{
+			bottom: 45vh;
+		}
+	}
+	.mx-server{
+		height:40vh;
+	}
+	.search-results-header{
+		font-size: 3em;
+	}
+	.placecounter-number{
+		font-size: 2.5em;
+	}
+	.placecounter-label{
+		font-size: 1.2em;   
+	}
 	.side-menu-button{
 		padding-top: 3vh;
 	}
@@ -196,7 +213,7 @@ $yellow:#f5bc04;
 		justify-content: center;
 	}
 	.counter-unit{
-		width:35vw;
+		width:31vw;
 	}
 	.place{
 		// width:100vw;
@@ -204,6 +221,9 @@ $yellow:#f5bc04;
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
 		width: 78vw;
 	  }
+	.search-box {
+		border: solid 0.3em var(--grey-accent);
+	}
 
 	  .blog-title {
         .single & {
@@ -211,6 +231,7 @@ $yellow:#f5bc04;
 			margin: 0vh auto;
 		}
         h2 {
+			
 			font-weight: 300;
             .single & {
 				font-size: 3em;
@@ -458,9 +479,28 @@ $yellow:#f5bc04;
 	color: #000; 
   }
   //tablet
-  @media (min-width: 769px) {
+  @media only screen and (min-width: 768px) and (max-width:1279px){
+	.blog-title-box{
+		.blog-title{
+			bottom: 48vh;
+		}
+	}
+	.mx-server{
+		height:40vh;
+	}
+	.search-results-header{
+		font-size: 3em;
+	}
+	.placecounter-number{
+		font-size: 4em;
+		margin-bottom: 0;
+	}
+	.placecounter-label{
+		font-size: 1.3em;
+	}
+
 	.side-menu-button{
-		padding-top: 4vh;
+		// padding-top: 4vh;
 	}
 	.latest-posts{
 		font-size: 5em;
@@ -469,10 +509,13 @@ $yellow:#f5bc04;
 		// width:37vw;
 	}
 	.counter-unit{
-		width: 20vw;
+		width: 34vw;
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		width: 29vw;
+		width: 50vw;
+	}
+	.search-box {
+		border: solid 0.3em var(--grey-accent);
 	}
 	.blog-title {
 		.single & {
@@ -511,6 +554,26 @@ $yellow:#f5bc04;
 }
   //desktop
 	@media only screen and (min-width: 1280px) {
+		.blog-title-box{
+			.blog-title{
+				bottom: 50vh;
+			}
+		}
+		.mx-server{
+			height:50vh;
+		}
+		.search-results-header{
+			font-size: 4em;
+		}
+		.counter-unit{
+			width:23vw;
+		}
+		.placecounter-number{
+			font-size: 3.3em;
+		}
+		.placecounter-label{
+			font-size: 1.3em;   
+		}
 		.side-menu-button{
 			padding-top: 6vh;
 		}
@@ -523,6 +586,7 @@ $yellow:#f5bc04;
 				margin: 0vh auto;
 			}
 			h2 {
+				padding: 0 5vw 0 5vw;
 				font-weight: 300;
 				.single & {
 					font-size: 5em;
@@ -550,6 +614,12 @@ $yellow:#f5bc04;
 			font-size: 1.2em;
 		}
 	}
+	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
+		width:30vw;
+	}
+	.search-box {
+		border: solid 0.3em var(--grey-accent);
+	}
 }
 
 
@@ -564,7 +634,6 @@ $yellow:#f5bc04;
 }
 .placecounter-label{
 	font-family: "standard";
-	font-size: 22px;
 	// font-weight: 400;
 	color:var(--grey-accent);
 }
@@ -572,7 +641,7 @@ $yellow:#f5bc04;
 	font-family: "cutout";
 	// font-weight: 800;
 	color: var(--magic-yellow);
-	font-size: 68px;
+	// font-size: 68px;
 	// text-transform: uppercase;
 }
 .flex-across-counter{
@@ -587,7 +656,9 @@ $yellow:#f5bc04;
     align-items: center;
 }
 
-
+.side-menu-button{
+	position: absolute;
+}
 //   Blog Section
 .latest-posts{
 	display: flex;
@@ -605,11 +676,12 @@ $yellow:#f5bc04;
 
 .standardLayout{
     height: 100%;
+	width: 100%;
     display: flex;
     flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
-	// margin:50px;
+    justify-content: space-between;
+		// margin:50px;
 	// border: 1.5px solid #EAFF82;
 }
 
@@ -845,6 +917,18 @@ main {
 	transition: 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 
+.side-menu-button img {
+	transition: transform 0.2s ease;
+  }
+  
+  .side-menu-button:hover img {
+	content: url('../public/eye-closed.png'); /* Replace with the hover image */
+	top:30px;
+	// width:80px;
+	// height:50px;
+  }
+
+
 .blog-title-box {
     width: 38.2%;
 	z-index: 1;
@@ -885,7 +969,7 @@ main {
     .blog-title {
         z-index: 12;
 		position: relative;
-		bottom: 35vh;
+		// bottom: 35vh;
 		padding: 30px;
 		display: flex;
 		justify-content: center;
@@ -1369,26 +1453,11 @@ main {
 
 //search button
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-// html, body {
-//   font-family: Raleway, sans-serif;
-//   width: 100%;
-//   height: 100%;
-//   padding: 0;
-//   margin: 0;
-// }
-
-// body {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: nowrap;
-//   overflow: hidden;
-// }
 
 .search-box {
 //   font-size: 30px;
   margin-top: 1em;
-  border: solid 0.4em var(--grey-accent);
+//   border: solid 0.4em var(--grey-accent);
   display: inline-block;
   position: relative;
   border-radius: 2.5em;
@@ -1470,12 +1539,12 @@ main {
 //search results
 .search-results-header{
 	display: flex;
+
     justify-content: center;
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 	padding: 3vh 0vh 1vh 0vw;
     font-family: "cutout";
     color: var(--grey-accent);
-	
-    font-size: 60px;
+	font-weight:300;
 
 }

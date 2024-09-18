@@ -45,19 +45,21 @@
         /* width: 45%; */
     }
     .the{
-        font-size: 1.5em;
+        font-size: 0.3em;
         padding-right:0.2em;
         display: flex;
         justify-content: flex-start;
         /* padding: 11vh 0.5vw 0px 2vw; */
         vertical-align: top;
         align-items: flex-start;
+        position: absolute;
+        transform: translate(-100%, -300%);
     
     }
     
     .tree-chronicles{
         font-family: 'glassure';
-        font-size: 5.2em;
+        font-size: 4em;
         font-weight: 100;
         display: flex;
         flex-direction: column;
@@ -65,6 +67,7 @@
         justify-content: center;
         color: var(--magic-yellow);
         line-height: 1.05;
+        position: relative;
     }
   }
   @media only screen and (min-width: 768px) and (max-width:1279px){
@@ -88,11 +91,14 @@
         /* padding: 11vh 0.5vw 0px 2vw; */
         vertical-align: top;
         align-items: flex-start;
+        position: absolute;
+        transform: translate(-415%, -25%);
     
     }
     
     .tree-chronicles{
-        font-size: 8em;
+        position: relative;
+        font-size: 6em;
         font-weight: 100;
         display: flex;
         flex-direction: column;

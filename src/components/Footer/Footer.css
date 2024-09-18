@@ -2,13 +2,32 @@
     font-family: 'tropikal';
     src: url('../../assets/fonts/Tropikal-Bold.otf');
 }
+@media only screen and (max-width: 767px) {
+    .footer{
+        font-size:0.75em;
+        padding: 3vh 2vw 3vh 2vw;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1279px){
+    .footer{
+        font-size: 1em;
+        padding: 0vh 2vw 3vh 2vw;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .footer{
+        font-size:15px;
+        padding:3vh 2vw 1vh 2vw;
+    }
+
+
+}
 .footer{
     /* position: sticky; */
     /* left: 0;
     bottom: 0; */
     width: 100%;
     height: 10vh;
-    font-size:15px;
     font-family: 'standard';
     letter-spacing: .1rem;
     /* background-color: #EAFF82; */
@@ -18,5 +37,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding:3vh 0 1vh 0;
 }

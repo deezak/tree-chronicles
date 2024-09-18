@@ -99,7 +99,7 @@ const SearchResult=({ user }) => {
         ) : (
           <>
             {/* <div style={{ color: "whitesmoke" }}>No results found</div> */}
-            <img src="./server-trans-white.png" alt="No Results Found" style={{height:"50vh"}}></img>
+            <img src="./server-trans-white.png" alt="No Results Found" className="mx-server"></img>
           </>
         )}
       </div>
