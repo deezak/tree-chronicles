@@ -231,8 +231,10 @@ function Maps({setActive, user, active}) {
                   width="9" // Set the width of the image
                   height="9" // Set the height of the image
                   transform="translate(-4,-6)" // Adjust positioning
-                  style={{ boxShadow: '2px 2px 8px var(--magic-yellow)',
+                  style={{ 
                     filter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)',
+                    WebkitFilter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)', // for Safari/Chrome
+                    MozFilter: 'invert(0.77) sepia(1.4) saturate(3.5) hue-rotate(-9deg)', // for Firefox
                     pointerEvents: "none",
                    }}
                 />

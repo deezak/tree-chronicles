@@ -27,7 +27,8 @@ body::before {
 	height: 100%;
 	background-image: url('./assets/images/collage.jpg');
 	background-repeat: no-repeat;
-	background-size:cover;
+	// background-size:cover;
+	background-position: center center;
 	background-attachment: fixed;
 	opacity: 1; /* Adjust the opacity as needed */
 	z-index: -1;
@@ -202,6 +203,9 @@ body::before {
   }
 // mobile view
   @media (max-width: 767px) {
+	body::before {
+		background-size:cover;
+		}
 	.blog-title-box{
 		.blog-title{
 			bottom: 30vh;
@@ -506,6 +510,9 @@ body::before {
   }
   //tablet
   @media only screen and (min-width: 768px) and (max-width:1279px){
+	body::before {
+		background-size:cover;
+		}
 	.blog-title-box{
 		.blog-title{
 			bottom: 38vh;
@@ -584,6 +591,9 @@ body::before {
 }
   //desktop
 	@media only screen and (min-width: 1280px) {
+		body::before {
+			background-size:cover;
+			}
 		.blog-title-box{
 			.blog-title{
 				bottom: 42vh;
