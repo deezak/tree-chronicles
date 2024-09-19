@@ -105,7 +105,7 @@ const Blogs = ({ setActive, user, active }) => {
                     <div className="block-loading blue"></div>
                 </div>
             ) : (
-                <div style={{ flex: "1" }}>
+                <div style={{ display: "block" }}>
                     
                     <BlogPost
                         className="blogs-flex"
