@@ -22,7 +22,7 @@ html,body{
 }
 	
 body::before {
-  background-image: url('./assets/images/right-collage.jpg');
+  background-image: url('../assets/images/right-collage.jpg');
   background-size:cover;
   background-attachment: fixed;
   }
