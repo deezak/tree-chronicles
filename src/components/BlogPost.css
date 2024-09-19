@@ -61,17 +61,24 @@ body {
     max-width: 250px;
 
   }
+  .blog-card h3,h1 {
+    font-size: 0.9em;
+  }
 }
-@media only screen and (min-width: 768px) and (max-width:1279px){
+@media only screen and (min-width: 768px) {
+  /* //and (max-width:1279px){ */
   .blog-card{
     max-width: 275px;
   }
+  .blog-card h3,h1 {
+    font-size: 1.1em;
+  }
 }
-@media only screen and (min-width: 1280) {
+/* @media only screen and (min-width: 1280px) {
   .blog-card{
     max-width: 275px;
   }
-}
+} */
 .blog-card a{ 
 color:#fff;
   text-decoration:none;
@@ -88,7 +95,7 @@ color:#fff;
   z-index: 10;
   position: absolute;
   top: 0px;
-  transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+  transition: 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 
 .blog0card-flex{
@@ -149,7 +156,7 @@ color:#fff;
 }
 
 .blog-card h3,h1 {
-  font-size: 1.1em;
+  /* font-size: 1.1em; */
   font-weight: 600;
   letter-spacing: 1px;
   /* font-family: 'Abril Fatface', serif; */
@@ -252,7 +259,7 @@ h3:after {
 .utility-info:after{
   content:" ";
   background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg) center no-repeat;
-  background-size: 30px auto;
+  background-size: 30px co;
   display:block;
   opacity: 0.4;
   /* position:absolute;
