@@ -21,9 +21,13 @@ html,body{
 	src: url('../assets/fonts/FeelingsOnOff.ttf');
 }
 	
-
+body::before {
+  background-image: url('./assets/images/right-collage.jpg');
+  background-size:cover;
+  background-attachment: fixed;
+  }
 body {
-  /* background: linear-gradient(to bottom, rgba(0,5,10,0.4) 0%,rgba(0,0,0,0) 100%); */
+
   font-family: 'feelings', serif;
 }
 .blog-card-flex{
@@ -58,7 +62,7 @@ body {
 }
 @media (max-width: 767px) {
   .blog-card{
-    max-width: 250px;
+    max-width: 245px;
 
   }
   .blog-card h3,h1 {
