@@ -221,11 +221,14 @@ body::before {
 	.placecounter-number{
 		font-size: 2.5em;
 	}
+	.placecounter-number p{
+		margin-bottom: 0;
+	}
 	.placecounter-label{
 		font-size: 1.1em;  
 	}
 	.side-menu-button{
-		padding-top: 3vh;
+		padding-top: 2vh;
 	}
 	.latest-posts{
 		font-size: 3em;
@@ -1500,7 +1503,7 @@ main {
 
 .search-box {
 //   font-size: 30px;
-  margin-top: 1em;
+  margin-top: 0.5em;
 //   border: solid 0.4em var(--grey-accent);
   display: inline-block;
   position: relative;
