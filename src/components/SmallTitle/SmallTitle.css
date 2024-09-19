@@ -33,7 +33,7 @@
     }
 
 }
-@media (min-width: 768px) and (max-width: 1280px) {
+@media (min-width: 768px) and (max-width: 1279px) {
     .small-tree-chronicles{
         font-size: 2em;
         letter-spacing: 2px;

@@ -513,7 +513,7 @@ body::before {
 	color: #000; 
   }
   //tablet
-  @media only screen and (min-width: 768px) and (max-width:1280px){
+  @media (min-width: 768px) and (max-width:1279px){
 	body::before {
 		background-image: url('./assets/images/collage.jpg');
 		background-size:cover;
@@ -596,7 +596,7 @@ body::before {
 	}
 }
   //desktop
-	@media only screen and (min-width: 1280px) {
+	@media (min-width: 1280px) {
 		body::before {
 			background-image: url('./assets/images/collage.jpg');
 			background-size:cover;

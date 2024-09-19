@@ -3,7 +3,7 @@
 		src: url('../assets/fonts/Glassure.otf');
 	}
   /* small mobile */
-  @media only screen and (max-width: 426px) {
+  @media (max-width: 426px) {
     .squiggle{
       width:100%;
       transform: scaleY(0.5);
@@ -122,7 +122,7 @@
     }
   }
 /* reg mobile */
-  @media only screen and (max-width: 768px) and (min-width: 426px) {
+  @media (max-width: 768px) and (min-width: 426px) {
     .squiggle{
       width:100%;
       transform: scaleY(0.5);
@@ -242,7 +242,7 @@
     }
   }
   /* tablet */
-  @media only screen and (min-width: 768px) and (max-width:1280px){
+  @media (min-width: 768px) and (max-width:1279px){
     .squiggle{
       width:100%;
       transform: scaleY(0.5);
@@ -364,7 +364,7 @@
 
   }
   /* desktop */
-  @media only screen and (min-width: 1280px) {
+  @media  (min-width: 1280px) {
     .squiggle{
       position: absolute;
       left: 51%;
