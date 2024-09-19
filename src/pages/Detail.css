@@ -9,6 +9,16 @@
       scale: 0.04;
       right: 8vw;
     }
+    .halftone {
+      --halftone-size: 1.5px;
+      --halftone-bleed: 1.4;
+      --halftone-separate-k: 1;
+      --halftone-dot-size: calc(var(--halftone-size)* var(--halftone-bleed));
+      --halftone-color-dot-size: var(--halftone-dot-size);
+      --halftone-rotation: -18deg;
+      position: relative;
+      filter: brightness(calc(0.5 + var(--halftone-bleed)* 0.3 - var(--halftone-separate-k)* 0.02)) blur(calc(var(--halftone-size)* 0.1)) contrast(1.1) blur(0.1px);
+    }
   }
 
   /* tablet  */
@@ -21,6 +31,17 @@
     .next-icon{
       scale: 0.05;
       right: 3vw;
+    }
+    .halftone {
+      --halftone-size: 2px;
+      --halftone-bleed: 1;
+      --halftone-separate-k: 2;
+      --halftone-dot-size: calc(var(--halftone-size)* var(--halftone-bleed));
+      --halftone-color-dot-size: var(--halftone-dot-size);
+      --halftone-rotation: -18deg;
+      position: relative;
+      filter: brightness(calc(0.5 + var(--halftone-bleed)* 0.3 - var(--halftone-separate-k)* 0.02)) blur(calc(var(--halftone-size)* 0.1)) contrast(1.1) blur(0.3px);
+
     }
   }
 
@@ -35,6 +56,17 @@
       scale: 0.05;
       right: 3vw;
       opacity:0.8;
+    }
+    .halftone {
+      --halftone-size: 2px;
+      --halftone-bleed: 1;
+      --halftone-separate-k: 2;
+      --halftone-dot-size: calc(var(--halftone-size)* var(--halftone-bleed));
+      --halftone-color-dot-size: var(--halftone-dot-size);
+      --halftone-rotation: -18deg;
+      position: relative;
+      filter: brightness(calc(0.5 + var(--halftone-bleed)* 0.3 - var(--halftone-separate-k)* 0.02)) blur(calc(var(--halftone-size)* 0.1)) contrast(1.1) blur(0.3px);
+
     }
 
   }
@@ -80,29 +112,6 @@
     z-index: 100;
 }
 
-
-
-
-
-.halftone {
-    --halftone-size: 2px;
-    --halftone-bleed: 1;
-    --halftone-separate-k: 2;
-    --halftone-dot-size: calc(var(--halftone-size)* var(--halftone-bleed));
-    --halftone-color-dot-size: var(--halftone-dot-size);
-    --halftone-rotation: -18deg;
-    position: relative;
-    filter: brightness(calc(0.5 + var(--halftone-bleed)* 0.3 - var(--halftone-separate-k)* 0.02)) blur(calc(var(--halftone-size)* 0.1)) contrast(1.1) blur(0.3px);
-    /* background-image:   radial-gradient(var(--halftone-color-dot-size) at center, #000, #666, #ccc, #fff),
-                        radial-gradient(var(--halftone-color-dot-size) at center, #000, #fff),
-                        radial-gradient(var(--halftone-color-dot-size) at center, black, white),
-                        radial-gradient(var(--halftone-color-dot-size) at center, cyan, white),
-                        radial-gradient(var(--halftone-color-dot-size) at center, magenta, white),
-                        radial-gradient(var(--halftone-color-dot-size) at center, yellow, white); */
-    /* background-size: 2.5px 2.5px; */
-    /* mix-blend-mode: screen;
-    background-blend-mode: multiply; */
-  }
   .halftone img {
     object-fit: cover; /* Cover the entire container without stretching */
     width: 100%;
