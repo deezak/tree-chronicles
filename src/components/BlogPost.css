@@ -21,11 +21,6 @@
 	src: url('../assets/fonts/FeelingsOnOff.ttf');
 }
 	
-body::before {
-  background-image: url('../assets/images/right-collage.jpg');
-  background-size:cover;
-  background-attachment: fixed;
-  }
 body {
 
   font-family: 'feelings', serif;
