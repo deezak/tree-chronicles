@@ -39,7 +39,7 @@ body::before {
     body::before {
       background-image: url('./assets/images/collageE.jpg');
       background-size:cover;
-      background-attachment: scroll;
+      /* background-attachment: scroll; */
       }
     }
 
