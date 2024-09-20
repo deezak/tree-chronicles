@@ -3,19 +3,29 @@
 }
 @media (max-width: 767px) {
   .blog-overlay::before {
-    top: 13vh;
+    top: 0vh;
     left: 0vw;
     right: 0;
-    bottom: 0;
+    bottom: 0px;
     transform-origin: center;
-    transform: scaleX(1.9) scaleY(2.5);
+    transform: scaleX(1.1) scaleY(4) rotate(-4deg);
+    background-image: url("../assets/images/rip4.png");
+
   }
+  .blog-overlay {
+    position: absolute;
+    bottom: 0%;
+    left: 70%;
+    transform: translateX(-68%) scale(0.5);
+    z-index: 10;
+    width: 100%;
+
+}
   .blog-header{
-    justify-content: flex-start;
-    text-shadow: 0px 0px #0f0a0d88;
-    letter-spacing: 0rem;
-    font-size: 2em;
-    padding: 20px 20px 0px 0px;
+    opacity: 0.8;
+    font-size: 3em;
+    top: 6vh;
+    position: relative;
   }
  
 }
@@ -27,15 +37,26 @@
     right: 0;
     bottom: 0;
     transform-origin: center;
-    transform: scaleX(1.7) scaleY(1.2);
+    transform: scaleX(1.5) scaleY(1.2);
+    background-image: url("../assets/images/rip5.png");
+
 }
   .blog-header{
     justify-content: flex-start;
     text-shadow: 0px 0px #0f0a0d88;
     letter-spacing: 0rem;
     font-size: 3em;
-    padding: 20px 20px 0px 0px;
+    padding: 30px 20px 0px 0px;
   }
+  .blog-overlay {
+    position: absolute;
+      bottom: -9%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.7);
+      z-index: 10;
+      width: 80vw;
+  }
+  
   
 }
 /* desktop */
@@ -47,6 +68,7 @@
     bottom: 0;
     transform-origin: center;
     transform: scaleX(2.2) scaleY(1.2);
+    background-image: url("../assets/images/rip5.png");
 }
   .blog-header{
     justify-content: flex-start;
@@ -55,6 +77,15 @@
     font-size: 80px;
     padding: 20px 20px 0px 0px;
   }
+  .blog-overlay {
+    position: absolute;
+      bottom: -9%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.7);
+      z-index: 10;
+      width: 80vw;
+  }
+  
   
 }
 .map-container {
@@ -64,14 +95,6 @@
 
 }
 
-.blog-overlay {
-  position: absolute;
-    bottom: -9%;
-    left: 50%;
-    transform: translateX(-50%) scale(0.7);
-    z-index: 10;
-    width: 80vw;
-}
 
 .blog-header{
   display: flex;
@@ -88,7 +111,6 @@
 .blog-overlay::before {
     content: '';
     position: absolute;
-    background-image: url("../assets/images/rip4.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

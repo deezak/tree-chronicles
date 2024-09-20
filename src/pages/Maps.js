@@ -271,7 +271,7 @@ function Maps({setActive, user, active}) {
       )}
     {countryBlogs.length > 0 && !loading && (
         <div className="blog-overlay" ref={containerRef} >
-          <div style={{flex: "1"}}>
+          <div style={{flex: "1", width:"inherit", padding:"0 8vw"}}>
           <h2 className='blog-header'>{selectedCountry}</h2>
           <BlogPost className="blogs-flex"
             isMap={true} 
