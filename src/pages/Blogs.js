@@ -107,7 +107,7 @@ const Blogs = ({ setActive, user, active }) => {
             ) : (
                 <div style={{ display: "block" }}>
                     
-                    <BlogPost
+                    {/* <BlogPost
                         className="blogs-flex"
                         isMap={false}
                         blogs={blogs}
@@ -118,7 +118,7 @@ const Blogs = ({ setActive, user, active }) => {
                         currentPage={currentPage}
                         noOfPages={noOfPages}
                         handlePageChange={handlePageChange}
-                    />
+                    /> */}
                 </div>
             )}
         </div>
