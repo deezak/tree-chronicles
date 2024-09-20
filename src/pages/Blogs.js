@@ -95,6 +95,7 @@ const Blogs = ({ setActive, user, active }) => {
             setCurrentPage(newPage);
         }
     };
+    console.log(blogs);
 
     return (
         <div>
@@ -107,10 +108,10 @@ const Blogs = ({ setActive, user, active }) => {
             ) : (
                 <div style={{ display: "block" }}>
                     
-                    {/* <BlogPost
+                    <BlogPost
                         className="blogs-flex"
                         isMap={false}
-                        blogs={blogs}
+                        blogs={null}
                         user={user}
                         handleDelete={handleDelete}
                     />
@@ -118,7 +119,7 @@ const Blogs = ({ setActive, user, active }) => {
                         currentPage={currentPage}
                         noOfPages={noOfPages}
                         handlePageChange={handlePageChange}
-                    /> */}
+                    />
                 </div>
             )}
         </div>
