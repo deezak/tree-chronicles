@@ -20,11 +20,7 @@
 	font-family: 'feelings';
 	src: url('../assets/fonts/FeelingsOnOff.ttf');
 }
-	
-body {
 
-  font-family: 'feelings', serif;
-}
 .blog-card-flex{
     position: relative;
     z-index: 20;
@@ -84,7 +80,7 @@ color:#fff;
   /* transition:all 0.2s */
 }
 .blog-card .color-overlay {
-  background: rgb(56 60 62 / 52%);
+  background: rgb(56 60 62 / 40%);
   width: 300px;
   height: 350px;
   /* position: absolute; */

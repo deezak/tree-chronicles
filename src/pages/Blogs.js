@@ -111,7 +111,7 @@ const Blogs = ({ setActive, user, active }) => {
                     <BlogPost
                         className="blogs-flex"
                         isMap={false}
-                        blogs={null}
+                        blogs={blogs}
                         user={user}
                         handleDelete={handleDelete}
                     />
