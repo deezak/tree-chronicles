@@ -184,6 +184,9 @@ $yellow:#f5bc04;
   }
 // mobile view
   @media (max-width: 767px) {
+	.standardLayout{
+		overflow-y:hidden;
+	}
 	
 	.blog-title-box{
 		.blog-title{
