@@ -4,15 +4,16 @@ html, body{
   margin: 0;
 }
 body {
+  /* min-height: 100dvh; */
+  height:  100dvh;
   font-family: 'feelings', serif;
   box-sizing: border-box;
   display: flex;
 	flex-direction: column;
-	min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-repeat: no-repeat;
-  height:  100vh;
+  
 }
 
 
