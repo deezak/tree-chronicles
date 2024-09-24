@@ -233,7 +233,7 @@ $yellow:#f5bc04;
 		border: solid 0.3em var(--grey-accent);
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		transform: scale(1) translateX(1em);
+		transform: scale(1) translateX(0em);
 	}
 
 	.search-box{
@@ -1363,15 +1363,7 @@ main {
 
 
 
-.list-left a:hover{
-    // color: rgba(0,0,0,0.0);
-	color: whitesmoke;
-    text-shadow: 0px 0px 1px #000000;
-    transition: 0.4s cubic-bezier(0.33, 0.66, 0.66, 1);
-    // -webkit-text-stroke: 1px #1E1B0F;
-    // font-size: 30px;
-	// transform: scale(1.1);
-}
+
 
 .alt-list-left a:hover{
     // color: rgba(0,0,0,0.3);
@@ -1510,21 +1502,26 @@ main {
 	transition: width 700ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
   
 }
+// .button[type=reset]:focus + .search-box input[type=text]{
+// 	transform:scale(0.8);
+// }
 
 .search-box input[type=text]:focus {
   outline: none;
 //   transform: scale(1.5);
 }
 .search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-//   transform: scale(1) translateX(2em);
   transition: width 700ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  
 }
-.search-box input[type=text]:focus + button[type=reset], .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
+.search-box input[type=text]:focus + button[type=reset],
+.search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
   transform: scale(0.8) rotate(-45deg) translateY(0);
   transition: transform 150ms ease-out 700ms;
 }
 .search-box input[type=text]:focus + button[type=reset]:after, .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
   opacity: 1;
+  
   transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms, opacity 150ms ease 950ms;
 }
 .search-box button[type=reset] {
@@ -1543,12 +1540,14 @@ main {
   transform: rotate(-45deg) translateY(2.2em);
   transition: transform 150ms ease-out 150ms;
 }
-.search-box button[type=reset]:before, .search-box button[type=reset]:after {
+.search-box button[type=reset]:before,
+.search-box button[type=reset]:after {
   content: "";
   background-color: var(--grey-accent);
   width: 0.4em;
   height: 1.4em;
   position: absolute;
+  
 }
 .search-box button[type=reset]:after {
   transform: rotate(90deg);
@@ -1556,7 +1555,8 @@ main {
   transition: transform 150ms ease-out, opacity 150ms ease-out;
 }
 
-.search-box:has( input:not(:placeholder-shown)), .search-box:focus-within {
+.search-box:has( input:not(:placeholder-shown)),
+.search-box:focus-within {
 	transform: scale(0.8);
 	transition: transform 700ms ease-in;
 	// transform: scale(1.5); /* Translate the search box to the right */

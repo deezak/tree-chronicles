@@ -5,7 +5,12 @@ import './NavBar.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import useWindowSize from '../../components/useWindowSize';
 import SideBar from '../SideBar/SideBar';
+import { useLocation } from 'react-router-dom';
+import SmallTitle from '../SmallTitle/SmallTitle';
+
 const NavBar = ({setActive, user, handleLogout}) => {
+  const location = useLocation(); // Get the current route
+
   // const [active, setActive] = useState("home");
   const { width } = useWindowSize();
   const isMobile = width < 768;
@@ -37,25 +42,27 @@ const NavBar = ({setActive, user, handleLogout}) => {
           
         </nav>
         <ul className="list-right">
-            {/* <li style ={{marginTop:"0px", marginRight: "0px", fontSize:"24px", color:"var(--grey-accent)"}} onClick={() => setActive("search")}><Link to="/search" className='font-icon' style={{transition:"0.5s"}}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></Link></li> */}
             <form className="search-box" onSubmit={handleSearchSubmit}>
               <input type="text" placeholder=" " 
                 value={searchQuery} // Bind input to state
                 onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
               />
-              <button type="reset"></button>
+              <button type="reset" onClick={() => {
+                                        setSearchQuery('');
+                                        document.querySelector('.search-box input[type=text]').blur();
+                                        }}></button>
             </form>
             {userId ?(
               <>
-                {/* <li className="nav-item nav-link log-out" onClick={handleLogout} style ={{padding: "14px 20px"}}>Logout</li> */}
+                <Link className="nav-item nav-link log-out" style={{textDecoration: "none"}} onClick={handleLogout} >
+                  <img src="../logout.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"0em"}}/>
+                </Link>
               </>
             ):(
               <>
-                {/* <Link to="/login" style={{textDecoration: "none"}}>
-                  <li className="nav-item nav-link log-out"onClick={() => setActive("login")} style ={{padding: "14px 20px"}}>
-                    Login
-                  </li>
-                </Link> */}
+                <Link className="nav-item nav-link log-out"  to="/login" style={{textDecoration: "none"}} onClick={() => setActive("login")} >
+                  <img src="../login.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"1em"}}/>
+                </Link>
               </>
             )}
             
@@ -74,19 +81,22 @@ const NavBar = ({setActive, user, handleLogout}) => {
                 value={searchQuery} // Bind input to state
                 onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
               />
-              <button type="reset"></button>
+              <button type="reset" onClick={() => {
+                                        setSearchQuery('');
+                                        document.querySelector('.search-box input[type=text]').blur();
+                                        }}></button>
             </form>
             {userId ?(
               <>
-                {/* <li className="nav-item nav-link log-out" onClick={handleLogout} style ={{padding: "14px 20px"}}>Logout</li> */}
+                <Link className="nav-item nav-link log-out" style={{textDecoration: "none"}} onClick={handleLogout} >
+                  <img src="../logout.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"1em"}}/>
+                </Link>
               </>
             ):(
               <>
-                {/* <Link to="/login" style={{textDecoration: "none"}}>
-                  <li className="nav-item nav-link log-out"onClick={() => setActive("login")} style ={{padding: "14px 20px"}}>
-                    Login
-                  </li>
-                </Link> */}
+                <Link className="nav-item nav-link log-out"  to="/login" style={{textDecoration: "none"}} onClick={() => setActive("login")} >
+                  <img src="../login.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"1em"}}/>
+                </Link>
               </>
             )}
             
@@ -95,6 +105,9 @@ const NavBar = ({setActive, user, handleLogout}) => {
     {isDesktop && <div className="std-nav-bar-wrapper">
         <nav style={{display:"flex", justifyContent:"space-between", width:"100%", height:"100%", alignItems:"center"}}>
           <ul className ="list-left"> 	
+
+          {(location.pathname === '/blogs' || location.pathname === '/maps'
+          || location.pathname === '/about' || location.pathname === '/login') && <SmallTitle />}
 
             <li onClick={() => setActive("home") }>
               <Link to="/">Home</Link>
@@ -135,25 +148,30 @@ const NavBar = ({setActive, user, handleLogout}) => {
           <ul className="list-right">
             {/* <li style ={{marginTop:"0px", marginRight: "0px", fontSize:"24px", color:"var(--grey-accent)"}} onClick={() => setActive("search")}><Link to="/search" className='font-icon' style={{transition:"0.5s"}}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></Link></li> */}
             <form className="search-box" onSubmit={handleSearchSubmit}>
-              <input type="text" placeholder=" " 
+              <input type="text" id="search" placeholder=" " 
                 value={searchQuery} // Bind input to state
                 onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
               />
-              <button type="reset"></button>
+              <button type="reset" onClick={() => {
+                                        setSearchQuery('');
+                                        document.querySelector('.search-box input[type=text]').blur();
+                                        }}></button>
             </form>
             {userId ?(
               <>
                 {/* <li className="nav-item nav-link log-out" onClick={handleLogout} style ={{padding: "14px 20px"}}>Logout</li> */}
-              </>
-            ):(
-              <>
-                {/* <Link to="/login" style={{textDecoration: "none"}}>
-                  <li className="nav-item nav-link log-out"onClick={() => setActive("login")} style ={{padding: "14px 20px"}}>
-                    Login
-                  </li>
-                </Link> */}
-              </>
-            )}
+                <Link className="nav-item nav-link log-out" style={{textDecoration: "none"}} onClick={handleLogout} >
+                  <img src="../logout.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"1em"}}/>
+                </Link>
+                  </>
+                ):(
+                  <>
+                    <Link className="nav-item nav-link log-out"  to="/login" style={{textDecoration: "none"}} onClick={() => setActive("login")} >
+                      
+                      <img src="../login.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"1em"}}/>
+                    </Link>
+                  </>
+                )}
             
           </ul>
         </nav>         

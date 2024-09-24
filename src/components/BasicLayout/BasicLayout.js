@@ -3,7 +3,7 @@ import React from 'react';
 // import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import './BasicLayout.css';
-import AltNavBar from '../AltNavBar/AltNavBar';
+import NavBar from '../NavBar/NavBar';
 const BasicLayout =({active, setActive, user, handleLogout}) =>{
     // const userId = user?.uid;
 
@@ -11,7 +11,7 @@ const BasicLayout =({active, setActive, user, handleLogout}) =>{
     return(
         <>
         <div className = "basicLayout">
-            <AltNavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
+            <NavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
             <Outlet className="page-body"/>
             {/* <Sides/> */}
             {/* <Footer className="layout-footer"/> */}
