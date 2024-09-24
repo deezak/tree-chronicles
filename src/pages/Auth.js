@@ -86,7 +86,7 @@ const handleAuth = async(e) => {
             </div>
         </div>
         <div className='row justify-content-center align-items-start'> 
-        <div className='col-10 col-md-8 col-lg-6' style={{width: "70%"}}>
+        <div className='width-login-container col-10 col-md-8 col-lg-6' >
             <form className='row' onSubmit={handleAuth}>
                 {signUp && (
                     <>
