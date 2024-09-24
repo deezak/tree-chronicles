@@ -6,7 +6,7 @@ const BlogDetailLayout =({setActive, user, handleLogout}) =>{
     return(
         <>
         <div className = "basicLayout">
-            <SideBar user={user} setActive={setActive}></SideBar>
+            <SideBar user={user} setActive={setActive} handleLogout={handleLogout}></SideBar>
             <Outlet className="page-body"/>
         </div>
         </>

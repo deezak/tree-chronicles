@@ -49,6 +49,7 @@ function App() {
       setUser(null);
       setActive("login");
       navigate("/login");
+      console.log("LOGGING OUT");
     });
   };
 

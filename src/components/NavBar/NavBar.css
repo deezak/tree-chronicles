@@ -120,7 +120,7 @@
   @media (min-width: 1280px) {
     .list-right{
         float:right;
-        padding-right: 2rem;
+        padding-right: 1rem;
     }
     .std-nav-bar-wrapper{
         /* width: 100vw; */

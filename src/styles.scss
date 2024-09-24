@@ -255,17 +255,17 @@ $yellow:#f5bc04;
 		// width:100vw;
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		width: 63vw;
+		width: 58vw;
 	  }
 	.search-box {
 		border: solid 0.3em var(--grey-accent);
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		transform: scale(1) translateX(0em);
+		transform: scale(1) translateX(1em);
 	}
 
 	.search-box{
-		margin-right: 3vw;
+		margin-right: 0vw;
 	}
 
 	  .blog-title {

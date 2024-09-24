@@ -38,7 +38,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
       {isMobile && <div className="std-nav-bar-wrapper">
         <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between",height:"100%", width:"100%", alignItems:"center"}}>
           
-          <SideBar className="list-left" user={user} setActive={setActive} style={{position:"relative"}}></SideBar>
+          <SideBar className="list-left" user={user} setActive={setActive} handleLogout = {handleLogout}style={{position:"relative"}}></SideBar>
           
         </nav>
         <ul className="list-right">
@@ -52,7 +52,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
                                         document.querySelector('.search-box input[type=text]').blur();
                                         }}></button>
             </form>
-            {userId ?(
+            {/* {userId ?(
               <>
                 <Link className="nav-item nav-link log-out" style={{textDecoration: "none"}} onClick={handleLogout} >
                   <img src="../logout.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"0em"}}/>
@@ -61,10 +61,10 @@ const NavBar = ({setActive, user, handleLogout}) => {
             ):(
               <>
                 <Link className="nav-item nav-link log-out"  to="/login" style={{textDecoration: "none"}} onClick={() => setActive("login")} >
-                  <img src="../login.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"1em"}}/>
+                  <img src="../login.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"0em"}}/>
                 </Link>
               </>
-            )}
+            )} */}
             
           </ul>         
     </div>}
