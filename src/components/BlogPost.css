@@ -52,6 +52,11 @@
   background-size: 100%;
 }
 @media (max-width: 767px) {
+  .blog-card.spring-fever{
+    position: relative;
+    margin: 5vh 2vw 5vh 2vw;
+}
+  
   .blog-card{
     max-width: 245px;
 
@@ -61,6 +66,10 @@
   }
 }
 @media (min-width: 768px) {
+  .blog-card.spring-fever{
+    position: relative;
+    margin: 1vh 2vw 9vh 2vw;
+  }
   /* //and (max-width:1279px){ */
   .blog-card{
     max-width: 275px;
@@ -112,10 +121,7 @@ color:#fff;
     /* box-shadow: 0px 18px 20px -9px rgba(0, 0, 0, 0.4); */
 }
 
-.blog-card.spring-fever{
-    position: relative;
-    margin: 5vh 2vw 5vh 2vw;
-}
+
 .blog-card:hover .card-info {
   opacity: 1;
   bottom: 100px;
