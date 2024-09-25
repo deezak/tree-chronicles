@@ -14,7 +14,7 @@
 @media (min-width: 768px) and (max-width:1279px){
     .footer{
         font-size: 1em;
-        padding: 0vh 2vw 3vh 2vw;
+        padding: 0vh 2vw 0vh 2vw;
         letter-spacing: .1rem;
 
     }

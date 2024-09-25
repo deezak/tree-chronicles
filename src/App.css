@@ -52,7 +52,7 @@
   }
 }
 
-.menu-bar{
+/* .menu-bar{
   z-index: 10;
   color: rgba(255, 255, 255, 0.20);
   font-size: 22px;
@@ -69,10 +69,8 @@
   z-index: 10;
   color: rgba(255, 255, 255, 1);
 
-  /* font-size: 22px; */
-  /* scale: 1.2; */
   transition: 0.5s cubic-bezier(0.33, 0.66, 0.66, 1);
-}
+} */
 
 .container {
   z-index: 10;

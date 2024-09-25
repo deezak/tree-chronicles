@@ -130,9 +130,9 @@ const AddEditBlog = ({ user, setActive }) => {
         try {
           await updateDoc(doc(db, "blogs", id), {
             ...form,
-            timestamp: serverTimestamp(),
-            author: user.displayName,
-            userId: user.uid,
+            // timestamp: serverTimestamp(),
+            // author: user.displayName,
+            // userId: user.uid,
           });
           toast.success("Blog updated successfully");
         } catch (err) {
@@ -143,7 +143,7 @@ const AddEditBlog = ({ user, setActive }) => {
       return toast.error("All fields are mandatory to fill");
     }
 
-    navigate("/");
+    navigate("/blogs");
   };
 
   const handleChange = (e) => {
@@ -222,6 +222,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   value={description}
                   name="description"
                   onChange={handleChange}
+                  style={{whiteSpace: "pre-wrap"}}
                 />
               </div>
               

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 // import { useState } from "react";
@@ -10,13 +10,14 @@ import SmallTitle from '../SmallTitle/SmallTitle';
 
 const NavBar = ({setActive, user, handleLogout}) => {
   const location = useLocation(); // Get the current route
-
+  const resetButtonRef = useRef(null);
   // const [active, setActive] = useState("home");
   const { width } = useWindowSize();
   const isMobile = width < 768;
   const isTablet = width >= 768 && width < 1280;
   const isDesktop = width >= 1280;
   // console.log("NAV WIDTH: " + width);
+  const [placeholder, setPlaceholder] = useState(" ");
 
   const [searchQuery, setSearchQuery] = useState(""); // State for search input
   const userId = user?.uid;
@@ -31,6 +32,14 @@ const NavBar = ({setActive, user, handleLogout}) => {
     navigate(`/search?query=${encodeURIComponent(searchQuery)}`); // Redirects to the search page with the query
   }
 };
+
+  const handleFocus = () => {
+    setPlaceholder("search categories, cities, tags..." );
+  };
+
+  const handleBlur = () => {
+    setPlaceholder(' ');
+  };
   
   
   return (
@@ -41,15 +50,15 @@ const NavBar = ({setActive, user, handleLogout}) => {
           <SideBar className="list-left" user={user} setActive={setActive} handleLogout = {handleLogout}style={{position:"relative"}}></SideBar>
           
         </nav>
-        <ul className="list-right">
+        <ul className="list-right" style={{paddingLeft:"0rem"}}>
             <form className="search-box" onSubmit={handleSearchSubmit}>
-              <input type="text" placeholder=" " 
+              <input type="text" placeholder=" "
                 value={searchQuery} // Bind input to state
                 onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
               />
-              <button type="reset" onClick={() => {
+              <button type="reset" ref={resetButtonRef} onClick={() => {
                                         setSearchQuery('');
-                                        document.querySelector('.search-box input[type=text]').blur();
+                                        resetButtonRef.current.blur();
                                         }}></button>
             </form>
             {/* {userId ?(
@@ -77,13 +86,15 @@ const NavBar = ({setActive, user, handleLogout}) => {
         <ul className="list-right">
             {/* <li style ={{marginTop:"0px", marginRight: "0px", fontSize:"24px", color:"var(--grey-accent)"}} onClick={() => setActive("search")}><Link to="/search" className='font-icon' style={{transition:"0.5s"}}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></Link></li> */}
             <form className="search-box" onSubmit={handleSearchSubmit}>
-              <input type="text" placeholder=" " 
+              <input type="text" placeholder={placeholder}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
                 value={searchQuery} // Bind input to state
                 onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
               />
-              <button type="reset" onClick={() => {
+              <button type="reset" ref={resetButtonRef} onClick={() => {
                                         setSearchQuery('');
-                                        document.querySelector('.search-box input[type=text]').blur();
+                                        resetButtonRef.current.blur();
                                         }}></button>
             </form>
             {userId ?(
@@ -148,13 +159,15 @@ const NavBar = ({setActive, user, handleLogout}) => {
           <ul className="list-right">
             {/* <li style ={{marginTop:"0px", marginRight: "0px", fontSize:"24px", color:"var(--grey-accent)"}} onClick={() => setActive("search")}><Link to="/search" className='font-icon' style={{transition:"0.5s"}}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></Link></li> */}
             <form className="search-box" onSubmit={handleSearchSubmit}>
-              <input type="text" id="search" placeholder=" " 
+              <input type="text" id="search"  placeholder={placeholder}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
                 value={searchQuery} // Bind input to state
                 onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
               />
-              <button type="reset" onClick={() => {
+              <button type="reset" ref={resetButtonRef} onClick={() => {
                                         setSearchQuery('');
-                                        document.querySelector('.search-box input[type=text]').blur();
+                                        resetButtonRef.current.blur();
                                         }}></button>
             </form>
             {userId ?(

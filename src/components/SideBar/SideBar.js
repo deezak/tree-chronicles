@@ -15,12 +15,12 @@ const SideBar = ({setActive, user, handleLogout}) => {
   console.log("name", user?.displayName); 
   return (
     <>  
-    <Container>  
+    {/* <Container>   */}
       {/* <Button variant="primary" onClick={showSidebar}>  
         Launch Sidebar  
       </Button> */}
       <div className="side-menu-button" variant="primary" onClick={showSidebar}>
-        <img src="../eye-open.png" alt="eye-open" className='menu-bar' style={{transform:"scale(0.8)", filter:"invert(0.85)"}}/>
+        <img src="../eye-open.png" alt="eye-open" className='eye-menu-bar' style={{transform:"scale(0.8)", filter:"invert(0.85)"}}/>
         {/* <svg className='menu-bar' xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24" fill="var(--grey-accent)">
           <path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path>
         </svg> */}
@@ -50,7 +50,7 @@ const SideBar = ({setActive, user, handleLogout}) => {
           </ul>
         </Offcanvas.Body>  
       </Offcanvas>  
-      </Container>  
+      {/* </Container>   */}
     </>  
   )
 }

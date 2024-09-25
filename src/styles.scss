@@ -184,6 +184,13 @@ $yellow:#f5bc04;
   }
 // mobile view
   @media (max-width: 767px) {
+	.eye-menu-bar{
+		width: 90px;
+		height: 65px;
+	}
+	.search-box {
+		margin-top: 3vh;
+	}
 	.blog-input-container{
 		width:100%;
 		font-size: 14px;
@@ -249,9 +256,7 @@ $yellow:#f5bc04;
 	.placecounter-label{
 		font-size: 1.1em;  
 	}
-	.side-menu-button{
-		padding-top: 2vh;
-	}
+	
 	.latest-posts{
 		font-size: 3em;
 	}
@@ -509,6 +514,7 @@ $yellow:#f5bc04;
   .p-text-start{
 	line-height: 1.6em;
 	text-align: justify;
+	white-space: pre-line;
   }
   .p-text-start::first-letter{
 	font-size: 4em; /* Increase the size of the first letter */
@@ -520,6 +526,13 @@ $yellow:#f5bc04;
   }
   //tablet
   @media (min-width: 768px) and (max-width:1279px){
+	.eye-menu-bar{
+		width: 105px;
+		height: 80px;
+	}
+	.search-box {
+		  margin-top: 2vh;
+	}
 	.blog-input-container{
 		width:100%;
 		font-size: 16px;
@@ -602,7 +615,7 @@ $yellow:#f5bc04;
 		border: solid 0.3em var(--grey-accent);
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		transform: scale(1) translateX(2em);
+		transform: scale(1) translateX(1.5em);
 	}
 	.blog-title {
 		.single & {
@@ -641,6 +654,9 @@ $yellow:#f5bc04;
 }
   //desktop
 	@media (min-width: 1280px) {
+		.search-box {
+			margin-top: 1em;
+	  	}	
 		.blog-input-container{
 			width:100%;
 			font-size: 16px;
@@ -746,13 +762,13 @@ $yellow:#f5bc04;
 		}
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		width:27vw;
+		width: 37vw;
 	}
 	.search-box {
 		border: solid 0.3em var(--grey-accent);
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
-		transform: scale(1) translateX(2em);
+		transform: scale(1) translateX(1em);
 	}
 }
 
@@ -790,8 +806,20 @@ $yellow:#f5bc04;
     align-items: center;
 }
 
+
+
 .side-menu-button{
-	position: absolute;
+	// position: absolute;
+	// width: 85px;
+	// height: 59px;
+	z-index: 10;
+	color: rgba(255, 255, 255, 0.20);
+	font-size: 22px;
+	display: flex;
+	justify-content: flex-begin;
+	position: relative;
+	
+	
 }
 //   Blog Section
 .latest-posts{
@@ -847,6 +875,7 @@ $yellow:#f5bc04;
 .mapLayout{
 	box-sizing: border-box;
     min-height: 100%;
+	width:100%;
     display: flex;
     flex-direction: column;
 	align-items: center;
@@ -1059,6 +1088,9 @@ main {
   .side-menu-button:hover img {
 	content: url('../public/eye-closed.png'); /* Replace with the hover image */
 	top:2vh;
+	margin-top:2vh;
+	// padding-top:2vh;
+	padding: 30px 11px 0 11px
 	// width:80px;
 	// height:50px;
   }
@@ -1566,7 +1598,6 @@ main {
 
 .search-box {
 //   font-size: 30px;
-  margin-top: 0.5em;
 //   border: solid 0.4em var(--grey-accent);
   display: inline-block;
   position: relative;
