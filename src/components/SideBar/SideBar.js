@@ -37,7 +37,7 @@ const SideBar = ({setActive, user, handleLogout}) => {
             {userId ?(
               <>
                 <li className='side-bar-list' onClick={() => setActive("create")}><Link to="/create">Create</Link></li>
-                <li className='side-bar-list' onClick={() => setActive("create")}><Link style={{textDecoration: "none"}} onClick={handleLogout}>Logout</Link></li>
+                <li className='side-bar-list' onClick={() => setActive("home")}><Link style={{textDecoration: "none"}} onClick={handleLogout}>Logout</Link></li>
               </>
             ):(
               <>
