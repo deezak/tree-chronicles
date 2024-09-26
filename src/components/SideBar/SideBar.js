@@ -32,7 +32,7 @@ const SideBar = ({setActive, user, handleLogout}) => {
           
             <li className='side-bar-list' onClick={() => setActive("home") }><Link to="/">Home</Link></li>
             <li className='side-bar-list' onClick={() => setActive("blogs")}><Link to="/blogs">Blog</Link></li>
-            <li className='side-bar-list' onClick={() => setActive("maps")}><Link to="/maps">Maps</Link></li>
+            <li className='side-bar-list' onClick={() => setActive("maps")}><Link to="/maps">Map</Link></li>
             <li className='side-bar-list' onClick={() => setActive("about")}><Link to="/about">About</Link></li>
             {userId ?(
               <>
