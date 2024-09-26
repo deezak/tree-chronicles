@@ -8,7 +8,7 @@ import SideBar from '../SideBar/SideBar';
 import { useLocation } from 'react-router-dom';
 import SmallTitle from '../SmallTitle/SmallTitle';
 
-const NavBar = ({setActive, user, handleLogout}) => {
+const NavBar = ({setActive, user, handleLogout, isDetail}) => {
   const location = useLocation(); // Get the current route
   const resetButtonRef = useRef(null);
   // const [active, setActive] = useState("home");
@@ -44,7 +44,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
   
   return (
     <>
-      {isMobile && <div className="std-nav-bar-wrapper">
+      {(isMobile || isDetail)&& <div className="std-nav-bar-wrapper">
         <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between",height:"100%", width:"100%", alignItems:"center"}}>
           
           <SideBar className="list-left" user={user} setActive={setActive} handleLogout = {handleLogout}style={{position:"relative"}}></SideBar>
@@ -61,20 +61,6 @@ const NavBar = ({setActive, user, handleLogout}) => {
                                         resetButtonRef.current.blur();
                                         }}></button>
             </form>
-            {/* {userId ?(
-              <>
-                <Link className="nav-item nav-link log-out" style={{textDecoration: "none"}} onClick={handleLogout} >
-                  <img src="../logout.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"0em"}}/>
-                </Link>
-              </>
-            ):(
-              <>
-                <Link className="nav-item nav-link log-out"  to="/login" style={{textDecoration: "none"}} onClick={() => setActive("login")} >
-                  <img src="../login.png" alt="login" className="log-out" style={{width:"70px", height:"50px", filter:"invert(0.15)", marginBottom:"0.5em", marginLeft:"0em"}}/>
-                </Link>
-              </>
-            )} */}
-            
           </ul>         
     </div>}
     {isTablet && <div className="std-nav-bar-wrapper">
@@ -113,7 +99,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
             
           </ul>             
     </div>}
-    {isDesktop && <div className="std-nav-bar-wrapper">
+    {(isDesktop && !isDetail)&& <div className="std-nav-bar-wrapper">
         <nav style={{display:"flex", justifyContent:"space-between", width:"100%", height:"100%", alignItems:"center"}}>
           <ul className ="list-left"> 	
 
@@ -133,7 +119,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
 
             <li onClick={() => setActive("maps")}>
               <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
-              <Link to="/maps">Maps</Link>
+              <Link to="/maps">Map</Link>
               </li>
 
             <li onClick={() => setActive("about")}>
@@ -189,6 +175,7 @@ const NavBar = ({setActive, user, handleLogout}) => {
           </ul>
         </nav>         
     </div>}
+   
 </>
     
   )

@@ -654,6 +654,10 @@ $yellow:#f5bc04;
 }
   //desktop
 	@media (min-width: 1280px) {
+		.eye-menu-bar{
+			width: 105px;
+			height: 80px;
+		}
 		.search-box {
 			margin-top: 1em;
 	  	}	
@@ -809,7 +813,7 @@ $yellow:#f5bc04;
 
 
 .side-menu-button{
-	// position: absolute;
+	position: absolute;
 	// width: 85px;
 	// height: 59px;
 	z-index: 10;
@@ -817,7 +821,7 @@ $yellow:#f5bc04;
 	font-size: 22px;
 	display: flex;
 	justify-content: flex-begin;
-	position: relative;
+	// position: relative;
 	
 	
 }
@@ -1060,6 +1064,7 @@ main {
 .single{
 	// position: relative;
 	// top: -55px;
+	position: absolute;
 	width: 100%;
 	display: flex;
     flex-direction: column;

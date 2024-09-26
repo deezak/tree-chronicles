@@ -7,7 +7,7 @@ import './MapLayout.css'
 const MapLayout =({active, setActive, user, handleLogout}) =>{
     return(
         <div className = "mapLayout">
-            <NavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout}/>
+            <NavBar setActive ={setActive} active={active} user={user} handleLogout={handleLogout} isDetail={false}/>
             <Outlet className="page-body"/>
             {/* <Sides/> */}
             {/* <Footer className="layout-footer"/> */}

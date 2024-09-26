@@ -15,7 +15,8 @@ const StandardLayout =({active, setActive, user, handleLogout}) =>{
                 <NavBar setActive ={setActive} 
                     active={active} 
                     user={user} 
-                    handleLogout={handleLogout} />
+                    handleLogout={handleLogout}
+                    isDetail={false} />
                 <Outlet className="page-body"/>
             {/* </div> */}
             {/* <Sides/> */}
