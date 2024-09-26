@@ -659,7 +659,7 @@ $yellow:#f5bc04;
 			height: 80px;
 		}
 		.search-box {
-			margin-top: 1em;
+			margin-top: 0.5em;
 	  	}	
 		.blog-input-container{
 			width:100%;
@@ -726,7 +726,8 @@ $yellow:#f5bc04;
 			font-size: 1.3em;   
 		}
 		.side-menu-button{
-			padding-top: 6vh;
+			padding-top: 2vh;
+        	padding-left: 3vw;
 		}
 		.latest-posts{
 			font-size: 5.7em;

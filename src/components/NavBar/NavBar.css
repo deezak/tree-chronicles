@@ -133,7 +133,7 @@
         padding-right: 1rem;
     }
     .std-nav-bar-wrapper{
-        width: 100vw;
+        /* width: 100vw; */
     }
     .list-left a{
         padding: 0em 0.4em;
