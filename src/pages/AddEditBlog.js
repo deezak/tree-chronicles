@@ -49,51 +49,51 @@ const AddEditBlog = ({ user, setActive }) => {
   const {title, tags, category, description, country, city} = form;
 
 
-  useEffect(() => {
-    const uploadFile = () => {
-      for(let i = 0; i < files.length; i++) {
-        console.log("FILES: " +  files );
-        console.log("FILE LENGTH: " +  files.length );
-        console.log('loop');
-        const storageRef = ref(storage, `${files[i].name}`);
-        const uploadTask = uploadBytesResumable(storageRef, files[i]);
-        uploadTask.on(
-          "state_changed",
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log("Upload is " + progress + "% done");
-            setProgress(progress);
-            switch (snapshot.state) {
-              case "paused":
-                console.log("Upload is paused");
-                break;
-              case "running":
-                console.log("Upload is running");
-                break;
-              default:
-                break;
-            }
-          },
-          (error) => {
-            console.log(error);
-          },
-            () => {
-              getDownloadURL(uploadTask.snapshot.ref).then((downloadUrls) => {
-                toast.info("Image upload to firebase successfully");
-                setForm((prev) => ({ ...prev, imgUrls: [...prev.imgUrls, downloadUrls] }));
-                console.log("downloadURLs in useEffect" + downloadUrls);
-                console.log("FILES in useEffect:" + files);
-            });
-          }
-        );
+  // useEffect(() => {
+  //   const uploadFile = () => {
+  //     for(let i = 0; i < files.length; i++) {
+  //       console.log("FILES: " +  files );
+  //       console.log("FILE LENGTH: " +  files.length );
+  //       console.log('loop');
+  //       const storageRef = ref(storage, `${files[i].name}`);
+  //       const uploadTask = uploadBytesResumable(storageRef, files[i]);
+  //       uploadTask.on(
+  //         "state_changed",
+  //         (snapshot) => {
+  //           const progress =
+  //             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //           console.log("Upload is " + progress + "% done");
+  //           setProgress(progress);
+  //           switch (snapshot.state) {
+  //             case "paused":
+  //               console.log("Upload is paused");
+  //               break;
+  //             case "running":
+  //               console.log("Upload is running");
+  //               break;
+  //             default:
+  //               break;
+  //           }
+  //         },
+  //         (error) => {
+  //           console.log(error);
+  //         },
+  //           () => {
+  //             getDownloadURL(uploadTask.snapshot.ref).then((downloadUrls) => {
+  //               toast.info("Image upload to firebase successfully");
+  //               setForm((prev) => ({ ...prev, imgUrls: [...prev.imgUrls, downloadUrls] }));
+  //               console.log("downloadURLs in useEffect" + downloadUrls);
+  //               console.log("FILES in useEffect:" + files);
+  //           });
+  //         }
+  //       );
         
-      }
+  //     }
 
-    };
+  //   };
 
-    files && uploadFile();
-  }, [files]);
+  //   files && uploadFile();
+  // }, [files]);
 
 
   useEffect(() => {
@@ -110,42 +110,76 @@ const AddEditBlog = ({ user, setActive }) => {
     setActive(null);
   };
 
-  const handleSubmit = async (e) => {
-    console.log(country);
-    e.preventDefault();
-    if (category && tags && title && description) {
-      if (!id) {
-        try {
-          await addDoc(collection(db, "blogs"), {
-            ...form,
-            timestamp: serverTimestamp(),
-            author: user.displayName,
-            userId: user.uid,
-          });
-          toast.success("Blog created successfully");
-        } catch (err) {
-          console.log(err);
-        }
-      } else {
-        try {
-          await updateDoc(doc(db, "blogs", id), {
-            ...form,
-            // timestamp: serverTimestamp(),
-            // author: user.displayName,
-            // userId: user.uid,
-          });
-          toast.success("Blog updated successfully");
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    } else {
-      return toast.error("All fields are mandatory to fill");
-    }
+  const uploadFiles = async () => {
+    const uploadedUrls = [];
+    for (const file of files) {
+      const storageRef = ref(storage, `${file.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
 
-    navigate("/blogs");
+      await new Promise((resolve, reject) => {
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            setProgress(progress);
+          },
+          (error) => {
+            console.error(error);
+            reject(error);
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+              uploadedUrls.push(downloadUrl);
+              resolve();
+            });
+          }
+        );
+      });
+    }
+    return uploadedUrls;
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (category && tags.length && title && description) {
+      try {
+        const uploadedUrls = await uploadFiles();
+        await saveBlog(uploadedUrls);
+      } catch (error) {
+        toast.error("Error uploading files");
+      }
+    } else {
+      toast.error("All fields are mandatory to fill");
+    }
+  };
+
+  const saveBlog = async (uploadedUrls) => {
+    const blogData = {
+      ...form,
+      imgUrls: uploadedUrls,
+      timestamp: serverTimestamp(),
+      author: user.displayName,
+      userId: user.uid,
+    };
+
+    if (!id) {
+      try {
+        await addDoc(collection(db, "blogs"), blogData);
+        toast.success("Blog created successfully");
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      try {
+        await updateDoc(doc(db, "blogs", id), blogData);
+        toast.success("Blog updated successfully");
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    navigate("/blogs");
+  };
+  
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -163,7 +197,10 @@ const AddEditBlog = ({ user, setActive }) => {
     setForm({ ...form, tags });
   };
 
- 
+  const handleFileChange = (e) => {
+    const selectedFiles = Array.from(e.target.files);
+    setFiles(selectedFiles); // Save files in the state
+  };
   
   return (
   <div className="blog container-fluid" style={{flex: "1"}}>
@@ -208,11 +245,12 @@ const AddEditBlog = ({ user, setActive }) => {
                   multiple
                   style={{padding:"12px"}}
                   className="form-control"
-                  onChange={(e) => 
-                    setFiles(e.target.files)
-                    // setFiles((prev) => [...prev, e.target.files])
-                    // dispatch({type:'updateUrls', payload:e.target.files})
-                  }
+                  // onChange={(e) => 
+                  //   setFiles(e.target.files)
+                  //   // setFiles((prev) => [...prev, e.target.files])
+                  //   // dispatch({type:'updateUrls', payload:e.target.files})
+                  // }
+                  onChange={handleFileChange}
                 />
               </div>
               <div className="col-12 py-2">
