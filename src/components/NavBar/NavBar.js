@@ -44,7 +44,7 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
   
   return (
     <>
-      {(isMobile || isDetail)&& <div className="std-nav-bar-wrapper">
+      {(isMobile || isDetail ) && <div className="std-nav-bar-wrapper">
         <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between",height:"100%", width:"100%", alignItems:"center"}}>
           
           <SideBar className="list-left" user={user} setActive={setActive} handleLogout = {handleLogout}style={{position:"relative"}}></SideBar>
@@ -63,15 +63,14 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
             </form>
           </ul>         
     </div>}
-    {isTablet && <div className="std-nav-bar-wrapper">
+     {isTablet && <div className="std-nav-bar-wrapper">
       <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between", height:"100%",width:"100%", alignItems:"center"}}>
           
           <SideBar className="list-left" user={user} setActive = {setActive}style={{position:"relative"}}></SideBar>
           
         </nav>
         <ul className="list-right">
-            {/* <li style ={{marginTop:"0px", marginRight: "0px", fontSize:"24px", color:"var(--grey-accent)"}} onClick={() => setActive("search")}><Link to="/search" className='font-icon' style={{transition:"0.5s"}}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></Link></li> */}
-            <form className="search-box" onSubmit={handleSearchSubmit}>
+             <form className="search-box" onSubmit={handleSearchSubmit}>
               <input type="text" placeholder={placeholder}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -98,7 +97,7 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
             )}
             
           </ul>             
-    </div>}
+    </div>} 
     {(isDesktop && !isDetail)&& <div className="std-nav-bar-wrapper">
         <nav style={{display:"flex", justifyContent:"space-between", width:"100%", height:"100%", alignItems:"center"}}>
           <ul className ="list-left"> 	
