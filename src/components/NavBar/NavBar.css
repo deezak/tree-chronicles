@@ -194,6 +194,7 @@
 
 .list-right{
     /* flex-grow: 1;  */
+    padding-left: 0rem;
     float:right;
     display: flex;
     justify-content: flex-end;
