@@ -23,7 +23,7 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             </Link>
             <FontAwesomeIcon icon="fa-regular fa-trash-can" 
               className='delete-blog-button'
-              onClick={() => handleDelete(item.id)}/>
+              onClick={() => handleDelete(item.id, item.imgUrls)}/>
           </div>
         )}
         <div className='blog-card-flex'>

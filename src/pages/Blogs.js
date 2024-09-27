@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import BlogPost from '../components/BlogPost';
+import { ref, deleteObject } from "firebase/storage"; // Import for Firebase Storage
 import { collection, deleteDoc, doc, limit, startAfter, orderBy, query, getDocs } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db, storage } from '../firebase';
 import { toast } from "react-toastify";
 import PaginationControls from '../components/PaginationControls/PaginationControls'; // Ensure correct import path
 
@@ -76,10 +77,16 @@ const Blogs = ({ setActive, user, active }) => {
     //     setNoOfPages(totalPage);
     // };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (id, imgUrls) => {
         if (window.confirm("Are you sure you want to delete this blog?")) {
             try {
                 setLoading(true);
+                // Delete all images from Firebase Storage
+                const deleteImagesPromises = imgUrls.map(async (imageUrl) => {
+                    const imageRef = ref(storage, imageUrl);
+                    await deleteObject(imageRef);
+                });
+                await Promise.all(deleteImagesPromises);
                 await deleteDoc(doc(db, "blogs", id));
                 toast.success("Blog deleted successfully");
                 setLoading(false);
