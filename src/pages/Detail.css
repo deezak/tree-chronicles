@@ -17,7 +17,7 @@
       --halftone-color-dot-size: var(--halftone-dot-size);
       --halftone-rotation: -18deg;
       position: relative;
-      filter: brightness(calc(0.5 + var(--halftone-bleed)* 0.3 - var(--halftone-separate-k)* 0.02)) blur(calc(var(--halftone-size)* 0.06)) contrast(1.1) blur(0.1px);
+      filter: brightness(calc(0.5 + var(--halftone-bleed)* 0.3 - var(--halftone-separate-k)* 0.02)) blur(calc(var(--halftone-size)* 0)) contrast(1.1) ;
     }
   }
 

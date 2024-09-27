@@ -238,9 +238,12 @@ $yellow:#f5bc04;
 	
 	.blog-title-box{
 		.blog-title{
-			bottom: 30vh;
+			bottom: 35vh;
 			padding: 30px;
 		}
+		.single & {
+			height: 90vh;
+			}
 	}
 	.mx-server{
 		height:40vh;
@@ -275,7 +278,7 @@ $yellow:#f5bc04;
 		width: 62vw;
 	  }
 	.search-box {
-		border: solid 0.3em var(--grey-accent);
+		border: solid 0.3em #f1f1f1;
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
 		transform: scale(1) translateX(1em);
@@ -581,6 +584,9 @@ $yellow:#f5bc04;
 			bottom: 38vh;
 			padding: 0 14vw 0 15vw;
 		}
+		.single & {
+			height: 100vh;
+			}
 	}
 	.mx-server{
 		height:40vh;
@@ -612,7 +618,7 @@ $yellow:#f5bc04;
 		width: 50vw;
 	}
 	.search-box {
-		border: solid 0.3em var(--grey-accent);
+		border: solid 0.3em #f1f1f1;
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
 		transform: scale(1) translateX(1.5em);
@@ -709,6 +715,9 @@ $yellow:#f5bc04;
 				bottom: 42vh;
         		padding: 0vw 35vh 10px 35vh;
 			}
+			.single & {
+				height: 100vh;
+				}
 		}
 		.mx-server{
 			height:50vh;
@@ -770,7 +779,7 @@ $yellow:#f5bc04;
 		width: 28vw;
 	}
 	.search-box {
-		border: solid 0.3em var(--grey-accent);
+		border: solid 0.3em #f1f1f1;
 	}
 	.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
 		transform: scale(1) translateX(1em);
@@ -1113,7 +1122,7 @@ main {
 		position: relative;
 		// height: 556px;
 		width: 100%;
-		height: 100vh;
+		// height: 100vh;
 		}
 
     .overlay {
@@ -1668,7 +1677,7 @@ main {
 .search-box button[type=reset]:before,
 .search-box button[type=reset]:after {
   content: "";
-  background-color: var(--grey-accent);
+  background-color: #f1f1f1;
   width: 0.4em;
   height: 1.4em;
   position: absolute;

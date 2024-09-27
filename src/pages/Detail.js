@@ -25,16 +25,14 @@ const Detail = () => {
 return (
     <div className='single'>
         <div className='blog-title-box'>
-            <Carousel style={{ maxHeight: '100vh' }} activeIndex={imageIndex} onSelect={(selectedIndex) => setIndex(selectedIndex)}
-            // nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{scale: "1.3", zIndex: "100"}}/>}
-            // prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{scale: "1.3", zIndex: "100"}}/>}
-            nextIcon={<span aria-hidden="true" className="next-icon">
-                <img src="../markerArrow.png" alt="arrow"/> 
-                </span>}
-            prevIcon={<span aria-hidden="true" className="prev-icon" > 
-                <img src="../markerArrow.png" alt="arrow" style={{opacity:"0.8"}}/>  
-                </span>}
-            interval={null} > 
+            <Carousel style={{ height: 'inherit' }} activeIndex={imageIndex} onSelect={(selectedIndex) => setIndex(selectedIndex)}
+                nextIcon={<span aria-hidden="true" className="next-icon">
+                    <img src="../markerArrow.png" alt="arrow"/> 
+                    </span>}
+                prevIcon={<span aria-hidden="true" className="prev-icon" > 
+                    <img src="../markerArrow.png" alt="arrow" style={{opacity:"0.8"}}/>  
+                    </span>}
+                interval={null} > 
             {/* // Disable auto sliding */}
                 {blog?.imgUrls.map((imageUrl, index) => (
                     <Carousel.Item key={index}>
@@ -42,30 +40,15 @@ return (
                             <img src={imageUrl} className="d-block w-100" alt={`Slide ${index}`} style={{ minHeight: '100.5vh',  margin: '0 auto', objectFit: 'cover',overflow: 'hidden', // Clip the image
                                         objectPosition:"center" }}/>
                         </div>
-                        {/* <div className="halftone-k">
-                            <img src={imageUrl} className="d-block w-100" alt={`Slide ${index}`} style={{ maxHeight: '100.5vh',  margin: '0 auto', objectFit: 'cover',overflow: 'hidden', // Clip the image
-                                        objectPosition:"center" }}/>
-                        </div> */}
                         <div className="halftone-color-overlay"></div>
-                        
-                        {/* <Carousel.Caption>
-                            <h3>{blog?.title}</h3>
-                            <p>{blog?.timestamp.toDate().toDateString()}</p>
-                        </Carousel.Caption> */}
+                     
                     </Carousel.Item>
                 ))}
             </Carousel>
             <div className='blog-title'>
-                {/* <div className="left-arrow">
-                    {imageIndex > 0 ? (
-                        <FontAwesomeIcon onClick={decrementIndex} icon="fa-solid fa-angle-left" />
-                    ) : (<></>)}
-                </div> */}
                 <div className='middle-part'>
                     <h2>{blog?.title}</h2>
-                    <span style={{ color: 'rgba(255,255,255,1)', fontFamily:"'feelings'", fontWeight:"400"}}>
-                        {/* {blog?.timestamp.toDate().toDateString().substring(4)} */}
-                        
+                    <span style={{ color: 'rgba(255,255,255,1)', fontFamily:"'feelings'", fontWeight:"400"}}>                        
                         {blog?.city ?(
                             <>
                                 {blog?.city.toUpperCase() +", " + blog?.country.toUpperCase()}
@@ -76,11 +59,6 @@ return (
                         )}
                         </span>
                 </div>
-                {/* <div className="right-arrow">
-                    {imageIndex < blog?.imgUrls.length - 1 ? (
-                        <FontAwesomeIcon onClick={incrementIndex} icon="fa-solid fa-angle-right" />
-                    ) : (<></>)}
-                </div> */}
             </div>
         </div>
         <div className='container-fluid pb-4 pt-4 padding blog-single-content'>

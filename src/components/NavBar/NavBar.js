@@ -63,7 +63,7 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
             </form>
           </ul>         
     </div>}
-     {isTablet && <div className="std-nav-bar-wrapper">
+     {(isTablet && !isDetail )&& <div className="std-nav-bar-wrapper">
       <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between", height:"100%",width:"100%", alignItems:"center"}}>
           
           <SideBar className="list-left" user={user} setActive = {setActive}style={{position:"relative"}}></SideBar>

@@ -20,7 +20,7 @@ const SideBar = ({setActive, user, handleLogout}) => {
         Launch Sidebar  
       </Button> */}
       <div className="side-menu-button" variant="primary" onClick={showSidebar}>
-        <img src="../eye-open.png" alt="eye-open" className='eye-menu-bar' style={{transform:"scale(0.8)", filter:"invert(0.85)"}}/>
+        <img src="../eye-open.png" alt="eye-open" className='eye-menu-bar' style={{transform:"scale(0.8)", filter:"invert(0.9)"}}/>
      </div>  
       <Offcanvas show={show} onHide={closeSidebar} style={{backgroundColor:"var(--dark-complement)", width:"auto", fontFamily:"feelings"}}>  
         <Offcanvas.Header >  
