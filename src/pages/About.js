@@ -83,8 +83,7 @@ const About = () => {
       </div>
         <div className="disclaimer">
           <h3>aBouT Me</h3>
-        Welcome to an insight into my year away from home.
-After finishing my bachelor’s degree in Computer Engineering and finding myself burnt out after spending years listening to everyone but myself, I decided to take a year off to practice freedom of movement and finally ask myself what do I *want* to do, not what do I *have* to do.          </div>
+          When people ask what I’ve learned while traveling, I’m at a loss of words because every era has taught me something new. I can’t say something cliche about “independence” and “finding myself” because that’s honestly not why I left in the first place, and almost the opposite of what I’ve learned. Every friend I’ve made has impacted me significantly in one way or another. I found myself putting aside my radical independence and have softened to accept the help of people around me. I’ve found that I don’t know myself at all, because it changes in every place and mindset I fall in — and I love it. I’m always changing and I’m excited to keep growing.         </div>
     </div>
   </div>
 </div>

@@ -544,8 +544,8 @@
     color: var(--grey-accent);
     /* font-family: "IM Fell French Canon"; */
     font-family: "standard";
-    font-size: 1.2em;
-    font-weight:500;
+    font-size: 1em;
+    font-weight: 200;
     text-align: center;
     /* font-style: italic; */
     line-height: 1.2;
