@@ -233,7 +233,7 @@ $yellow:#f5bc04;
 	}
 	.standardLayout{
 		overflow-y:hidden;
-		height:90vh;
+		height:87vh;
 	}
 	
 	.blog-title-box{
@@ -242,14 +242,14 @@ $yellow:#f5bc04;
 			padding: 30px;
 		}
 		.single & {
-			height: 90vh;
+			height: 87vh;
 			}
 	}
 	.mx-server{
 		height:40vh;
 	}
 	.search-results-header{
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 	.placecounter-number{
 		font-size: 2.5em;
@@ -269,7 +269,7 @@ $yellow:#f5bc04;
 		justify-content: center;
 	}
 	.counter-unit{
-		width:30vw;
+		width:31vw;
 	}
 	.place{
 		// width:100vw;

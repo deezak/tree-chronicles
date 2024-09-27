@@ -52,7 +52,7 @@
     }
     .container-fluid-about {
       position: absolute;
-      transform: translateY(41%) translateX(12%);
+      transform: translateY(34%) translateX(10%);
       width: 82%;
     }
     .passenger h4{
@@ -171,7 +171,7 @@
     }
     .container-fluid-about {
       position: absolute;
-      transform: translateY(55%) translateX(22%);
+      transform: translateY(53%) translateX(20%);
       width: 71%;
   
     }
@@ -288,7 +288,7 @@
     }
     .container-fluid-about {
       position: absolute;
-      transform: translateY(17%) translateX(25%);
+      transform: translateY(17%) translateX(22%);
       width: 69%;
       height: 85%;
   }
