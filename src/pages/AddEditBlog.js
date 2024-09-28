@@ -154,11 +154,16 @@ const AddEditBlog = ({ user, setActive }) => {
   };
 
   const saveBlog = async (uploadedUrls) => {
+    const displayNameArray = user.displayName ? user.displayName.split(' ') : [];
+    const firstName = displayNameArray[0] || ""; // If displayName exists, take the first part
+    const lastName = displayNameArray.slice(1).join(' ') || "";
     const blogData = {
       ...form,
       imgUrls: uploadedUrls,
       timestamp: serverTimestamp(),
       author: user.displayName,
+      firstName: firstName,
+      lastName: lastName,
       userId: user.uid,
     };
 

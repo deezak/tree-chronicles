@@ -30,19 +30,23 @@ const SearchResult=({ user }) => {
         }
     
         setLoading(true);
-    
+        searchTerm.toLowerCase();
         try {
           const blogRef = collection(db, "blogs");
-        const queries = [
-          query(blogRef, where("category", "==", capitalizeEachWord(searchTerm))),
-          query(blogRef, where("city", "==", searchTerm)),
-          query(blogRef, where("city", "==", capitalizeEachWord(searchTerm))),
-          query(blogRef, where("country", "==", searchTerm)),
-          query(blogRef, where("country", "==", capitalizeEachWord(searchTerm))),
-          // query(blogRef, where("description", "array-contains", searchTerm)),
-          query(blogRef, where("tags", "array-contains", searchTerm)),
-          query(blogRef, where("title", "==", searchTerm)) // For partial match in title
-        ];
+          const queries = [
+            query(blogRef, where("category", "==", capitalizeEachWord(searchTerm))),
+            // query(blogRef, where("city", "==", searchTerm)),
+            query(blogRef, where("city", "==", capitalizeEachWord(searchTerm))),
+            // query(blogRef, where("country", "==", searchTerm)),
+            query(blogRef, where("country", "==", capitalizeEachWord(searchTerm))),
+            query(blogRef, where("author", "==", capitalizeEachWord(searchTerm))),
+            query(blogRef, where("firstName", "==", capitalizeEachWord(searchTerm))),
+            query(blogRef, where("lastName", "==", capitalizeEachWord(searchTerm))),
+
+            // query(blogRef, where("description", "array-contains", searchTerm)),
+            query(blogRef, where("tags", "array-contains", searchTerm)),
+            query(blogRef, where("title", "==", searchTerm)) // For partial match in title
+          ];
         //INCLUDE SEARCH BY DATE
     
         // Execute all queries in parallel
@@ -55,9 +59,9 @@ const SearchResult=({ user }) => {
           index === self.findIndex((t) => t.id === value.id) // Deduplicate
         );
     
-        if (combinedResults.length === 0) {
-          toast.info("No blogs found matching your search criteria");
-        }
+        // if (combinedResults.length === 0) {
+        //   toast.info("No blogs found matching your search criteria");
+        // }
         setSearchResults(combinedResults);
         } catch (error) {
           console.error("Error searching blogs: ", error);
