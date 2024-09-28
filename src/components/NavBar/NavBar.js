@@ -107,17 +107,17 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
 
             <li onClick={() => setActive("home") }>
               <Link to="/">Home</Link>
-              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
               </li>
             
             
             <li onClick={() => setActive("blogs")}>
               <Link to="/blogs">Blog</Link>
-              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
               </li>
 
             <li onClick={() => setActive("maps")}>
-              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
               <Link to="/maps">Map</Link>
               </li>
 
