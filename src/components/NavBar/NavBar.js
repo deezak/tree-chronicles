@@ -123,7 +123,7 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
 
             <li onClick={() => setActive("about")}>
               <Link to="/about">About</Link>
-              <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+              <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
 
               </li>
 
@@ -132,7 +132,7 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
                 <li onClick={() => setActive("create")}>
                   
                   <Link to="/create">Create</Link>
-                  <img class="overlay-markup" src="./220.png" alt="Overlay Circle" />
+                  <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
                   </li>
 
               </>
