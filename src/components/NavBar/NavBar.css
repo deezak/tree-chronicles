@@ -56,9 +56,9 @@
 	src: url('../../assets/fonts/raleway.ttf');
 } */
 
-.user-name{
-    /* font-family:"poppins"; */
-}
+/* .user-name{
+    font-family:"poppins";
+} */
 .log-out{
     /* margin-bottom: 1rem; */
     color:var(--grey-accent);
@@ -132,9 +132,9 @@
         float:right;
         padding-right: 1rem;
     }
-    .std-nav-bar-wrapper{
+    /* .std-nav-bar-wrapper{ */
         /* width: 100vw; */
-    }
+    /* } */
     .list-left a{
         padding: 0em 0.4em;
         font-size: 2em;
@@ -232,10 +232,10 @@ a{
 
  
 
-.list-right a:hover{
+/* .list-right a:hover{ */
     /* color: rgba(0,0,0,0.3); */
 
-}
+/* } */
 
 .log-out:hover{
     color: whitesmoke;

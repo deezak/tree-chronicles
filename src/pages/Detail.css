@@ -14,8 +14,8 @@
       right: 8vw;
     }
     .halftone {
-      --halftone-size: 1.5px;
-      --halftone-bleed: 1.4;
+      --halftone-size: 2px;
+      --halftone-bleed: 1;
       --halftone-separate-k: 1;
       --halftone-dot-size: calc(var(--halftone-size)* var(--halftone-bleed));
       --halftone-color-dot-size: var(--halftone-dot-size);
