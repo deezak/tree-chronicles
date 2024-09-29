@@ -179,11 +179,11 @@ const AddEditBlog = ({ user, setActive }) => {
     } else {
         const blogData = {
           ...form,
-          timestamp: serverTimestamp(),
-          author: user.displayName,
-          firstName: firstName,
-          lastName: lastName,
-          userId: user.uid,
+          // timestamp: serverTimestamp(),
+          // author: user.displayName,
+          // firstName: firstName,
+          // lastName: lastName,
+          // userId: user.uid,
         };
         try {
           await updateDoc(doc(db, "blogs", id), blogData);
