@@ -23,9 +23,9 @@ const SideBar = ({setActive, user, handleLogout}) => {
         <img src="../eye-open.png" alt="eye-open" className='eye-menu-bar' style={{transform:"scale(0.8)", filter:"invert(0.9)"}}/>
      </div>  
       <Offcanvas show={show} onHide={closeSidebar} style={{backgroundColor:"var(--dark-complement)", width:"auto", fontFamily:"feelings"}}>  
-        <Offcanvas.Header >  
+        {/* <Offcanvas.Header >  
           <Offcanvas.Title className='side-bar-title'></Offcanvas.Title>  
-        </Offcanvas.Header>  
+        </Offcanvas.Header>   */}
         <Offcanvas.Body>  
           {/* Some dummy text, we can have any text or element at at this place.   */}
           <ul className='side-bar-list-down'>
