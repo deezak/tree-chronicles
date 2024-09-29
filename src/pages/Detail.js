@@ -43,10 +43,10 @@ return (
         <div className='blog-title-box'>
             <Carousel style={{ height: 'inherit' }} activeIndex={imageIndex} onSelect={(selectedIndex) => setIndex(selectedIndex)}
                 nextIcon={<span aria-hidden="true" className="next-icon">
-                    <img src="../markerArrow.png" alt="arrow"/> 
+                    {/* <img src="../markerArrow.png" alt="arrow"/>  */}
                     </span>}
                 prevIcon={<span aria-hidden="true" className="prev-icon" > 
-                    <img src="../markerArrow.png" alt="arrow" style={{opacity:"0.8"}}/>  
+                    {/* <img src="../markerArrow.png" alt="arrow" style={{opacity:"0.8"}}/>   */}
                     </span>}
                 interval={null} > 
             {/* // Disable auto sliding */}
@@ -62,7 +62,7 @@ return (
                                 onClick={() => handlePicDelete(id, imageUrl)}/> */}
                                 <img src="../delete.png" alt="X" 
                                 className='delete-picture-button'
-                                style={{filter:"invert(1)", zIndex:"1000"}}
+                                style={{filter:"invert(0.9)", zIndex:"1000",cursor: 'pointer'}}
                                 onClick={() => handlePicDelete(id, imageUrl)}/>
                     </Carousel.Item>
                     

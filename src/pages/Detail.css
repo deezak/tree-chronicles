@@ -184,9 +184,17 @@
 
   .delete-picture-button{
     position: absolute;
-    bottom: 20vh;
-    color: whitesmoke;
-    right: 20vw;
+    bottom: 4vh;
+    z-index: 100;
+    right: 2vw;
     /* width: 30px; */
     height: 32px;
+    cursor: 'pointer';
+  }
+
+  .delete-picture-button:hover{
+    cursor: 'pointer';
+    transform: scale(1.05);
+    filter:invert(1);
+    transition: transform 0.2s ease-in-out;
   }
