@@ -26,7 +26,7 @@ const SideBar = ({setActive, user, handleLogout}) => {
         {/* <Offcanvas.Header >  
           <Offcanvas.Title className='side-bar-title'></Offcanvas.Title>  
         </Offcanvas.Header>   */}
-        <Offcanvas.Body>  
+        <Offcanvas.Body style={{paddingTop:"6vh"}}>  
           {/* Some dummy text, we can have any text or element at at this place.   */}
           <ul className='side-bar-list-down'>
           
