@@ -81,13 +81,14 @@ const Blogs = ({ setActive, user, active }) => {
         if (window.confirm("Are you sure you want to delete this blog?")) {
             try {
                 setLoading(true);
+                await deleteDoc(doc(db, "blogs", id));
                 // Delete all images from Firebase Storage
                 const deleteImagesPromises = imgUrls.map(async (imageUrl) => {
                     const imageRef = ref(storage, imageUrl);
                     await deleteObject(imageRef);
                 });
                 await Promise.all(deleteImagesPromises);
-                await deleteDoc(doc(db, "blogs", id));
+                setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.id !== id));
                 toast.success("Blog deleted successfully");
                 setLoading(false);
             } catch (err) {
