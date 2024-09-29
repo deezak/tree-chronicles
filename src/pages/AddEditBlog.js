@@ -10,6 +10,7 @@ import {
   serverTimestamp,
   doc,
   updateDoc,
+  arrayUnion
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { TagsInput } from "react-tag-input-component";
@@ -157,17 +158,18 @@ const AddEditBlog = ({ user, setActive }) => {
     const displayNameArray = user.displayName ? user.displayName.split(' ') : [];
     const firstName = displayNameArray[0] || ""; // If displayName exists, take the first part
     const lastName = displayNameArray.slice(1).join(' ') || "";
-    const blogData = {
-      ...form,
-      imgUrls: uploadedUrls,
-      timestamp: serverTimestamp(),
-      author: user.displayName,
-      firstName: firstName,
-      lastName: lastName,
-      userId: user.uid,
-    };
+    
 
     if (!id) {
+      const blogData = {
+        ...form,
+        imgUrls: uploadedUrls,
+        timestamp: serverTimestamp(),
+        author: user.displayName,
+        firstName: firstName,
+        lastName: lastName,
+        userId: user.uid,
+      };
       try {
         await addDoc(collection(db, "blogs"), blogData);
         toast.success("Blog created successfully");
@@ -175,12 +177,26 @@ const AddEditBlog = ({ user, setActive }) => {
         console.error(err);
       }
     } else {
-      try {
-        await updateDoc(doc(db, "blogs", id), blogData);
-        toast.success("Blog updated successfully");
-      } catch (err) {
-        console.error(err);
-      }
+        const blogData = {
+          ...form,
+          timestamp: serverTimestamp(),
+          author: user.displayName,
+          firstName: firstName,
+          lastName: lastName,
+          userId: user.uid,
+        };
+        try {
+          await updateDoc(doc(db, "blogs", id), blogData);
+          // Then add each URL individually to the `imgUrls` array in Firestore
+          uploadedUrls.forEach(async (url) => {
+            await updateDoc(doc(db, "blogs", id), {
+              imgUrls: arrayUnion(url),
+            });
+          });
+          toast.success("Blog updated successfully");
+        } catch (err) {
+          console.error(err);
+        }
     }
     navigate("/blogs");
   };

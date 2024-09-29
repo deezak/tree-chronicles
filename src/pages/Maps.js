@@ -143,7 +143,7 @@ function Maps({setActive, user, active}) {
   return (
     <>
     {loading ? (
-      <div className="blocks-loading">
+      <div className="blocks-loading" style={{transform: "scale(1.3)"}}>
         <div className="block-loading orange"></div>
         <div className="block-loading blue"></div>
       </div>

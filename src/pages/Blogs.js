@@ -108,7 +108,7 @@ const Blogs = ({ setActive, user, active }) => {
         <div>
             <h2 className='latest-posts'>Latest Posts</h2>
             {loading ? (
-                <div className="blocks-loading">
+                <div className="blocks-loading" style={{padding: "13vh 0 0 0"}}>
                     <div className="block-loading orange"></div>
                     <div className="block-loading blue"></div>
                 </div>

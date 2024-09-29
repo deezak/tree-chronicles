@@ -181,3 +181,12 @@
 
     /* background-image: url('../assets/images/textures/photocopies.png'); */
   }
+
+  .delete-picture-button{
+    position: absolute;
+    bottom: 20vh;
+    color: whitesmoke;
+    right: 20vw;
+    /* width: 30px; */
+    height: 32px;
+  }

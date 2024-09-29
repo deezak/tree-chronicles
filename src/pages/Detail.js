@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './Detail.css';
 import { useParams } from 'react-router-dom';
-import {doc, getDoc} from 'firebase/firestore';
+import {doc, arrayRemove, updateDoc, getDoc} from 'firebase/firestore';
 import {db} from '../firebase';
 import { Carousel } from 'react-bootstrap';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { imageListClasses } from '@mui/material';
 
 const Detail = () => {
     const {id} = useParams();
@@ -20,6 +22,20 @@ const Detail = () => {
         setBlog(blogDetail.data());
         // setActive(null);
     }
+
+    const handlePicDelete = async (id, imageUrl) => {
+        if (window.confirm("Are you sure you want to delete this picture?")) {
+            try {
+                const docRef = doc(db, "blogs", id);
+                // Use arrayRemove to delete the image URL from imgUrls[]
+                await updateDoc(docRef, {
+                    imgUrls: arrayRemove(imageUrl),
+                });
+            } catch (err) {
+                console.error("Error deleting image: ", err);
+            }
+        }
+    };
 
 
 return (
@@ -41,8 +57,15 @@ return (
                                         objectPosition:"center" }}/>
                         </div>
                         <div className="halftone-color-overlay"></div>
-                     
+                        {/* <FontAwesomeIcon icon="fa-regular fa-trash-can" 
+                                className='delete-picture-button'
+                                onClick={() => handlePicDelete(id, imageUrl)}/> */}
+                                <img src="../delete.png" alt="X" 
+                                className='delete-picture-button'
+                                style={{filter:"invert(1)", zIndex:"1000"}}
+                                onClick={() => handlePicDelete(id, imageUrl)}/>
                     </Carousel.Item>
+                    
                 ))}
             </Carousel>
             <div className='blog-title'>
