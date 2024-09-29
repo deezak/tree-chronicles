@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { ref, deleteObject} from "firebase/storage";
 import './Detail.css';
 import { useParams } from 'react-router-dom';
 import {doc, arrayRemove, updateDoc, getDoc} from 'firebase/firestore';
-import {db} from '../firebase';
+import {db, storage} from '../firebase';
 import { Carousel } from 'react-bootstrap';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { imageListClasses } from '@mui/material';
@@ -31,6 +32,10 @@ const Detail = () => {
                 await updateDoc(docRef, {
                     imgUrls: arrayRemove(imageUrl),
                 });
+                const storageRef = ref(storage, imageUrl);
+
+                // Delete the file from Firebase Storage
+                await deleteObject(storageRef);
             } catch (err) {
                 console.error("Error deleting image: ", err);
             }
