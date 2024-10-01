@@ -103,7 +103,7 @@ const Blogs = ({ setActive, user, active }) => {
             setCurrentPage(newPage);
         }
     };
-    console.log(blogs);
+    // console.log(blogs);
 
     return (
         <div>

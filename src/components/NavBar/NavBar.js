@@ -22,8 +22,8 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
   const [searchQuery, setSearchQuery] = useState(""); // State for search input
   const userId = user?.uid;
   const navigate = useNavigate(); // React Router's navigation hook
-  console.log("userId", userId);
-  console.log("name", user?.displayName);
+  // console.log("userId", userId);
+  // console.log("name", user?.displayName);
 
   // Handle the form submission
   const handleSearchSubmit = (e) => {

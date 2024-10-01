@@ -11,8 +11,8 @@ const SideBar = ({setActive, user, handleLogout}) => {
   const closeSidebar = () => setShow(false);  
   const showSidebar = () => setShow(true); 
   const userId = user?.uid;
-  console.log("userId", userId);
-  console.log("name", user?.displayName); 
+  // console.log("userId", userId);
+  // console.log("name", user?.displayName); 
   return (
     <>  
     {/* <Container>   */}

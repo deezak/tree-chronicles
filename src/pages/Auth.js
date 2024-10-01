@@ -50,7 +50,7 @@ const handleAuth = async(e) => {
                 const approvedUsersRef = collection(db, "approvedUsers");
                 const q = query(approvedUsersRef, where("email", "==", email));
                 const querySnapshot = await getDocs(q);
-                console.log("APPROVED USERS: " + querySnapshot);
+                // console.log("APPROVED USERS: " + querySnapshot);
                 if (!querySnapshot.empty) {//if(result.data.exists) {
                     const {user} = await createUserWithEmailAndPassword(auth, email, password);
                     await updateProfile(user, {displayName: `${firstName} ${lastName}`});

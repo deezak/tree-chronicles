@@ -111,8 +111,8 @@ function Maps({setActive, user, active}) {
   }, []);
 
   useEffect(() =>{
-    console.log("BLOG LENGTH: " + markers.length);
-    console.log("FIND BLOG: " + markers.find(m => m.country === selectedCountry));
+    // console.log("BLOG LENGTH: " + markers.length);
+    // console.log("FIND BLOG: " + markers.find(m => m.country === selectedCountry));
     const zoomLevel = markers.find(marker => marker.country === selectedCountry) ? 8 : 2;
     setZoom(zoomLevel);
   },[markers, selectedCountry]);

@@ -8,8 +8,9 @@ import { Carousel } from 'react-bootstrap';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { imageListClasses } from '@mui/material';
 
-const Detail = (user) => {
+const Detail = ({user}) => {
     const userId = user?.uid;
+    // console.log("DETAIL USER ID " + userId)
     const {id} = useParams();
     const [blog, setBlog] = useState(null);
     const [imageIndex, setIndex] = useState(0);
