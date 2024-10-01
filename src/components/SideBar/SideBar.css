@@ -26,9 +26,9 @@
   }
   /* desktop */
 	@media  (min-width: 1280px) {
-    .side-bar-list-down {
+    /* .side-bar-list-down {
       padding-top: 6vh;
-    }
+    } */
 		.side-bar-list-down li a {
       font-size: 4em;
       -webkit-text-stroke: 0.7px rgba(224, 224, 224, 0.8);
@@ -50,7 +50,7 @@
   }
 
 .side-bar-list-down {
-        position: relative;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 4vh;

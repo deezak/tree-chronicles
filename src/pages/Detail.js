@@ -8,7 +8,8 @@ import { Carousel } from 'react-bootstrap';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { imageListClasses } from '@mui/material';
 
-const Detail = () => {
+const Detail = (user) => {
+    const userId = user?.uid;
     const {id} = useParams();
     const [blog, setBlog] = useState(null);
     const [imageIndex, setIndex] = useState(0);
@@ -62,13 +63,15 @@ return (
                                         objectPosition:"center" }}/>
                         </div>
                         <div className="halftone-color-overlay"></div>
-                        {/* <FontAwesomeIcon icon="fa-regular fa-trash-can" 
-                                className='delete-picture-button'
-                                onClick={() => handlePicDelete(id, imageUrl)}/> */}
-                                <img src="../delete.png" alt="X" 
-                                className='delete-picture-button'
-                                style={{filter:"invert(0.9)", zIndex:"1000",cursor: 'pointer'}}
-                                onClick={() => handlePicDelete(id, imageUrl)}/>
+                        {userId ?(
+                        <>
+                            <img src="../delete.png" alt="X" 
+                            className='delete-picture-button'
+                            style={{filter:"invert(0.9)", zIndex:"1000",cursor: 'pointer'}}
+                            onClick={() => handlePicDelete(id, imageUrl)}/>
+                        </>
+                        ):(<></>)}
+                        
                     </Carousel.Item>
                     
                 ))}
