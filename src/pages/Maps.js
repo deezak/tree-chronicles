@@ -157,9 +157,9 @@ function Maps({setActive, user, active}) {
             width: "100%",
             height: "100%",
         }}>
-          <ZoomableGroup zoom={defaultZoom} transitionduration={100} center={defaultCenter} onMoveEnd={handleMoveEnd} >
+          <ZoomableGroup zoom={defaultZoom} center={defaultCenter} onMoveEnd={handleMoveEnd} >
           {/* {position => ( */}
-          <>
+          {/* <> */}
           {/* console.log("POSITION "+ position.k);
           console.log("SCALE "+ 1/position.k); */}
         
@@ -212,20 +212,6 @@ function Maps({setActive, user, active}) {
             
           {markers.map(({ country, lat, long }, index) => (
             <Marker key={`${country}-${index}`} coordinates={[long, lat]}>
-              {/* <g
-                  fill="none"
-                  stroke="var(--yellow-dark)"
-                  strokeWidth={1.5}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  transform={`translate(-6,-12) scale(${Math.pow(0.65, 2)})`}//"translate(-10, -20) scale(0.75)"//{`translate(${( - 12 / position.k)}, ${ - 24 / position.k}) scale(${1 / position.k})`}
-                  className="scaleM"
-                  style={{boxShadow: "2px 2px 8px var(--magic-yellow)"}}
-                >
-                  <circle fill ="var(--yellow-dark)" cx="12" cy="10" r={3} />
-                  <path 
-                  d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                </g> */}
                 <image
                   href={"./star-yellow.png"} // Use 'href' to link the image
                   width="9" // Set the width of the image
@@ -234,22 +220,11 @@ function Maps({setActive, user, active}) {
                   style={{ pointerEvents: "none",
                    }}
                 />
-              {/* <text
-                textAnchor="middle"
-                y={10}
-                style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
-              >
-              </text> */}
             </Marker>
-            
           ))}
-          </>
+          {/* </> */}
           </ ZoomableGroup>
-
     </ComposableMap>
-
-    
-      
     )}
     
     {toolTipContent && (
