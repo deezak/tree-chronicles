@@ -131,11 +131,11 @@ const Blogs = ({ setActive, user, active }) => {
                         handleDelete={handleDelete}
                         />
                     </Suspense>
-                    <Suspense fallback={
-                        <div className="blocks-loading" style={{padding: "13vh 0 0 0"}}>
-                            <div className="block-loading orange"></div>
-                            <div className="block-loading blue"></div>
-                        </div>
+                    <Suspense fallback={<></>
+                        // <div className="blocks-loading" style={{padding: "13vh 0 0 0"}}>
+                        //     <div className="block-loading orange"></div>
+                        //     <div className="block-loading blue"></div>
+                        // </div>
                     }>
                         <PaginationControls
                         currentPage={currentPage}
