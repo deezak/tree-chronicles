@@ -1,8 +1,12 @@
-import React from 'react';
+// import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 // import { excerpt } from '../utility';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './BlogPost.css';
+// const FontAwesomeIcon = lazy(() => import('@fortawesome/react-fontawesome'));
+
+
 const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
   const userId = user?.uid;
   // console.log("USER ID " + userId);
@@ -54,7 +58,10 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             {/* <li><span class="licon icon-dat"></span>{item.timestamp.toDate().toDateString()}</li> */}
             <li>
               {/* <FontAwesomeIcon icon="fa-regular fa-calendar" style={{marginRight:"7px"}}/> */}
-              <img src="./212.png" alt="box" style={{width:"20px", height:"20px", marginRight:"5px", paddingBottom:"5px",filter:"invert(1)"}}/>
+              <img src="./212.png" alt="box" 
+              style={{width:"20px", height:"20px", marginRight:"5px", paddingBottom:"5px",filter:"invert(1)"}}
+              loading="lazy"  // Lazy load images
+              />
               {item.timestamp.toDate().toDateString().substring(4)}
               </li>
 
@@ -62,7 +69,10 @@ const BlogPost = ({isMap, blogs, user, id, handleDelete}) => {
             {/* <li><FontAwesomeIcon icon="fa-solid fa-rectangle-list" style={{marginRight:"7px", marginLeft:"20px"}} />{item.category}</li> */}
             <li>
               {/* <FontAwesomeIcon icon="fa-solid fa-clipboard-list"style={{marginRight:"7px", marginLeft:"20px"}} /> */}
-              <img src="./214.png" alt="box" style={{width:"20px", height:"20px",marginRight:"5px",  paddingBottom:"5px",filter:"invert(1)"}}/>
+              <img src="./214.png" alt="box" 
+              style={{width:"20px", height:"20px",marginRight:"5px",  paddingBottom:"5px",filter:"invert(1)"}}
+              loading="lazy"  // Lazy load images
+              />
               {item.category}
               </li>
           </ul>

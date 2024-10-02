@@ -1,10 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import BlogPost from '../components/BlogPost';
+import React, { useState, useEffect, useRef, Suspense  } from 'react';
+// import BlogPost from '../components/BlogPost';
 import { ref, deleteObject } from "firebase/storage"; // Import for Firebase Storage
 import { collection, deleteDoc, doc, limit, startAfter, orderBy, query, getDocs } from 'firebase/firestore';
 import { db, storage } from '../firebase';
 import { toast } from "react-toastify";
-import PaginationControls from '../components/PaginationControls/PaginationControls'; // Ensure correct import path
+// import PaginationControls from '../components/PaginationControls/PaginationControls'; // Ensure correct import path
+
+// Lazy load components
+const BlogPost = React.lazy(() => import('../components/BlogPost'));
+const PaginationControls = React.lazy(() => import('../components/PaginationControls/PaginationControls'));
 
 const Blogs = ({ setActive, user, active }) => {
     const [loading, setLoading] = useState(true);
@@ -15,21 +19,6 @@ const Blogs = ({ setActive, user, active }) => {
     const [currentPage, setCurrentPage] = useState(1); // Track current page
     const [perPage, setPerPage] = useState(6); // Number of blogs per page
 
-    // const getBlogsData = async (page = 1) => {
-    //     setLoading(true);
-    //     const blogRef = collection(db, "blogs");
-    //     let q = query(blogRef, orderBy("timestamp", "desc"), limit(perPage));
-
-    //     if (page > 1) {
-    //         q = query(q, startAfter(lastVisible));
-    //     }
-
-    //     const docSnapshot = await getDocs(q);
-    //     setBlogs(docSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    //     setCount(docSnapshot.size);
-    //     setLastVisible(docSnapshot.docs[docSnapshot.docs.length - 1] || null);
-    //     setLoading(false);
-    // };
 
     useEffect(() => {
         const getBlogsData = async (page = 1) => {
@@ -116,7 +105,7 @@ const Blogs = ({ setActive, user, active }) => {
             ) : (
                 <div style={{ display: "block" }}>
                     
-                    <BlogPost
+                    {/* <BlogPost
                         className="blogs-flex"
                         isMap={false}
                         blogs={blogs}
@@ -127,7 +116,33 @@ const Blogs = ({ setActive, user, active }) => {
                         currentPage={currentPage}
                         noOfPages={noOfPages}
                         handlePageChange={handlePageChange}
-                    />
+                    /> */}
+                    <Suspense fallback={
+                        <div className="blocks-loading" style={{padding: "13vh 0 0 0"}}>
+                            <div className="block-loading orange"></div>
+                            <div className="block-loading blue"></div>
+                        </div>
+                    }>
+                        <BlogPost
+                        className="blogs-flex"
+                        isMap={false}
+                        blogs={blogs}
+                        user={user}
+                        handleDelete={handleDelete}
+                        />
+                    </Suspense>
+                    <Suspense fallback={
+                        <div className="blocks-loading" style={{padding: "13vh 0 0 0"}}>
+                            <div className="block-loading orange"></div>
+                            <div className="block-loading blue"></div>
+                        </div>
+                    }>
+                        <PaginationControls
+                        currentPage={currentPage}
+                        noOfPages={noOfPages}
+                        handlePageChange={handlePageChange}
+                        />
+                    </Suspense>
                 </div>
             )}
         </div>
