@@ -1,5 +1,5 @@
 // import React from 'react';
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 // import { excerpt } from '../utility';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
