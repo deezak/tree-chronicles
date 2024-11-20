@@ -28,11 +28,12 @@ const initialState={
 
 const categoryOption =[
   "Solo Travel",
+  "Food",
+  "Storytime",
   "Finances",
+  "Photo Series",
   "Transportation",
   "Work Exchange",
-  "Storytime",
-  "Food",
   "Safety",
   "Activities",  
 ]
