@@ -31,7 +31,7 @@ const categoryOption =[
   "Food",
   "Storytime",
   "Finances",
-  "Photo Series",
+  "Photo Essay",
   "Transportation",
   "Work Exchange",
   "Safety",
