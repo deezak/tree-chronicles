@@ -159,14 +159,14 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
               <>
                 {/* <li className="nav-item nav-link log-out" onClick={handleLogout} style ={{padding: "14px 20px"}}>Logout</li> */}
                 <Link className="nav-item nav-link log-out" style={{textDecoration: "none"}} onClick={handleLogout} >
-                  <img src="../unlocked.png" alt="login" className="log-out" style={{width:"70px", height:"70px", filter:"invert(0.9)", marginBottom:"0.5em", marginLeft:"0.3em"}}/>
+                  <img src="../unlocked.png" alt="login" className="log-out" style={{width:"90px", height:"95px", filter:"invert(0.9)", marginBottom:"0.5em", marginLeft:"0.3em"}}/>
                 </Link>
                   </>
                 ):(
                   <>
                     <Link className="nav-item nav-link log-out"  to="/login" style={{textDecoration: "none"}} onClick={() => setActive("login")} >
                       
-                      <img src="../locked.png" alt="login" className="log-out" style={{width:"70px", height:"70px", filter:"invert(0.9)", marginBottom:"0.5em", marginLeft:"0.3em"}}/>
+                      <img src="../locked.png" alt="login" className="log-out" style={{width:"90px", height:"95px", filter:"invert(0.9)", marginBottom:"0.5em", marginLeft:"0.3em"}}/>
                     </Link>
                   </>
                 )}
