@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# About this application
+
+The Tree Chronicles is a travel blog powered by React and Firebase to document my observations, takeaways, and lessons I've learned while traveling and seeking discomfort and finding people and places that feel like home, hundreds or thousands of miles away. This project is a labor of love from its inception in the Hungarian countryside, to now, as my personal journal whenever I depart to find a new story.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
