@@ -103,7 +103,8 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
           <ul className ="list-left"> 	
 
           {(location.pathname === '/blogs' || location.pathname === '/maps'
-          || location.pathname === '/about' || location.pathname === '/login') && <SmallTitle />}
+          || location.pathname === '/about' || location.pathname === '/login'
+          || location.pathname === '/ask-me') && <SmallTitle />}
 
             <li onClick={() => setActive("home") }>
               <Link to="/">Home</Link>
@@ -126,6 +127,11 @@ const NavBar = ({setActive, user, handleLogout, isDetail}) => {
               <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
 
               </li>
+
+            <li onClick={() => setActive("ask-me")}>
+              <Link to="/ask-me">Ask Me Anything!</Link>
+              <img className="overlay-markup" src="./220.png" alt="Overlay Circle" />
+            </li>
 
             {userId ?(
               <>

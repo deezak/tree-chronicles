@@ -14,18 +14,18 @@ const BigTitle = () => {
           
           <div className="tree-chronicles">
           <div className="the">the</div>
-            <span>TRee</span> <span>ChRoNiCLeS</span>
+            <span>JAsMiNe</span> <span>AlleYs</span>
             </div>
           {/* <div className= "by-dina"> by Dina</div> */}
         </div>}
         {isTablet && <div className="big-title">
           <div className="the">the</div>
-          <div className="tree-chronicles"><span>TRee</span> <span>ChRoNiCLeS</span></div>
+          <div className="tree-chronicles"><span>JAsMiNe</span> <span>AlleYs</span></div>
           {/* <div className= "by-dina"> by Dina</div> */}
         </div>}
         {isDesktop && <div className="big-title">
           <div className="the">the</div>
-          <div className="tree-chronicles"><span>TRee</span> <span>ChRoNiCLeS</span></div>
+          <div className="tree-chronicles"><span>JAsMiNe</span> <span>AlleYs</span></div>
           {/* <div className= "by-dina"> by Dina</div> */}
         </div>}
     </div>

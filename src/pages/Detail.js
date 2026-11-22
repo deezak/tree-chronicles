@@ -26,6 +26,10 @@ const Detail = ({user}) => {
         // setActive(null);
     }
 
+    const countryLabel = typeof blog?.country === 'string'
+        ? blog.country
+        : blog?.country?.name || '';
+
     const handlePicDelete = async (id, imageUrl) => {
         if (window.confirm("Are you sure you want to delete this picture?")) {
             try {
@@ -83,10 +87,10 @@ return (
                     <span style={{ color: 'rgba(255,255,255,1)', fontFamily:"'feelings'", fontWeight:"400"}}>                        
                         {blog?.city ?(
                             <>
-                                {blog?.city.toUpperCase() +", " + blog?.country.toUpperCase()}
+                                {blog.city.toUpperCase() +", " + countryLabel.toUpperCase()}
                             </>
                             ):(<>
-                                {blog?.country.toUpperCase()}
+                                {countryLabel.toUpperCase()}
                             </>
                         )}
                         </span>
