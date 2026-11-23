@@ -15,13 +15,16 @@ import {
 import { toast } from "react-toastify";
 import { TagsInput } from "react-tag-input-component";
 import { countryList } from '../assets/countryList';
+import  countryData  from '../assets/mapJson/countries.json';
+import  cityData  from '../assets/mapJson/cities.json';
+
 
 const initialState={
   title:"",
   tags:[],
   category:"",
   description:"",
-  country:"",
+  country:{id: "", name:""},
   city:"",
   imgUrls:[]
 }
@@ -43,6 +46,7 @@ const AddEditBlog = ({ user, setActive }) => {
   const [files, setFiles] = useState([]);
   // const [urls, setUrls] = useState([]);
   const [progress, setProgress] = useState(null);
+  const [cities, setCities] = useState([]);
 
   const { id } = useParams();
 
@@ -204,15 +208,33 @@ const AddEditBlog = ({ user, setActive }) => {
   
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    
   };
 
  
   const onCategoryChange = (e) => {
     setForm({ ...form, category: e.target.value });
+    console.log("Cat: " + form.category);
   };
 
   const  onCountryChange  = (e) => {
-    setForm({ ...form, country : e.target.value });
+    setForm({ ...form, country: {
+                        id: e.target.value,
+                        name: countryData.find(country => country.id.toString() === e.target.value.toString()).name
+        },
+        city: '' });
+
+
+    console.log("NEW COUNTRY: " + countryData.find(country => country.id.toString() === e.target.value.toString()).name);
+    const filteredCities  = cityData.filter( city => city.country_id.toString() === e.target.value.toString());
+    setCities(filteredCities);
+    console.log("CITIES LIST: " + filteredCities.map((n) => n.name ));
+  };
+
+  const  onCityChange  = (e) => {
+    setForm({ ...form, city : e.target.value });
+    console.log("NEW CITY: " + form.city);
+    
   };
 
   const handleTags = (tags) => {
@@ -288,19 +310,39 @@ const AddEditBlog = ({ user, setActive }) => {
               
               <div className="col-12 category-select">
                 <select
-                  value={country}
+                  value={country.id}
                   onChange={onCountryChange}
                   className="catg-dropdown"
                 >
-                  <option>Please select country</option>
-                  {countryList.map((option, index) => (
+                  <option>Select Country</option>
+                  {/* {countryList.map((option, index) => (
                     <option value={option || ""} key={index}>
                       {option}
+                    </option>
+                  ))} */}
+                  {countryData.map((country, index) =>(
+                    <option value={country.id || ""} key={index}>
+                      {country.name}
                     </option>
                   ))}
                 </select>
               </div>
-              <div className="col-12 py-2 city-text">
+              <div className="col-12 category-select">
+                <select
+                  value={city}
+                  onChange={onCityChange}
+                  className="catg-dropdown"
+                  disabled={!form.country}
+                >
+                  <option>Select City</option>
+                  {cities.map((city, index) =>(
+                    <option value={city.name} key={index}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {/* <div className="col-12 py-2 city-text">
                 <input
                   type="text"
                   className="form-control input-text-box"
@@ -309,7 +351,7 @@ const AddEditBlog = ({ user, setActive }) => {
                   value={city}
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
               <div className="col-12 py-2">
               <TagsInput
                 value={tags}

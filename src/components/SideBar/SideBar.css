@@ -31,7 +31,7 @@
     } */
 		.side-bar-list-down li a {
       font-size: 4em;
-      -webkit-text-stroke: 0.7px rgba(224, 224, 224, 0.8);
+      -webkit-text-stroke: 0.7px rgba(255, 255, 255, 0.75);
       color:transparent;
     }
     
@@ -86,7 +86,7 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    font-family: 'glassure';
+    font-family: 'cutout';
   }
   
 

@@ -19,6 +19,7 @@ import { useEffect } from "react";
 import MapLayout from './components/MapLayout/MapLayout';
 import Auth from './pages/Auth';
 import SearchResult from './pages/SearchResult';
+import AskMe from './pages/AskMe';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { auth } from "./firebase";
@@ -71,6 +72,7 @@ function App() {
         <Route element={<BasicLayout setActive={setActive} active ={active} user={user} handleLogout={handleLogout}/>}>
           {/* <Route exact path='/' element={< Home setActive={setActive}/>}></Route> */}
           <Route path='/about' element={< About setActive={setActive} active={active}/>}></Route>
+          <Route path='/ask-me' element={<AskMe setActive={setActive} />} />
           <Route path='/update/:id' element={
             user?.uid ? (
                   <AddEditBlog user={user} setActive={setActive} active={active}/>
